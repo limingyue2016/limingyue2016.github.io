@@ -250,6 +250,136 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/wanfu2017/map/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/04/wanfu2017/map/" itemprop="url">
+                  map方法巧用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-04T00:00:00+08:00">
+                2017-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="jQuery-遍历-map-方法"><a href="#jQuery-遍历-map-方法" class="headerlink" title="jQuery 遍历 - map() 方法"></a>jQuery 遍历 - map() 方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&quot;p&quot;).append( $(&quot;input&quot;).map(function()&#123;</div><div class="line">  return $(this).val();</div><div class="line">&#125;).get().join(&quot;, &quot;) );</div></pre></td></tr></table></figure>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>map() 把每个元素通过函数传递到当前匹配集合中，生成包含返回值的新的 jQuery 对象。</p>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p><code>.map(callback(index,domElement))</code></p>
+<h2 id="详细说明"><a href="#详细说明" class="headerlink" title="详细说明"></a>详细说明</h2><ul>
+<li>由于返回值是 jQuery 封装的数组，使用 get() 来处理返回的对象以得到基础的数组。</li>
+<li><code>.map()</code> 方法对于获得或设置元素集的值特别有用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;form method=&quot;post&quot; action=&quot;&quot;&gt;</div><div class="line">  &lt;fieldset&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">      &lt;label for=&quot;two&quot;&gt;2&lt;/label&gt;</div><div class="line">      &lt;input type=&quot;checkbox&quot; value=&quot;2&quot; id=&quot;two&quot; name=&quot;number[]&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">      &lt;label for=&quot;four&quot;&gt;4&lt;/label&gt;</div><div class="line">      &lt;input type=&quot;checkbox&quot; value=&quot;4&quot; id=&quot;four&quot; name=&quot;number[]&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">      &lt;label for=&quot;six&quot;&gt;6&lt;/label&gt;</div><div class="line">      &lt;input type=&quot;checkbox&quot; value=&quot;6&quot; id=&quot;six&quot; name=&quot;number[]&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">      &lt;label for=&quot;eight&quot;&gt;8&lt;/label&gt;</div><div class="line">      &lt;input type=&quot;checkbox&quot; value=&quot;8&quot; id=&quot;eight&quot; name=&quot;number[]&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/fieldset&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>我们能够获得复选框 ID 组成的逗号分隔的列表：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&apos;:checkbox&apos;).map(function() &#123;</div><div class="line">  return this.id;</div><div class="line">&#125;).get().join(&apos;,&apos;);</div></pre></td></tr></table></figure></p>
+<p>在 callback 函数内部，this 引用每次迭代的当前 DOM 元素。该函数可返回单独的数据项，或者是要被插入结果集中的数据项的数组。如果返回的是数组，数组内的元素会被插入集合中。如果函数返回 null 或 undefined，则不会插入任何元素。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/02/wanfu2017/css规范小点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2021,199 +2151,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/30/07-canvas/03-canvas/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/30/07-canvas/03-canvas/" itemprop="url">
-                  canvas基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-30T00:00:00+08:00">
-                2016-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="outline-day03"><a href="#outline-day03" class="headerlink" title="outline-day03"></a>outline-day03</h1><h2 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h2><ul>
-<li>ctx.font = ‘微软雅黑’ 设置字体</li>
-<li>strokeText()</li>
-<li>fillText(text,x,y,maxWidth)<ul>
-<li>text 要绘制的文本</li>
-<li>x,y 文本绘制的坐标（文本左下角）</li>
-<li>maxWidth 设置文本最大宽度，可选参数</li>
-</ul>
-</li>
-<li>ctx.textAlign文本水平对齐方式，相对绘制坐标来说的<ul>
-<li>left</li>
-<li>center</li>
-<li>right</li>
-<li>start 默认</li>
-<li>end</li>
-<li>direction属性css(rtl ltr) start和end于此相关<ul>
-<li>如果是ltr,start和left表现一致</li>
-<li>如果是rtl,start和right表现一致</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>ctx.textBaseline 设置基线（垂直对齐方式  ）<ul>
-<li>top 文本的基线处于文本的正上方，并且有一段距离</li>
-<li>middle 文本的基线处于文本的正中间</li>
-<li>bottom 文本的基线处于文本的证下发，并且有一段距离</li>
-<li>hanging 文本的基线处于文本的正上方，并且和文本粘合</li>
-<li>alphabetic 默认值，基线处于文本的下方，并且穿过文字</li>
-<li>ideographic 和bottom相似，但是不一样</li>
-</ul>
-</li>
-<li>measureText() 获取文本宽度obj.width</li>
-</ul>
-<h2 id="水平和垂直对齐练习"><a href="#水平和垂直对齐练习" class="headerlink" title="水平和垂直对齐练习"></a>水平和垂直对齐练习</h2><h2 id="绘制完整的饼图"><a href="#绘制完整的饼图" class="headerlink" title="绘制完整的饼图"></a>绘制完整的饼图</h2><h2 id="绘制图片"><a href="#绘制图片" class="headerlink" title="绘制图片"></a>绘制图片</h2><ul>
-<li>drawImage()<ul>
-<li>三个参数drawImage(img,x,y)<ul>
-<li>img 图片对象、canvas对象、video对象</li>
-<li>x,y 图片绘制的左上角</li>
-</ul>
-</li>
-<li>五个参数drawImage(img,x,y,w,h)<ul>
-<li>img 图片对象、canvas对象、video对象</li>
-<li>x,y 图片绘制的左上角</li>
-<li>w,h 图片绘制尺寸设置(图片缩放，不是截取)</li>
-</ul>
-</li>
-<li>九个参数drawImage(img,x,y,w,h,x1,y1,w1,h1)<ul>
-<li>img 图片对象、canvas对象、video对象</li>
-<li>x,y,w,h 图片中的一个矩形区域</li>
-<li>x1,y1,w1,h1 画布中的一个矩形区域<h2 id="序列帧动画"><a href="#序列帧动画" class="headerlink" title="序列帧动画"></a>序列帧动画</h2></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>绘制精灵图</li>
-<li>动起来</li>
-<li>控制边界</li>
-<li>键盘控制</li>
-</ul>
-<h2 id="变换"><a href="#变换" class="headerlink" title="变换"></a>变换</h2><ul>
-<li>平移 移动画布的原点<ul>
-<li>translate(x,y) 参数表示移动目标点的坐标</li>
-</ul>
-</li>
-<li>旋转<ul>
-<li>scale(x,y) 参数表示宽高的缩放比例</li>
-</ul>
-</li>
-<li>缩放<ul>
-<li>rotate(angle) 参数表示旋转角度</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/30/07-canvas/01-canvas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2544,7 +2481,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/01-html5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/30/07-canvas/03-canvas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="明月">
@@ -2566,8 +2503,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/02/11/06-H5+c3/01-html5/" itemprop="url">
-                  html5基础
+                <a class="post-title-link" href="/2016/03/30/07-canvas/03-canvas/" itemprop="url">
+                  canvas基础
                 </a>
               
             
@@ -2583,8 +2520,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-11T00:00:00+08:00">
-                2016-02-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-30T00:00:00+08:00">
+                2016-03-30
               </time>
             
 
@@ -2621,141 +2558,76 @@
       
         
           
-            <h1 id="html5第一天"><a href="#html5第一天" class="headerlink" title="html5第一天"></a>html5第一天</h1><h2 id="DOCTYPE"><a href="#DOCTYPE" class="headerlink" title="DOCTYPE"></a>DOCTYPE</h2><blockquote>
-<p><code>DOCTYPE</code>并不是<code>HTML标签</code>,而是一个<code>声明</code>,告诉浏览器按哪种规范解析</p>
-</blockquote>
-<h2 id="新的语义标签"><a href="#新的语义标签" class="headerlink" title="新的语义标签"></a>新的语义标签</h2><blockquote>
-<p>目的：有利于SEO和后期维护<br>header nav main article section aside footer</p>
-</blockquote>
-<h2 id="新语义标签兼容问题"><a href="#新语义标签兼容问题" class="headerlink" title="新语义标签兼容问题"></a>新语义标签兼容问题</h2><ul>
-<li>兼容ie8以下<ul>
-<li>cc:ie6+tab <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if lte IE 8]&gt;</div><div class="line">    &lt;script src=&quot;js/html5shiv.min.js&quot;&gt;&lt;/script&gt;   </div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-</li>
+            <h1 id="outline-day03"><a href="#outline-day03" class="headerlink" title="outline-day03"></a>outline-day03</h1><h2 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h2><ul>
+<li>ctx.font = ‘微软雅黑’ 设置字体</li>
+<li>strokeText()</li>
+<li>fillText(text,x,y,maxWidth)<ul>
+<li>text 要绘制的文本</li>
+<li>x,y 文本绘制的坐标（文本左下角）</li>
+<li>maxWidth 设置文本最大宽度，可选参数</li>
 </ul>
 </li>
-</ul>
-<h2 id="input标签的新type属性"><a href="#input标签的新type属性" class="headerlink" title="input标签的新type属性"></a>input标签的新type属性</h2><p><img src="images/HTML5中的type.png" alt=""></p>
-<h2 id="input表单验证"><a href="#input表单验证" class="headerlink" title="input表单验证"></a>input表单验证</h2><ul>
-<li><code>email</code>自带格式</li>
-<li>对于没有自带验证效果的标签,就需要手动添加属性增加验证了<ul>
-<li><code>required</code> 当控件没有输入信息，会弹出提示信息</li>
-<li><code>pattern</code> 自定义规则 赋值正则表达式<ul>
-<li>自定义验证信息：</li>
-<li>oninvalid事件 //元素验证失败会触发 这个事件需要绑定给 对应的表单元素</li>
-<li>setCustomValidity()方法 //自定义验证信息</li>
-<li>输入时会弹出<code>oninput</code>绑定的代码</li>
-<li><img src="images/输入中.png" alt="输入中"></li>
-<li>验证失败时,会弹出<code>oninvalid</code>绑定的代码!</li>
-<li><a href="images/验证失败.png">验证失败</a></li>
-<li>自定义验证属性 </li>
-<li><img src="images/自定义验证.png" alt="自定义"></li>
-<li>代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"> &lt;!DOCTYPE html&gt;</div><div class="line"> &lt;html lang=&quot;en&quot;&gt;</div><div class="line"> &lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line"> &lt;/head&gt;</div><div class="line"> &lt;body&gt;</div><div class="line">    &lt;form action=&quot;&quot;&gt;</div><div class="line">        email:&lt;input type=&quot;email&quot; name=&quot;userEmail&quot;&gt;</div><div class="line">        &lt;br/&gt;</div><div class="line">        tel:&lt;input type=&quot;tel&quot; required pattern=&quot;[0-9]&#123;3&#125;&quot; id=&quot;telInput&quot;&gt;</div><div class="line">        &lt;br/&gt;</div><div class="line">        &lt;input type=&quot;submit&quot;&gt;</div><div class="line">    &lt;/form&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var telInput = document.getElementById(&quot;telInput&quot;);</div><div class="line">// 正在输入时</div><div class="line">telInput.oninput=function () &#123;</div><div class="line">    this.setCustomValidity(&quot;请正确输入哦&quot;);</div><div class="line">&#125;</div><div class="line">// 验证失败时</div><div class="line">telInput.oninvalid=function()&#123;</div><div class="line">    this.setCustomValidity(&quot;请不要输入火星的手机号好吗？&quot;);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-</li>
+<li>ctx.textAlign文本水平对齐方式，相对绘制坐标来说的<ul>
+<li>left</li>
+<li>center</li>
+<li>right</li>
+<li>start 默认</li>
+<li>end</li>
+<li>direction属性css(rtl ltr) start和end于此相关<ul>
+<li>如果是ltr,start和left表现一致</li>
+<li>如果是rtl,start和right表现一致</li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<h2 id="新表单属性"><a href="#新表单属性" class="headerlink" title="新表单属性"></a>新表单属性</h2><ul>
-<li><code>placeholder</code>(占位符)<ul>
-<li><blockquote>
-<p>输入元素内默认显示一些提示信息,当用户输入之后自动消失</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><code>autofocus</code>(获取焦点)<ul>
-<li><blockquote>
-<p>当某一页有很多个可供输入的元素时,用户需要使用鼠标点选元素进行输入,为了提升用户体验,我们可以通过<code>autofocus</code>属性来指定页面中默认选中的元素</p>
-<h2 id="新的表单元素"><a href="#新的表单元素" class="headerlink" title="新的表单元素"></a>新的表单元素</h2></blockquote>
-</li>
+<li>ctx.textBaseline 设置基线（垂直对齐方式  ）<ul>
+<li>top 文本的基线处于文本的正上方，并且有一段距离</li>
+<li>middle 文本的基线处于文本的正中间</li>
+<li>bottom 文本的基线处于文本的证下发，并且有一段距离</li>
+<li>hanging 文本的基线处于文本的正上方，并且和文本粘合</li>
+<li>alphabetic 默认值，基线处于文本的下方，并且穿过文字</li>
+<li>ideographic 和bottom相似，但是不一样</li>
 </ul>
 </li>
-<li>datalist<ul>
-<li><blockquote>
-<p>该元素规定了输入区域的选项列表,可以让用户有一些选项</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>id:id属性,想要使用该datalist的元素需要通过list=id的方式来指定</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>option:   </p>
-<ul>
-<li>value制定具体的值</li>
+<li>measureText() 获取文本宽度obj.width</li>
 </ul>
-<ul>
-<li>代码：</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">网址:&lt;input type=&quot;url&quot; list=&quot;url_list&quot; name=&quot;link&quot;/&gt;</div><div class="line">&lt;datalist id=&quot;url_list&quot;&gt;</div><div class="line">    &lt;option label=&quot;W3School&quot; value=&quot;http://www.W3School.com.cn&quot;/&gt;</div><div class="line">    &lt;option label=&quot;Google&quot; value=&quot;http://www.google.com&quot;/&gt;</div><div class="line">    &lt;option label=&quot;Microsoft&quot; value=&quot;http://www.microsoft.com&quot;/&gt;</div><div class="line">&lt;/datalist&gt;</div><div class="line"></div><div class="line">电话: &lt;input type=&quot;tel&quot; list=&quot;tel_list&quot;&gt;</div><div class="line">&lt;datalist id=&quot;tel_list&quot;&gt;</div><div class="line">    &lt;option value=&quot;186xxx&quot; label=&quot;移动&quot;&gt;移动&lt;/option&gt;</div><div class="line">    &lt;option value=&quot;187xxx&quot; label=&quot;联通&quot;&gt;联通&lt;/option&gt;</div><div class="line">    &lt;option value=&quot;135xxx&quot; label=&quot;天翼&quot;&gt;天翼&lt;/option&gt;</div><div class="line">&lt;/datalist&gt;</div></pre></td></tr></table></figure>
-</li>
+<h2 id="水平和垂直对齐练习"><a href="#水平和垂直对齐练习" class="headerlink" title="水平和垂直对齐练习"></a>水平和垂直对齐练习</h2><h2 id="绘制完整的饼图"><a href="#绘制完整的饼图" class="headerlink" title="绘制完整的饼图"></a>绘制完整的饼图</h2><h2 id="绘制图片"><a href="#绘制图片" class="headerlink" title="绘制图片"></a>绘制图片</h2><ul>
+<li>drawImage()<ul>
+<li>三个参数drawImage(img,x,y)<ul>
+<li>img 图片对象、canvas对象、video对象</li>
+<li>x,y 图片绘制的左上角</li>
 </ul>
-</blockquote>
 </li>
+<li>五个参数drawImage(img,x,y,w,h)<ul>
+<li>img 图片对象、canvas对象、video对象</li>
+<li>x,y 图片绘制的左上角</li>
+<li>w,h 图片绘制尺寸设置(图片缩放，不是截取)</li>
+</ul>
+</li>
+<li>九个参数drawImage(img,x,y,w,h,x1,y1,w1,h1)<ul>
+<li>img 图片对象、canvas对象、video对象</li>
+<li>x,y,w,h 图片中的一个矩形区域</li>
+<li>x1,y1,w1,h1 画布中的一个矩形区域<h2 id="序列帧动画"><a href="#序列帧动画" class="headerlink" title="序列帧动画"></a>序列帧动画</h2></li>
 </ul>
 </li>
 </ul>
-<h2 id="多媒体"><a href="#多媒体" class="headerlink" title="多媒体"></a>多媒体</h2><ul>
-<li><p><code>audio</code>标签</p>
-<ul>
-<li>src:音频的地址</li>
-<li>controls:音频播放控制器</li>
-<li>autoplay:自动播放</li>
-<li>loop:循环</li>
-<li>poster:指定视频不播放时显示的封面</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">  &lt;audio src=&quot;song.ogg&quot; controls=&quot;controls&quot; autoplay loop&gt;</div><div class="line">  &lt;/audio&gt;</div><div class="line">  ``` </div><div class="line">* 由于音频格式在不同浏览器中支持情况不同,考虑兼容性问题,我们需要使用下述代码</div><div class="line">* source:指定多个音频,如果找到了当前浏览器支持的,那么会直接使用,如果所有的`source`标签格式都不支持,会显示最后的文本内容</div><div class="line">* src:音频的地址</div><div class="line"></div><div class="line">*</div></pre></td></tr></table></figure>
-<pre><code>&lt;audio controls=&quot;controls&quot;&gt;
-    &lt;source src=&quot;song.ogg&quot; type=&quot;audio/ogg&quot;&gt;
-    &lt;source src=&quot;song.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
-    你的浏览器不支持此种格式
-&lt;/audio&gt;
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">* `video`标签 </div><div class="line">  * 用法跟audio一样</div><div class="line"></div><div class="line">## 两种进度条</div><div class="line">*</div></pre></td></tr></table></figure>
 </li>
+<li>绘制精灵图</li>
+<li>动起来</li>
+<li>控制边界</li>
+<li>键盘控制</li>
 </ul>
-<p><meter value=".5"></meter> //value(0-1)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">*  ```  </div><div class="line">   &lt;progress value=&quot;50&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;  //value(0-100)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="Dom语法"><a href="#Dom语法" class="headerlink" title="Dom语法"></a>Dom语法</h2><ul>
-<li>document.querySelector()<blockquote>
-<p>可以传入的选择器 还有CSS3的选择器 获取满足条件的第一个元素 从上往下 查找</p>
-</blockquote>
-</li>
-<li>document.querySelectorAll()<blockquote>
-<p>返回数组</p>
-</blockquote>
-</li>
-<li>classList<blockquote>
-<p>这个元素返回的是dom元素的class 列表,这个属性本身是只读的，但是我们可以通过几个方法去操作元素的class</p>
-<ul>
-<li><strong>可用方法：</strong><ul>
-<li><strong>add</strong> ： 添加一个 class 到元素的 class 列表中</li>
-<li><strong>remove</strong> ： 从元素的 class 列表中移除一个 class</li>
-<li><strong>toggle</strong> ： 切换一个 class 是否存在于一个元素的 class 列表中</li>
-<li><strong>contains</strong> ： 查询一个指定的 class 是否存在于元素的 class 列表中</li>
+<h2 id="变换"><a href="#变换" class="headerlink" title="变换"></a>变换</h2><ul>
+<li>平移 移动画布的原点<ul>
+<li>translate(x,y) 参数表示移动目标点的坐标</li>
 </ul>
 </li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<h2 id="data-添加属性"><a href="#data-添加属性" class="headerlink" title="data-添加属性"></a>data-添加属性</h2><ul>
-<li><strong>语法:</strong><ul>
-<li>data-:这个是固定格式</li>
-<li>data-xxx:xxx是自定义的值</li>
+<li>旋转<ul>
+<li>scale(x,y) 参数表示宽高的缩放比例</li>
 </ul>
 </li>
-<li><strong>注意:</strong><ul>
-<li>属性名不应该包含任何大写字母，并且在前缀 “data-“ 之后必须有至少一个字符</li>
-<li>属性值可以是任意字符串</li>
-<li>不要使用纯数字,特殊字符等作为自定义值</li>
-<li>如果data之后使用<code>-</code>连接多个值,取值时,需要使用<code>驼峰命名</code></li>
-</ul>
-</li>
-<li>获取：<ul>
-<li>对象.dataset 返回是自定义属性的对象，可以<code>.</code>出想要的属性值或者 也可以 对象.dataset[“属性名”]</li>
-<li>如果定义的时候使用了大写字母获取的时候 会变成小写,我们需要通过小写字母来获取</li>
-<li>如果 我们使用 多个 - 进行分割会去掉横线,横线之后的 首字母变为大写</li>
+<li>缩放<ul>
+<li>rotate(angle) 参数表示旋转角度</li>
 </ul>
 </li>
 </ul>
@@ -2842,7 +2714,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

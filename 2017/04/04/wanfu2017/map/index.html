@@ -87,46 +87,19 @@
 
 
 
-<meta name="description" content="css3第三天3D
-近大远小 给祖先元素设置perspective: px;
-这个属性的理解 需要配合transformZ()
-
-
-开启3D效果 给父级元素设置：transform-style:preserve-3d;动画
-定义需要使用的动画@keyframes 名字{}
-将动画设置给需要使用的元素
-animation-name:
-animation-duration:
-animation-tim">
+<meta name="description" content="jQuery 遍历 - map() 方法123$(&amp;quot;p&amp;quot;).append( $(&amp;quot;input&amp;quot;).map(function()&amp;#123;  return $(this).val();&amp;#125;).get().join(&amp;quot;, &amp;quot;) );
+定义map() 把每个元素通过函数传递到当前匹配集合中，生成包含返回值的新的 jQuery 对象。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css3基础">
-<meta property="og:url" content="http://yoursite.com/2016/02/11/06-H5+c3/02-css3/index.html">
+<meta property="og:title" content="map方法巧用">
+<meta property="og:url" content="http://yoursite.com/2017/04/04/wanfu2017/map/index.html">
 <meta property="og:site_name" content="小博客园">
-<meta property="og:description" content="css3第三天3D
-近大远小 给祖先元素设置perspective: px;
-这个属性的理解 需要配合transformZ()
-
-
-开启3D效果 给父级元素设置：transform-style:preserve-3d;动画
-定义需要使用的动画@keyframes 名字{}
-将动画设置给需要使用的元素
-animation-name:
-animation-duration:
-animation-tim">
-<meta property="og:updated_time" content="2017-05-04T05:20:54.826Z">
+<meta property="og:description" content="jQuery 遍历 - map() 方法123$(&amp;quot;p&amp;quot;).append( $(&amp;quot;input&amp;quot;).map(function()&amp;#123;  return $(this).val();&amp;#125;).get().join(&amp;quot;, &amp;quot;) );
+定义map() 把每个元素通过函数传递到当前匹配集合中，生成包含返回值的新的 jQuery 对象。">
+<meta property="og:updated_time" content="2017-07-13T14:03:34.768Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css3基础">
-<meta name="twitter:description" content="css3第三天3D
-近大远小 给祖先元素设置perspective: px;
-这个属性的理解 需要配合transformZ()
-
-
-开启3D效果 给父级元素设置：transform-style:preserve-3d;动画
-定义需要使用的动画@keyframes 名字{}
-将动画设置给需要使用的元素
-animation-name:
-animation-duration:
-animation-tim">
+<meta name="twitter:title" content="map方法巧用">
+<meta name="twitter:description" content="jQuery 遍历 - map() 方法123$(&amp;quot;p&amp;quot;).append( $(&amp;quot;input&amp;quot;).map(function()&amp;#123;  return $(this).val();&amp;#125;).get().join(&amp;quot;, &amp;quot;) );
+定义map() 把每个元素通过函数传递到当前匹配集合中，生成包含返回值的新的 jQuery 对象。">
 
 
 
@@ -154,13 +127,13 @@ animation-tim">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/02/11/06-H5+c3/02-css3/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/04/wanfu2017/map/"/>
 
 
 
 
 
-  <title> css3基础 | 小博客园 </title>
+  <title> map方法巧用 | 小博客园 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -279,7 +252,7 @@ animation-tim">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/02-css3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/wanfu2017/map/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="明月">
@@ -300,7 +273,7 @@ animation-tim">
             
             
               
-                css3基础
+                map方法巧用
               
             
           </h1>
@@ -315,8 +288,8 @@ animation-tim">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-11T00:00:00+08:00">
-                2016-02-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-04T00:00:00+08:00">
+                2017-04-04
               </time>
             
 
@@ -351,42 +324,16 @@ animation-tim">
       
 
       
-        <h1 id="css3第三天"><a href="#css3第三天" class="headerlink" title="css3第三天"></a>css3第三天</h1><h2 id="3D"><a href="#3D" class="headerlink" title="3D"></a>3D</h2><ul>
-<li>近大远小 给祖先元素设置perspective: px;<ul>
-<li>这个属性的理解 需要配合transformZ()</li>
-</ul>
-</li>
-<li>开启3D效果 给父级元素设置：transform-style:preserve-3d;<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2></li>
-<li>定义需要使用的动画@keyframes 名字{}</li>
-<li>将动画设置给需要使用的元素</li>
-<li>animation-name:</li>
-<li>animation-duration:</li>
-<li>animation-timing-function:</li>
-<li>animation-iteration-count:infinite;</li>
-<li>animation–play-state:running/paused;</li>
-<li>animation-fill-mode: forwards//动画结束的时候保持的状态</li>
-<li>animation:第一个时间是持续，第二个时间是延迟 其他随便写</li>
-</ul>
-<h2 id="弹性布局"><a href="#弹性布局" class="headerlink" title="弹性布局"></a>弹性布局</h2><ul>
-<li>display:flex;//开启  盒子就是弹性盒子了 主要是设置元素的位置<ul>
-<li>主轴 x justify-content: <ul>
-<li>flex-end;主轴的末尾</li>
-<li>flex-start:主轴的 开始</li>
-<li>space-around 会预留一些间隙</li>
-<li>space-between 元素之间 会预留间隙 但是 两边顶格</li>
-<li>center</li>
-</ul>
-</li>
-<li>副轴 y<ul>
-<li>align-items:</li>
-<li>值同上</li>
-<li>align-self:</li>
-<li>值同上</li>
-</ul>
+        <h1 id="jQuery-遍历-map-方法"><a href="#jQuery-遍历-map-方法" class="headerlink" title="jQuery 遍历 - map() 方法"></a>jQuery 遍历 - map() 方法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&quot;p&quot;).append( $(&quot;input&quot;).map(function()&#123;</div><div class="line">  return $(this).val();</div><div class="line">&#125;).get().join(&quot;, &quot;) );</div></pre></td></tr></table></figure>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>map() 把每个元素通过函数传递到当前匹配集合中，生成包含返回值的新的 jQuery 对象。</p>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p><code>.map(callback(index,domElement))</code></p>
+<h2 id="详细说明"><a href="#详细说明" class="headerlink" title="详细说明"></a>详细说明</h2><ul>
+<li>由于返回值是 jQuery 封装的数组，使用 get() 来处理返回的对象以得到基础的数组。</li>
+<li><code>.map()</code> 方法对于获得或设置元素集的值特别有用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;form method=&quot;post&quot; action=&quot;&quot;&gt;</div><div class="line">  &lt;fieldset&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">      &lt;label for=&quot;two&quot;&gt;2&lt;/label&gt;</div><div class="line">      &lt;input type=&quot;checkbox&quot; value=&quot;2&quot; id=&quot;two&quot; name=&quot;number[]&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">      &lt;label for=&quot;four&quot;&gt;4&lt;/label&gt;</div><div class="line">      &lt;input type=&quot;checkbox&quot; value=&quot;4&quot; id=&quot;four&quot; name=&quot;number[]&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">      &lt;label for=&quot;six&quot;&gt;6&lt;/label&gt;</div><div class="line">      &lt;input type=&quot;checkbox&quot; value=&quot;6&quot; id=&quot;six&quot; name=&quot;number[]&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">      &lt;label for=&quot;eight&quot;&gt;8&lt;/label&gt;</div><div class="line">      &lt;input type=&quot;checkbox&quot; value=&quot;8&quot; id=&quot;eight&quot; name=&quot;number[]&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/fieldset&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-</li>
-</ul>
+<p>我们能够获得复选框 ID 组成的逗号分隔的列表：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&apos;:checkbox&apos;).map(function() &#123;</div><div class="line">  return this.id;</div><div class="line">&#125;).get().join(&apos;,&apos;);</div></pre></td></tr></table></figure></p>
+<p>在 callback 函数内部，this 引用每次迭代的当前 DOM 元素。该函数可返回单独的数据项，或者是要被插入结果集中的数据项的数组。如果返回的是数组，数组内的元素会被插入集合中。如果函数返回 null 或 undefined，则不会插入任何元素。</p>
 
       
     </div>
@@ -423,8 +370,8 @@ animation-tim">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/11/06-H5+c3/01-html5/" rel="next" title="html5基础">
-                <i class="fa fa-chevron-left"></i> html5基础
+              <a href="/2017/04/02/wanfu2017/css规范小点/" rel="next" title="css规范小点">
+                <i class="fa fa-chevron-left"></i> css规范小点
               </a>
             
           </div>
@@ -432,10 +379,6 @@ animation-tim">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/11/06-H5+c3/01-css3/" rel="prev" title="CSS3基础">
-                CSS3基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -546,7 +489,7 @@ animation-tim">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#css3第三天"><span class="nav-number">1.</span> <span class="nav-text">css3第三天</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3D"><span class="nav-number">1.1.</span> <span class="nav-text">3D</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动画"><span class="nav-number">1.2.</span> <span class="nav-text">动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#弹性布局"><span class="nav-number">1.3.</span> <span class="nav-text">弹性布局</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery-遍历-map-方法"><span class="nav-number">1.</span> <span class="nav-text">jQuery 遍历 - map() 方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用法"><span class="nav-number">1.2.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详细说明"><span class="nav-number">1.3.</span> <span class="nav-text">详细说明</span></a></li></ol></li></ol></div>
             
 
           </div>

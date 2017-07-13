@@ -250,6 +250,168 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/01/03/03-js/array/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/03/03-js/array/" itemprop="url">
+                  数组和函数
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-03T00:00:00+08:00">
+                2016-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数组和函数"><a href="#数组和函数" class="headerlink" title="数组和函数"></a>数组和函数</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ul>
+<li>定义 <ul>
+<li>var ary=[1,2,3]</li>
+<li>var ary=  new Array()  <ul>
+<li>参数位置一个数值时为数组长度，多个数值时为数组中的元素</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>遍历<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3];</div><div class="line">for(var i = 0;i&lt;arr.length;i++)&#123;</div><div class="line">    arr[i]  //如此操作数组中的每一个元素</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><ul>
+<li>定义：可以重复执行的代码块<ul>
+<li>function 名字（）{程序}</li>
+</ul>
+</li>
+<li>参数<ul>
+<li>形参 实参 </li>
+</ul>
+</li>
+<li>返回值<ol>
+<li>如果函数没有使用 return ，那么函数有默认的返回值：undefined</li>
+<li>如果函数使用 return，那么跟再return后面的值，就成了函数的返回值</li>
+<li>如果函数使用 return，但是return后面没有任何值，那么函数的返回值也是：undefined</li>
+<li>函数使用return后，这个函数会在执行完 return 语句之后停止并立即退出，也就是说return后面的所有其他代码都不会再执行。<h2 id="函数名-函数体-函数加载问题"><a href="#函数名-函数体-函数加载问题" class="headerlink" title="函数名 函数体 函数加载问题"></a>函数名 函数体 函数加载问题</h2></li>
+</ol>
+</li>
+<li>函数名 == 整个函数</li>
+<li>JS加载的时候，只加载函数名，不加载函数体。所以如果想使用内部的成员变量，需要调用函数。<h2 id="变量和作用域"><a href="#变量和作用域" class="headerlink" title="变量和作用域"></a>变量和作用域</h2></li>
+<li>隐式全局变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">隐式全局变量就是隐藏的全局变量不好被发现。</div><div class="line">function  fn（）&#123;</div><div class="line">var  a  =  b  =  c  =  1;   // b和c就是隐式全局变量</div><div class="line">&#125;</div><div class="line">注意:</div><div class="line">function  fn（）&#123;</div><div class="line">var  a  =  b  =  c  =  1;   // b和c就是隐式全局变量（等号）</div><div class="line">var  a = 1;  b = 2;  c = 3;     // b和c就是隐式全局变量（分号）</div><div class="line">var  a = 1 ,  b = 2 ,  c = 3;    // b和c就不是隐式全局变量（逗号）</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="变量声明提升（预解析）"><a href="#变量声明提升（预解析）" class="headerlink" title="变量声明提升（预解析）"></a>变量声明提升（预解析）</h2><ul>
+<li>函数中，定义变量在使用变量之后。（先提升变量，后提升函数）</li>
+<li>只提升变量名，不提升变量值，容易出现undefined。计算后形成NaN</li>
+<li>函数是所有内容全部提升。（function直接定义的）<h2 id="函数高级"><a href="#函数高级" class="headerlink" title="函数高级"></a>函数高级</h2></li>
+<li>匿名函数 匿名函数就是没有名字的函数</li>
+<li>递归函数 自己调用自己</li>
+<li>回调函数 函数作为参数</li>
+<li>闭包 函数作为返回值</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/01/02/02-css/css/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -730,7 +892,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
