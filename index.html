@@ -250,6 +250,165 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/27/wanfu2017/前后端分离 - 副本/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/27/wanfu2017/前后端分离 - 副本/" itemprop="url">
+                  浏览器缓存
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-27T00:00:00+08:00">
+                2017-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="浏览器缓存类型"><a href="#浏览器缓存类型" class="headerlink" title="浏览器缓存类型"></a>浏览器缓存类型</h2><ul>
+<li><p>强缓存和协商缓存</p>
+</li>
+<li><p>强缓存：</p>
+<ul>
+<li>不会向服务器发送请求，直接从缓存中读取资源<br>在chrome控制台的network选项中可以看到该请求返回200的状态码，并且size显示from disk cache或from memory cache</li>
+</ul>
+</li>
+<li><p>协商缓存：</p>
+<ul>
+<li>向服务器发送请求，服务器会根据这个请求的request header的一些参数来判断是否命中协商缓存，<br>如果命中，则返回304状态码并带上新的response header通知浏览器从缓存中读取资源</li>
+</ul>
+</li>
+</ul>
+<h2 id="缓存有关的header"><a href="#缓存有关的header" class="headerlink" title="缓存有关的header"></a>缓存有关的header</h2><ul>
+<li><p>强缓存</p>
+<ul>
+<li>Expires：response header里的过期时间，浏览器再次加载资源时，如果在这个过期时间内，则命中强缓存。</li>
+<li>Cache-Control：当值设为 max-age=300时，则代表在这个请求正确返回时间（浏览器也会记录下来）的5分钟内再次加载资源，就会命中强缓存。</li>
+</ul>
+</li>
+<li><p>协商缓存</p>
+<ul>
+<li>ETag和 If-None-Match：这两个要一起说。<br>Etag是上一次加载资源时，服务器返回的response header，是对该资源的一种唯一标识，只要资源有变化，Etag就会重新生成。<br>浏览器在下一次加载资源向服务器发送请求时，会将上一次返回的Etag值放到request header里的If-None-Match里，服务器接受到If-None-Match的值后，会拿来跟该资源文件的Etag值做比较，<br>如果相同，则表示资源文件没有发生改变，命中协商缓存。</li>
+<li>Last-Modified和 If-Modified-Since：这两个也要一起说。<br>Last-Modified是该资源文件最后一次更改时间，服务器会在response header里返回，同时浏览器会将这个值保存起来，在下一次发送请求时，放到request header里的If-Modified-Since里，服务器在接收到后也会做比对，<br>如果相同则命中协商缓存。</li>
+</ul>
+</li>
+</ul>
+<h2 id="浏览器缓存过程"><a href="#浏览器缓存过程" class="headerlink" title="浏览器缓存过程"></a>浏览器缓存过程</h2><ol>
+<li>浏览器第一次加载资源，服务器返回200，浏览器将资源文件从服务器上请求下载下来，并把response header及该请求的返回时间一并缓存；</li>
+<li>下一次加载资源时，先比较当前时间和上一次返回200时的时间差，如果没有超过cache-control设置的max-age，则没有过期，命中强缓存，不发请求直接从本地缓存读取该文件（如果浏览器不支持HTTP1.1，则用expires判断是否过期）；如果时间过期，则向服务器发送header带有If-None-Match和If-Modified-Since的请求；</li>
+<li>服务器收到请求后，优先根据Etag的值判断被请求的文件有没有做修改，Etag值一致则没有修改，命中协商缓存，返回304；如果不一致则有改动，直接返回新的资源文件带上新的Etag值并返回200；</li>
+<li>如果服务器收到的请求没有Etag值，则将If-Modified-Since和被请求文件的最后修改时间做比对，一致则命中协商缓存，返回304；不一致则返回新的last-modified和文件并返回200；</li>
+</ol>
+<h2 id="用户行为对浏览器缓存的控制"><a href="#用户行为对浏览器缓存的控制" class="headerlink" title="用户行为对浏览器缓存的控制"></a>用户行为对浏览器缓存的控制</h2><ul>
+<li>地址栏访问，链接跳转是正常用户行为，将会触发浏览器缓存机制；</li>
+<li>F5刷新，浏览器会设置max-age=0，跳过强缓存判断，会进行协商缓存判断；</li>
+<li>ctrl+F5刷新，跳过强缓存和协商缓存，直接从服务器拉取资源。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/25/wanfu2017/缓存小结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1705,316 +1864,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/02/node/node3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/02/node/node3/" itemprop="url">
-                  模块化
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-02T00:00:00+08:00">
-                2016-05-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Node-中的模块化"><a href="#Node-中的模块化" class="headerlink" title="Node 中的模块化"></a>Node 中的模块化</h2><h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><p>Node 中的模块化采用了 CommonJS 模块规范，CommonJS 不仅仅是模块规范，<br>它为 JavaScript 制定了很多服务端的所谓的规范（API），例如二进制操作、网络操作等。</p>
-<ul>
-<li>require</li>
-<li>exports<ul>
-<li>exports 是 module.exports 的一个引用，也就是一个别名</li>
-<li></li>
-</ul>
-</li>
-<li>module.exports</li>
-</ul>
-<h3 id="模块分类"><a href="#模块分类" class="headerlink" title="模块分类"></a>模块分类</h3><ul>
-<li>核心模块<ul>
-<li>由 node 本身提供，通过唯一的模块标识名进行加载</li>
-<li>核心模块本质上也是文件模块，它已经被编译到了可执行文件中了</li>
-</ul>
-</li>
-<li>第三方模块<ul>
-<li>由社区提供</li>
-</ul>
-</li>
-<li>用户自定义模块<ul>
-<li>咱们自己写的</li>
-</ul>
-</li>
-</ul>
-<h3 id="require-加载模块查找规则"><a href="#require-加载模块查找规则" class="headerlink" title="require 加载模块查找规则"></a>require 加载模块查找规则</h3><p>require 函数接收的参数叫做模块标识符：</p>
-<ul>
-<li>核心模块<ul>
-<li>先看下有缓存，如果有直接拿过来</li>
-<li>如果没有，则直接加载</li>
-</ul>
-</li>
-<li>自己写的模块<ul>
-<li>以 <code>./</code> 或者 <code>../</code> 或者 <code>/</code> 或者 <code>c:/xxx</code> 类似于这样的标识路径</li>
-<li><code>/</code> 是当前文件模块所属磁盘根目录</li>
-<li><code>c:/xxx</code> 就是绝对路径</li>
-</ul>
-</li>
-<li>第三方模块：包<ul>
-<li>先基于当前文件模块所属目录找 node_modules 目录</li>
-<li>如果找到，则去该目录中找 moment 目录</li>
-<li>如果找到 moment 目录，则找该目录中的 package.json 文件</li>
-<li>如果找到 package.json 文件，则找该文件中的 main 属性</li>
-<li>如果找到 main 属性，则拿到该属性对应的文件路径</li>
-<li>如果找到 moment 目录之后<ul>
-<li>发现没有 package.json </li>
-<li>或者 有 package.json 没有 main 属性</li>
-<li>或者 有 main 属性，但是指向的路径不存在</li>
-<li>则 node 会默认去看一下 moment 目录中有没有 index.js index.node index.json 文件</li>
-</ul>
-</li>
-<li>如果找不到 index 或者找不到 moment 或者找不到 node_modules</li>
-<li>则进入上一级目录找 node_moudles 查找规则同上</li>
-<li>如果上一级还找不到，继续向上，一直到当前文件所属磁盘根目录，</li>
-<li>如果最后到磁盘根目录还找不到，最后报错：<code>can not find module xxx</code></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="path-模块"><a href="#path-模块" class="headerlink" title="path 模块"></a>path 模块</h2><h2 id="fs-模块"><a href="#fs-模块" class="headerlink" title="fs 模块"></a>fs 模块</h2><h2 id="http-模块"><a href="#http-模块" class="headerlink" title="http 模块"></a>http 模块</h2><h3 id="http-模块相关属性及方法"><a href="#http-模块相关属性及方法" class="headerlink" title="http 模块相关属性及方法"></a>http 模块相关属性及方法</h3><ul>
-<li>http.METHODS<ul>
-<li>获取 http 支持的请求方法</li>
-</ul>
-</li>
-<li>http.STATUS_CODES<ul>
-<li>获取 http 模块支持的状态码</li>
-</ul>
-</li>
-<li>http.createClient([port][, host])<ul>
-<li>创建客户端，使用 Node 发送请求</li>
-</ul>
-</li>
-<li>http.createServer([requestListener])<ul>
-<li>创建服务器，接收客户端请求</li>
-</ul>
-</li>
-<li>http.get(options[, callback])<ul>
-<li>发起 get 请求</li>
-</ul>
-</li>
-<li>http.globalAgent</li>
-<li>http.request(options[, callback])<ul>
-<li>发请求</li>
-</ul>
-</li>
-</ul>
-<h3 id="Class-http-Server-服务实例对象"><a href="#Class-http-Server-服务实例对象" class="headerlink" title="Class: http.Server 服务实例对象"></a>Class: http.Server 服务实例对象</h3><p>事件：</p>
-<ul>
-<li>Event: ‘checkContinue’</li>
-<li>Event: ‘checkExpectation’</li>
-<li>Event: ‘clientError’</li>
-<li>Event: ‘close’</li>
-<li>Event: ‘connect’</li>
-<li>Event: ‘connection’</li>
-<li>Event: ‘request’<ul>
-<li>请求事件</li>
-</ul>
-</li>
-<li>Event: ‘upgrade’</li>
-</ul>
-<p>方法：</p>
-<ul>
-<li>server.close([callback])<ul>
-<li>关闭服务器</li>
-</ul>
-</li>
-<li>server.listen(handle[, callback])<ul>
-<li>绑定监听</li>
-</ul>
-</li>
-<li>server.listen(path[, callback])<ul>
-<li>绑定监听</li>
-</ul>
-</li>
-<li>server.listen([port][, hostname][, backlog][, callback])<ul>
-<li>绑定监听</li>
-</ul>
-</li>
-<li>server.listening</li>
-<li>server.maxHeadersCount</li>
-<li>server.setTimeout(msecs, callback)</li>
-<li>server.timeout</li>
-</ul>
-<h3 id="Class-http-ServerResponse-响应对象"><a href="#Class-http-ServerResponse-响应对象" class="headerlink" title="Class: http.ServerResponse 响应对象"></a>Class: http.ServerResponse 响应对象</h3><p>事件：</p>
-<ul>
-<li>Event: ‘close’</li>
-<li>Event: ‘finish’</li>
-</ul>
-<p>方法：</p>
-<ul>
-<li>response.addTrailers(headers)</li>
-<li>response.end([data][, encoding][, callback])<ul>
-<li>结束响应</li>
-</ul>
-</li>
-<li>response.finished</li>
-<li>response.getHeader(name)</li>
-<li>response.headersSent</li>
-<li>response.removeHeader(name)</li>
-<li>response.sendDate</li>
-<li>response.setHeader(name, value)</li>
-<li>response.setTimeout(msecs, callback)</li>
-<li>response.statusCode<ul>
-<li>状态码</li>
-</ul>
-</li>
-<li>response.statusMessage<ul>
-<li>状态短语</li>
-</ul>
-</li>
-<li>response.write(chunk[, encoding][, callback])<ul>
-<li>写入响应流数据</li>
-</ul>
-</li>
-<li>response.writeContinue()</li>
-<li>response.writeHead(statusCode[, statusMessage][, headers])<ul>
-<li>写入响应头</li>
-</ul>
-</li>
-</ul>
-<h3 id="Request（http-IncomingMessage）请求对象"><a href="#Request（http-IncomingMessage）请求对象" class="headerlink" title="Request（http.IncomingMessage）请求对象"></a>Request（http.IncomingMessage）请求对象</h3><p>事件：</p>
-<p>Event: ‘aborted’<br>Event: ‘close’</p>
-<p>方法：</p>
-<ul>
-<li>message.destroy([error])</li>
-<li>message.headers<ul>
-<li>获取请求头</li>
-</ul>
-</li>
-<li>message.httpVersion<ul>
-<li>获取 http 协议版本</li>
-</ul>
-</li>
-<li>message.method<ul>
-<li>获取请求方法</li>
-</ul>
-</li>
-<li>message.rawHeaders</li>
-<li>message.rawTrailers</li>
-<li>message.setTimeout(msecs, callback)</li>
-<li>message.statusCode</li>
-<li>message.statusMessage</li>
-<li>message.socket</li>
-<li>message.trailers</li>
-<li>message.url<ul>
-<li>获取请求路径</li>
-</ul>
-</li>
-</ul>
-<hr>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2064,7 +1913,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
