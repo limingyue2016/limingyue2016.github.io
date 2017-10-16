@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/27/wanfu2017/map1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/25/wanfu2017/缓存小结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="明月">
@@ -272,7 +272,166 @@
             
               
                 
-                <a class="post-title-link" href="/2017/07/27/wanfu2017/map1/" itemprop="url">
+                <a class="post-title-link" href="/2017/07/25/wanfu2017/缓存小结/" itemprop="url">
+                  ����������
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-25T00:00:00+08:00">
+                2017-07-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="��������������"><a href="#��������������" class="headerlink" title="��������������"></a>��������������</h2><ul>
+<li><p>ǿ������Э�̻���</p>
+</li>
+<li><p>ǿ���棺</p>
+<ul>
+<li>����������������������ֱ�Ӵӻ����ж�ȡ��Դ<br>��chrome����̨��networkѡ���п��Կ��������󷵻�200��״̬�룬����size��ʾfrom disk cache��from memory cache</li>
+</ul>
+</li>
+<li><p>Э�̻��棺</p>
+<ul>
+<li>���������������󣬷���������������������request header��һЩ�������ж��Ƿ�����Э�̻��棬<br>�������У��򷵻�304״̬�벢�����µ�response header֪ͨ�������ӻ����ж�ȡ��Դ</li>
+</ul>
+</li>
+</ul>
+<h2 id="�����йص�header"><a href="#�����йص�header" class="headerlink" title="�����йص�header"></a>�����йص�header</h2><ul>
+<li><p>ǿ����</p>
+<ul>
+<li>Expires��response header���Ĺ���ʱ�䣬�������ٴμ�����Դʱ����������������ʱ���ڣ�������ǿ���档</li>
+<li>Cache-Control����ֵ��Ϊ max-age=300ʱ��������������������ȷ����ʱ�䣨������Ҳ����¼��������5�������ٴμ�����Դ���ͻ�����ǿ���档</li>
+</ul>
+</li>
+<li><p>Э�̻���</p>
+<ul>
+<li>ETag�� If-None-Match��������Ҫһ��˵��<br>Etag����һ�μ�����Դʱ�����������ص�response header���ǶԸ���Դ��һ��Ψһ��ʶ��ֻҪ��Դ�б仯��Etag�ͻ��������ɡ�<br>����������һ�μ�����Դ����������������ʱ���Ὣ��һ�η��ص�Etagֵ�ŵ�request header����If-None-Match����������ܵ�If-None-Match��ֵ�󣬻�����������Դ�ļ���Etagֵ���Ƚϣ�<br>������ͬ������ʾ��Դ�ļ�û�з����ı䣬����Э�̻��档</li>
+<li>Last-Modified�� If-Modified-Since��������ҲҪһ��˵��<br>Last-Modified�Ǹ���Դ�ļ�����һ�θ���ʱ�䣬����������response header�ﷵ�أ�ͬʱ�������Ὣ����ֵ��������������һ�η�������ʱ���ŵ�request header����If-Modified-Since��������ڽ��յ���Ҳ�����ȶԣ�<br>������ͬ������Э�̻��档</li>
+</ul>
+</li>
+</ul>
+<h2 id="��������������-1"><a href="#��������������-1" class="headerlink" title="��������������"></a>��������������</h2><ol>
+<li>��������һ�μ�����Դ������������200������������Դ�ļ��ӷ�������������������������response header���������ķ���ʱ��һ�����棻</li>
+<li>��һ�μ�����Դʱ���ȱȽϵ�ǰʱ������һ�η���200ʱ��ʱ�������û�г���cache-control���õ�max-age����û�й��ڣ�����ǿ���棬��������ֱ�Ӵӱ��ػ�����ȡ���ļ���������������֧��HTTP1.1������expires�ж��Ƿ����ڣ�������ʱ�����ڣ���������������header����If-None-Match��If-Modified-Since��������</li>
+<li>�������յ������������ȸ���Etag��ֵ�жϱ��������ļ���û�����޸ģ�Etagֵһ����û���޸ģ�����Э�̻��棬����304��������һ�����иĶ���ֱ�ӷ����µ���Դ�ļ������µ�Etagֵ������200��</li>
+<li>�����������յ�������û��Etagֵ������If-Modified-Since�ͱ������ļ��������޸�ʱ�����ȶԣ�һ��������Э�̻��棬����304����һ���򷵻��µ�last-modified���ļ�������200��</li>
+</ol>
+<h2 id="�u���Ϊ�������������L���"><a href="#�u���Ϊ�������������L���" class="headerlink" title="�û���Ϊ�������������Ŀ���"></a>�û���Ϊ�������������Ŀ���</h2><ul>
+<li>��ַ�����ʣ�������ת�������û���Ϊ�����ᴥ���������������ƣ�</li>
+<li>F5ˢ�£�������������max-age=0������ǿ�����жϣ�������Э�̻����жϣ�</li>
+<li>ctrl+F5ˢ�£�����ǿ������Э�̻��棬ֱ�Ӵӷ�������ȡ��Դ��</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/20/wanfu2017/前后端分离/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/06/20/wanfu2017/前后端分离/" itemprop="url">
                   前后端分离
                 </a>
               
@@ -289,8 +448,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-27T00:00:00+08:00">
-                2017-07-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-20T00:00:00+08:00">
+                2017-06-20
               </time>
             
 
@@ -353,127 +512,6 @@
 <li>完美应对复杂多变的前端需求</li>
 <li>增强代码可维护性</li>
 </ol>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/25/wanfu2017/缓存小结/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/07/25/wanfu2017/缓存小结/" itemprop="url">
-                  abc
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-25T00:00:00+08:00">
-                2017-07-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>����������</p>
 
           
         
