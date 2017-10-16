@@ -1,0 +1,869 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Node 介绍
+官网
+维基百科
+深入浅出Node.js（一）：什么是Node.js
+Node.js 究竟是什么？
+
+Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine. 
+
+NodeJS 是一个构建与 Chrome V8 引擎之上的一个 JavaScript 运行时环境
+Node 可以像浏览器一样去解析和执">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node基础">
+<meta property="og:url" content="http://yoursite.com/2016/05/01/node/node0/index.html">
+<meta property="og:site_name" content="小博客园">
+<meta property="og:description" content="Node 介绍
+官网
+维基百科
+深入浅出Node.js（一）：什么是Node.js
+Node.js 究竟是什么？
+
+Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine. 
+
+NodeJS 是一个构建与 Chrome V8 引擎之上的一个 JavaScript 运行时环境
+Node 可以像浏览器一样去解析和执">
+<meta property="og:updated_time" content="2017-10-16T12:48:37.652Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node基础">
+<meta name="twitter:description" content="Node 介绍
+官网
+维基百科
+深入浅出Node.js（一）：什么是Node.js
+Node.js 究竟是什么？
+
+Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine. 
+
+NodeJS 是一个构建与 Chrome V8 引擎之上的一个 JavaScript 运行时环境
+Node 可以像浏览器一样去解析和执">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/05/01/node/node0/"/>
+
+
+
+
+
+  <title> Node基础 | 小博客园 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小博客园</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/01/node/node0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Node基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-01T00:00:00+08:00">
+                2016-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Node-介绍"><a href="#Node-介绍" class="headerlink" title="Node 介绍"></a>Node 介绍</h2><ul>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="external">官网</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/Node.js" target="_blank" rel="external">维基百科</a></li>
+<li><a href="http://www.infoq.com/cn/articles/what-is-nodejs" target="_blank" rel="external">深入浅出Node.js（一）：什么是Node.js</a></li>
+<li><p><a href="http://blog.jobbole.com/1254/" target="_blank" rel="external">Node.js 究竟是什么？</a></p>
+</li>
+<li><p>Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine. </p>
+<ul>
+<li>NodeJS 是一个构建与 Chrome V8 引擎之上的一个 JavaScript 运行时环境</li>
+<li>Node 可以像浏览器一样去解析和执行 JavaScript 代码</li>
+<li>JavaScript 是一个动态脚本语言<ul>
+<li>预编译</li>
+<li>再执行</li>
+</ul>
+</li>
+<li>JavaScript 之前的解析和执行一直停留在浏览器环境<ul>
+<li>通过编译解析引擎：解析和执行 JavaScript 脚本代码</li>
+<li>Chrome V8 引擎是所有浏览器里面解析和执行 JS 代码最快的</li>
+<li>Node 作者做了一件事儿，把 Chrome 的 V8 引擎移植出来了</li>
+<li>又基于 V8 引擎至上构建了一系列的 API</li>
+<li>在 Node 中，没有界面，不再需要关心 HTML、CSS</li>
+<li>只需要关注 JavaScript</li>
+<li>和 DOM、Style 等没有任何关系了</li>
+<li>纯粹的 JavaScript 代码：Ecmascript<ul>
+<li>var</li>
+<li>function</li>
+<li>Object</li>
+<li>Date</li>
+<li>Math</li>
+<li>x window</li>
+<li>x document</li>
+<li>文件操作</li>
+<li>网络操作</li>
+<li>让 JavaScript 代码具有了服务器编程能力</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. <ul>
+<li>事件驱动</li>
+<li>非阻塞IO模型：大量的异步编程接口<ul>
+<li>充满了类似于客户端中 ajax 一样的 API</li>
+<li>异步：回调</li>
+</ul>
+</li>
+<li>跨平台</li>
+<li>单线程</li>
+<li>轻量和高效</li>
+</ul>
+</li>
+<li>Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.<ul>
+<li>npm 是世界上最大的开源库生态系统</li>
+<li>在 npm  上发布的第三方包已经接近 35 万个之多</li>
+<li>包只能帮你解决某一个单一的问题，解决不了你的业务</li>
+</ul>
+</li>
+</ul>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><h3 id="可以做什么"><a href="#可以做什么" class="headerlink" title="可以做什么"></a>可以做什么</h3><p>Node 说白了就是为 JavaScript 提供了服务端编程的能力（不处理UI）。</p>
+<ul>
+<li>Java、PHP、Python、.Net、Ruby 等 能做的 Node 都能做</li>
+<li>网站开发，提供网站服务端</li>
+<li>数据库交互</li>
+<li>移动应用：后台</li>
+<li>网络游戏：后台</li>
+<li>CLI（Command Line Interface） 程序：<ul>
+<li>git</li>
+<li>gulp</li>
+<li>hexo</li>
+<li>Node 具有开发命令行工具的能力<ul>
+<li>webpack 打包构建工具</li>
+<li>http-server 在终端中快速提供一个服务</li>
+<li>browser-sync 提供服务，提供浏览器自动刷新的能力</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>虽然 Node 很强大，而且也是前端进阶必备的一个节能。</p>
+<ul>
+<li>对 IO 操作比较频繁的操作<ul>
+<li>文件读写</li>
+<li>和数据库交互：网络数据IO</li>
+</ul>
+</li>
+<li>实时通信<ul>
+<li>聊天：微信、QQ、直播</li>
+</ul>
+</li>
+</ul>
+<h3 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h3><ul>
+<li>朴灵：《深入浅出Node.js》</li>
+<li>《Node.js 权威指南》：官方API详解<ul>
+<li>参考 API</li>
+</ul>
+</li>
+<li>JavaScript 标准参考教程（alpha）：<a href="http://javascript.ruanyifeng.com/" target="_blank" rel="external">http://javascript.ruanyifeng.com/</a></li>
+<li>Node 入门：<a href="http://www.nodebeginner.org/index-zh-cn.html" target="_blank" rel="external">http://www.nodebeginner.org/index-zh-cn.html</a></li>
+<li>官方API文档：<a href="https://nodejs.org/dist/latest-v6.x/docs/api/" target="_blank" rel="external">https://nodejs.org/dist/latest-v6.x/docs/api/</a></li>
+<li>中文文档（版本比较旧，凑合看）：<a href="http://www.nodeclass.com/api/node.html" target="_blank" rel="external">http://www.nodeclass.com/api/node.html</a></li>
+<li>CNODE社区：<a href="http://cnodejs.org" target="_blank" rel="external">http://cnodejs.org</a></li>
+<li>CNODE-新手入门：<a href="http://cnodejs.org/getstart" target="_blank" rel="external">http://cnodejs.org/getstart</a></li>
+</ul>
+<hr>
+<h2 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h2><h3 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h3><p>各个环境版本下载地址：<a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a></p>
+<h4 id="如何确认是否有-Node-环境"><a href="#如何确认是否有-Node-环境" class="headerlink" title="如何确认是否有 Node 环境"></a>如何确认是否有 Node 环境</h4><p>打开终端，在终端中输入以下命令：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node --version</div></pre></td></tr></table></figure>
+<p>如果能看到类似于 <code>v6.8.0</code> 这样的版本号（版本号不一定和我的一致）输出，<br>说明当前计算机具有 Node 环境。</p>
+<h4 id="普通安装方式（下一步下一步）"><a href="#普通安装方式（下一步下一步）" class="headerlink" title="普通安装方式（下一步下一步）"></a>普通安装方式（下一步下一步）</h4><h4 id="使用-nvm（Node-version-manager）-安装和管理-Node（补充）"><a href="#使用-nvm（Node-version-manager）-安装和管理-Node（补充）" class="headerlink" title="使用 nvm（Node version manager） 安装和管理 Node（补充）"></a>使用 nvm（Node version manager） 安装和管理 Node（补充）</h4><h3 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h3><h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><h3 id="构建-HTTP-服务"><a href="#构建-HTTP-服务" class="headerlink" title="构建 HTTP 服务"></a>构建 HTTP 服务</h3><h3 id="path-环境变量"><a href="#path-环境变量" class="headerlink" title="path 环境变量"></a>path 环境变量</h3><p>问题：为什么在终端的任何目录下输入 <code>node</code> 命令，<br>执行的都是 <code>node.exe</code> 这个可执行文件？</p>
+<p>核心就在于可以通过操作系统的终端启动或者打开软件（GUI、CLI）：</p>
+<p>当你在终端输入一个字符串的时候：</p>
+<ul>
+<li>终端会在当前目录下找和该字符串相关的执行文件</li>
+<li>如果找不到，优先进入用户 path 环境变量<ul>
+<li>path 换件变量通过 <strong>英文分号</strong> 作为分割保存了多个目录</li>
+<li>终端会一个一个进入该目录找你刚才输入的字符串所对应的可执行文件</li>
+<li>如果在其中一个目录找到，则直接打开执行</li>
+<li>如果在用户 path 环境变量中找不到，则进入系统 path 换将变量</li>
+<li>查找规则如上，如果最后还找不到，则报错：<code>&#39;A&#39; 不是内部或外部命令，也不是可运行的程序或批处理文件。</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Node-中的-JavaScript"><a href="#Node-中的-JavaScript" class="headerlink" title="Node 中的 JavaScript"></a>Node 中的 JavaScript</h2><h3 id="Ecmascript"><a href="#Ecmascript" class="headerlink" title="Ecmascript"></a>Ecmascript</h3><ul>
+<li>var</li>
+<li>if else </li>
+<li>function </li>
+<li>{}</li>
+<li>Object</li>
+<li>Number</li>
+<li>String</li>
+<li>Date</li>
+<li>Math</li>
+<li>…</li>
+<li>console</li>
+<li>定时器函数<ul>
+<li>setTimeout clearTimeout</li>
+<li>setInterval clearInterval</li>
+</ul>
+</li>
+<li>global</li>
+</ul>
+<h3 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h3><ul>
+<li>核心模块是由 Node 环境平台本身提供的</li>
+<li>以一个唯一的核心模块标识名称进行暴露</li>
+<li>使用的时候，直接通过 <code>require</code> 函数进行加载</li>
+</ul>
+<p>Node 把绝大多数的 API 都封装到了一个具名的核心模块中了，例如文件操作的：<code>fs</code><br>网络操作的 <code>http</code> 等。</p>
+<p>也就是说你如果想要使用核心模块，必须先加载才可以使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> 起个名字 = <span class="built_in">require</span>(<span class="string">'唯一的核心模块标识名称'</span>)</div></pre></td></tr></table></figure>
+<h3 id="第三方模块（由社区提供）"><a href="#第三方模块（由社区提供）" class="headerlink" title="第三方模块（由社区提供）"></a>第三方模块（由社区提供）</h3><ul>
+<li>由社区提供，也就是所谓的第三方<ul>
+<li>可以是公司</li>
+<li>可以是个人</li>
+</ul>
+</li>
+<li>举个例子：moment 时间处理库</li>
+</ul>
+<p>如何在 Node 中使用第三方包：</p>
+<ol>
+<li>通过 <code>npm</code> 下载</li>
+<li>通过 <code>require</code> 函数引包</li>
+<li>查看第三方包的 API 文档，<code>try-try-see</code></li>
+</ol>
+<h3 id="用户自定义模块"><a href="#用户自定义模块" class="headerlink" title="用户自定义模块"></a>用户自定义模块</h3><ul>
+<li>require</li>
+<li>module.exports</li>
+</ul>
+<p>在 Node 中，也提供了一种所谓的 JavaScript 模块化解决方案（类似于之前学过的 requirejs）：</p>
+<p>在 Node 中对模块化的支持非常好，<br>也就是说 Node 开发就是结合：</p>
+<ul>
+<li>Ecmascript</li>
+<li>核心模块</li>
+<li>第三方模块</li>
+<li>自己写的模块</li>
+</ul>
+<p>结合以上的功能去开发 Node 应用程序，这里先宏观了解一下，<br>随着课程的不断深入，会讲解到具体的模块加载机制及细节。</p>
+<hr>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/01/08-OOP/01-oop/" rel="next" title="面向对象">
+                <i class="fa fa-chevron-left"></i> 面向对象
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/01/node/node1/" rel="prev" title="Node组成部分">
+                Node组成部分 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/wuliannan.jpg"
+               alt="明月" />
+          <p class="site-author-name" itemprop="name">明月</p>
+           
+              <p class="site-description motion-element" itemprop="description">温故知新</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-介绍"><span class="nav-number">1.</span> <span class="nav-text">Node 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">1.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以做什么"><span class="nav-number">1.2.</span> <span class="nav-text">可以做什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用场景"><span class="nav-number">1.3.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些资源"><span class="nav-number">1.4.</span> <span class="nav-text">一些资源</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#起步"><span class="nav-number">2.</span> <span class="nav-text">起步</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境安装"><span class="nav-number">2.1.</span> <span class="nav-text">环境安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#如何确认是否有-Node-环境"><span class="nav-number">2.1.1.</span> <span class="nav-text">如何确认是否有 Node 环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#普通安装方式（下一步下一步）"><span class="nav-number">2.1.2.</span> <span class="nav-text">普通安装方式（下一步下一步）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-nvm（Node-version-manager）-安装和管理-Node（补充）"><span class="nav-number">2.1.3.</span> <span class="nav-text">使用 nvm（Node version manager） 安装和管理 Node（补充）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hello-world"><span class="nav-number">2.2.</span> <span class="nav-text">hello world</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件操作"><span class="nav-number">2.3.</span> <span class="nav-text">文件操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建-HTTP-服务"><span class="nav-number">2.4.</span> <span class="nav-text">构建 HTTP 服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#path-环境变量"><span class="nav-number">2.5.</span> <span class="nav-text">path 环境变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-中的-JavaScript"><span class="nav-number">3.</span> <span class="nav-text">Node 中的 JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ecmascript"><span class="nav-number">3.1.</span> <span class="nav-text">Ecmascript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心模块"><span class="nav-number">3.2.</span> <span class="nav-text">核心模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三方模块（由社区提供）"><span class="nav-number">3.3.</span> <span class="nav-text">第三方模块（由社区提供）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户自定义模块"><span class="nav-number">3.4.</span> <span class="nav-text">用户自定义模块</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">明月</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
