@@ -250,6 +250,152 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/27/wanfu2017/map1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/27/wanfu2017/map1/" itemprop="url">
+                  前后端分离
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-27T00:00:00+08:00">
+                2017-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="正确理解前后端分离"><a href="#正确理解前后端分离" class="headerlink" title="正确理解前后端分离"></a>正确理解前后端分离</h2><ul>
+<li>前后端分离并不只是开发模式，而是Web应用的一种架构模式。</li>
+<li>在开发期，前后端工程师可以通过约定好交互接口，实现并行开发；</li>
+<li>在运行期，前后端分离模式需要对Web应用进行分离部署，前后端之间使用HTTP请求进行交互。<br>我们可以从交互形式、代码组织方式、开发模式三个方面对前后端分离进行认识。</li>
+</ul>
+<h3 id="交互形式"><a href="#交互形式" class="headerlink" title="交互形式"></a>交互形式</h3><ul>
+<li>在前后端分离架构中，后端只需要负责按照约定的数据格式向前端提供可调用的API服务即可。</li>
+<li>前后端之间通过HTTP请求进行交互，前端获取到数据后，进行页面的装配和渲染。</li>
+</ul>
+<h3 id="代码组织方式"><a href="#代码组织方式" class="headerlink" title="代码组织方式"></a>代码组织方式</h3><p><img src="images/codeType.jpg" alt="代码组织方式图"></p>
+<ul>
+<li>在传统架构模式中，前后端代码存放于同一个代码库中，甚至是同一工程目录下。页面中还夹杂着后端代码。前后端工程师进行开发时，都必须把整个项目导入到开发工具中。</li>
+<li>而前后端分离模式在代码组织形式上有以下两种：<ul>
+<li>半分离<br>前后端共用一个代码库，但是代码分别存放在两个工程中。<br>后端不关心或很少关心前端元素的输出情况，前端不能独立进行开发和测试，项目中缺乏前后端交互的测试用例。</li>
+<li>分离<br>前后端代码库分离，前端代码中有可以进行Mock测试（通过构造虚拟测试对象以简化测试环境的方法）的伪后端，能支持前端的独立开发和测试。<br>而后端代码中除了功能实现外，还有着详细的测试用例，以保证API的可用性，降低集成风险。</li>
+</ul>
+</li>
+</ul>
+<h3 id="开发模式"><a href="#开发模式" class="headerlink" title="开发模式"></a>开发模式</h3><ul>
+<li>在前后端分离架构中，前端工程师只需要编写HTML、js、CSS等前端资源，然后通过HTTP请求调用后端提供的服务即可。除了开发期的分离，在运行期前后端资源也会进行分离部署。</li>
+</ul>
+<h2 id="要“离”：几个好处"><a href="#要“离”：几个好处" class="headerlink" title="要“离”：几个好处:"></a>要“离”：几个好处:</h2><ol>
+<li>提升开发效率</li>
+<li>完美应对复杂多变的前端需求</li>
+<li>增强代码可维护性</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/25/wanfu2017/缓存小结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -328,152 +474,6 @@
         
           
             <p>����������</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/20/wanfu2017/前后端分离是为了彼此更好/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/06/20/wanfu2017/前后端分离是为了彼此更好/" itemprop="url">
-                  ǰ���˷���
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-20T00:00:00+08:00">
-                2017-06-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="��ȷ����j���˷���"><a href="#��ȷ����j���˷���" class="headerlink" title="��ȷ����ǰ���˷���"></a>��ȷ����ǰ���˷���</h2><ul>
-<li>ǰ���˷��벢��ֻ�ǿ���ģʽ������WebӦ�õ�һ�ּܹ�ģʽ��</li>
-<li>�ڿ����ڣ�ǰ���˹���ʦ����ͨ��Լ���ý����ӿڣ�ʵ�ֲ��п�����</li>
-<li>�������ڣ�ǰ���˷���ģʽ��Ҫ��WebӦ�ý��з��벿����ǰ����֮��ʹ��HTTP�������н�����<br>���ǿ��Դӽ�����ʽ��������֯��ʽ������ģʽ����������ǰ���˷���������ʶ��</li>
-</ul>
-<h3 id="������ʽ"><a href="#������ʽ" class="headerlink" title="������ʽ"></a>������ʽ</h3><ul>
-<li>��ǰ���˷����ܹ��У�����ֻ��Ҫ��������Լ�������ݸ�ʽ��ǰ���ṩ�ɵ��õ�API���񼴿ɡ�</li>
-<li>ǰ����֮��ͨ��HTTP�������н�����ǰ�˻�ȡ�����ݺ󣬽���ҳ����װ������Ⱦ��</li>
-</ul>
-<h3 id="������֯��ʽ"><a href="#������֯��ʽ" class="headerlink" title="������֯��ʽ"></a>������֯��ʽ</h3><p><img src="images/codeType.jpg" alt="������֯��ʽͼ"></p>
-<ul>
-<li>�ڴ�ͳ�ܹ�ģʽ�У�ǰ���˴���������ͬһ���������У�������ͬһ����Ŀ¼�¡�ҳ���л������ź��˴��롣ǰ���˹���ʦ���п���ʱ����������������Ŀ���뵽���������С�</li>
-<li>��ǰ���˷���ģʽ�ڴ�����֯��ʽ�����������֣�<ul>
-<li>������<br>ǰ���˹���һ�������⣬���Ǵ����ֱ����������������С�<br>���˲����Ļ����ٹ���ǰ��Ԫ�ص�����������ǰ�˲��ܶ������п����Ͳ��ԣ���Ŀ��ȱ��ǰ���˽����Ĳ���������</li>
-<li>����<br>ǰ���˴��������룬ǰ�˴������п��Խ���Mock���ԣ�ͨ�������������Զ����Լ򻯲��Ի����ķ�������α���ˣ���֧��ǰ�˵Ķ��������Ͳ��ԡ�<br>�����˴����г��˹���ʵ���⣬��������ϸ�Ĳ����������Ա�֤API�Ŀ����ԣ����ͼ��ɷ��ա�</li>
-</ul>
-</li>
-</ul>
-<h3 id="����gʽ"><a href="#����gʽ" class="headerlink" title="����ģʽ"></a>����ģʽ</h3><ul>
-<li>��ǰ���˷����ܹ��У�ǰ�˹���ʦֻ��Ҫ��дHTML��js��CSS��ǰ����Դ��Ȼ��ͨ��HTTP�������ú����ṩ�ķ��񼴿ɡ����˿����ڵķ��룬��������ǰ������ԴҲ�����з��벿����</li>
-</ul>
-<h2 id="Ҫ���롱�������o�"><a href="#Ҫ���롱�������o�" class="headerlink" title="Ҫ���롱�������ô�:"></a>Ҫ���롱�������ô�:</h2><ol>
-<li>��������Ч��</li>
-<li>����Ӧ�Ը��Ӷ�����ǰ������</li>
-<li>��ǿ������ά����</li>
-</ol>
 
           
         
