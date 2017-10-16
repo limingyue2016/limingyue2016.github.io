@@ -250,132 +250,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/01/node/node2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/01/node/node2/" itemprop="url">
-                  文件操作和HTTP服务
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-01T00:00:00+08:00">
-                2016-05-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 引包</span></div><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 读取文件</span></div><div class="line"><span class="comment">// 第一个参数：要读取文件的路径</span></div><div class="line"><span class="comment">// 第二个参数：回调函数</span></div><div class="line"><span class="comment">//    err</span></div><div class="line"><span class="comment">//      如果操作失败，err 是一个错误对象，data undefined</span></div><div class="line"><span class="comment">//      如果操作成功，err 是一个 null，data 是 读取到的数据</span></div><div class="line"><span class="comment">//    data</span></div><div class="line"><span class="comment">//      读取到的文件数据，取决于第一个参数是否是错误对象</span></div><div class="line">fs.readFile(<span class="string">'../1.md'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (err) &#123;</div><div class="line">    <span class="comment">// console.log('读取文件失败了')</span></div><div class="line">    <span class="built_in">console</span>.log(err)</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="comment">// console.log(data)</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'读取文件的回调函数执行了'</span>)</div><div class="line">    <span class="built_in">console</span>.log(data.toString())</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="文件写入"><a href="#文件写入" class="headerlink" title="文件写入"></a>文件写入</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 写文件</span></div><div class="line"><span class="comment">// 第一个参数：文件路径</span></div><div class="line"><span class="comment">//    如果没有，会自动新建，如果已存在，则会将内容覆盖</span></div><div class="line"><span class="comment">// 第二个参数：回调函数</span></div><div class="line"><span class="comment">//    err：如果操作成功，err 就是 null，如果操作失败，err 就是错误对象</span></div><div class="line">fs.writeFile(<span class="string">'./data/a.txt'</span>, <span class="string">'你好，NOde.js'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (err) &#123;</div><div class="line">    <span class="comment">// 这里使用 return 的目的是不让代码继续往后执行（后面是逻辑是针对成功之后的操作）</span></div><div class="line">    <span class="comment">// 使用 return 的方式就是不用再去 else 嵌套了</span></div><div class="line">    <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'写入文件失败了'</span>)</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'写入文件成功'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<hr>
-<h2 id="构建-HTTP-服务"><a href="#构建-HTTP-服务" class="headerlink" title="构建 HTTP 服务"></a>构建 HTTP 服务</h2><h3 id="编写一个响应-hello-world-的服务"><a href="#编写一个响应-hello-world-的服务" class="headerlink" title="编写一个响应 hello world 的服务"></a>编写一个响应 <code>hello world</code> 的服务</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 1. 通过 http.createServer 创建一个服务，得到一个 server 服务实例</span></div><div class="line"><span class="keyword">var</span> server = http.createServer()</div><div class="line"></div><div class="line"><span class="keyword">var</span> count = <span class="number">0</span></div><div class="line"></div><div class="line"><span class="comment">// 2. 为 server 设置 request 请求事件的请求处理函数</span></div><div class="line"><span class="comment">//    request 请求事件是所有请求的入口</span></div><div class="line"><span class="comment">//      也就是说任务请求都会触发该事件，然后执行对应的回调处理函数</span></div><div class="line"><span class="comment">//    第二个参数 callback 需要接收两个参数</span></div><div class="line"><span class="comment">//    Request</span></div><div class="line"><span class="comment">//      请求对象：用来获取客户端的一些数据</span></div><div class="line"><span class="comment">//    Response</span></div><div class="line"><span class="comment">//      响应对象：用来给客户端发送响应数据</span></div><div class="line"><span class="comment">//      res.write</span></div><div class="line"><span class="comment">//        write 可以使用多次</span></div><div class="line"><span class="comment">//      res.end</span></div><div class="line"><span class="comment">//        write 之后一定要通过 res.end 结束响应</span></div><div class="line"><span class="comment">//        res.end 可以在结束响应的同时，直接发送响应数据</span></div><div class="line">server.on(<span class="string">'request'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="comment">// res.end('hello world')</span></div><div class="line"></div><div class="line">  <span class="comment">// 一个请求对应一个响应，发送多次响应数据是不管用的</span></div><div class="line">  <span class="comment">// 如果发送的数据是中文，要在响应头中加入 Content-Type 指定 charset 具体编码才可以</span></div><div class="line">  res.writeHead(<span class="number">200</span>, &#123;</div><div class="line">    <span class="string">'Content-Type'</span>: <span class="string">'text/plain; charset=utf-8'</span></div><div class="line">  &#125;)</div><div class="line"></div><div class="line">  <span class="comment">// 发送响应数据</span></div><div class="line">  res.end(<span class="string">'河北人民非常 happy：，被拆了'</span> + (++count) + <span class="string">'套房子'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 3. 绑定端口号，启动服务</span></div><div class="line">server.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'服务已启动，请访问: http://127.0.0.1:3000/'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="根据不同请求输出不同响应数据"><a href="#根据不同请求输出不同响应数据" class="headerlink" title="根据不同请求输出不同响应数据"></a>根据不同请求输出不同响应数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line"></div><div class="line"><span class="keyword">var</span> server = http.createServer()</div><div class="line"></div><div class="line"><span class="comment">// 在请求处理函数中，通过 req.url 获取请求路径作不同的响应处理</span></div><div class="line">server.on(<span class="string">'request'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="comment">// 可以通过 req 请求对象的 url 属性来获取请求路径</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'请求路径：'</span>, req.url)</div><div class="line">  </div><div class="line">  <span class="keyword">var</span> url = req.url</div><div class="line">  </div><div class="line">  <span class="keyword">if</span> (url === <span class="string">'/'</span>) &#123;</div><div class="line">    res.end(<span class="string">'home index'</span>)</div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url === <span class="string">'/a'</span>) &#123;</div><div class="line">    res.end(<span class="string">'aaa index'</span>)</div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url === <span class="string">'/about'</span>) &#123;</div><div class="line">    <span class="comment">// 建议：如果发送的数据是 HTML 格式字符串，最好加入 Content-Type 响应头</span></div><div class="line">    res.writeHead(<span class="number">200</span>, &#123;</div><div class="line">      <span class="string">'Content-Type'</span>: <span class="string">'text/html; charset=utf-8'</span></div><div class="line">    &#125;)</div><div class="line">    res.end(<span class="string">'&lt;div&gt;&lt;h2&gt;erji biaoti&lt;/h2&gt;&lt;p&gt;this is paragraph&lt;/p&gt;&lt;h1&gt;about me&lt;/h1&gt;&lt;/div&gt;'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">server.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'running...'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="实现-Apache-的功能：静态资源服务器"><a href="#实现-Apache-的功能：静态资源服务器" class="headerlink" title="实现 Apache 的功能：静态资源服务器"></a>实现 Apache 的功能：静态资源服务器</h3><h3 id="构建动态网站"><a href="#构建动态网站" class="headerlink" title="构建动态网站"></a>构建动态网站</h3><hr>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/01/node/node1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -984,6 +858,183 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/30/07-canvas/01-canvas/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/30/07-canvas/01-canvas/" itemprop="url">
+                  canvas基础
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-30T00:00:00+08:00">
+                2016-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="canvas01"><a href="#canvas01" class="headerlink" title="canvas01"></a>canvas01</h1><h2 id="初识canvas"><a href="#初识canvas" class="headerlink" title="初识canvas"></a>初识canvas</h2><h2 id="canvas基本使用"><a href="#canvas基本使用" class="headerlink" title="canvas基本使用"></a>canvas基本使用</h2><ul>
+<li>canvas坐标系</li>
+</ul>
+<p><img src="img/location.jpg" alt=""></p>
+<ul>
+<li>绘图基本步骤</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 获取canvas画布</span></div><div class="line"><span class="keyword">var</span> cas = <span class="built_in">document</span>.getElementById(<span class="string">'cas'</span>);</div><div class="line"><span class="comment">// 获取绘图工具</span></div><div class="line"><span class="keyword">var</span> ctx = cas.getContext(<span class="string">'2d'</span>);</div><div class="line"><span class="comment">// 设置绘图起始位置</span></div><div class="line">ctx.moveTo(<span class="number">10</span>,<span class="number">10</span>);</div><div class="line"><span class="comment">// 绘制路径</span></div><div class="line">ctx.lineTo(<span class="number">100</span>,<span class="number">100</span>);</div><div class="line"><span class="comment">// 描边</span></div><div class="line">ctx.stroke();</div></pre></td></tr></table></figure>
+<h2 id="绘制图形"><a href="#绘制图形" class="headerlink" title="绘制图形"></a>绘制图形</h2><ul>
+<li>路径的概念</li>
+<li>路径绘制方式(路径与隐形墨水)<ul>
+<li>描边 stroke()</li>
+<li>填充 fill()</li>
+<li>既描边又填充 stroke() 和 fill()</li>
+</ul>
+</li>
+</ul>
+<p><img src="img/path.jpg" alt=""></p>
+<ul>
+<li><p>绘制曲线（函数方程-贝塞尔曲线）</p>
+<ul>
+<li><a href="http://zh.numberempire.com/graphingcalculator.php" target="_blank" rel="external">方程曲线绘制</a></li>
+</ul>
+</li>
+<li><p>手动闭合与closePath()闭合路径</p>
+</li>
+<li><p>非零环绕规则</p>
+</li>
+</ul>
+<p><img src="img/zero.jpg" alt=""></p>
+<ul>
+<li>beginPath() 开启新的路径</li>
+</ul>
+<h2 id="绘制图形样式设置"><a href="#绘制图形样式设置" class="headerlink" title="绘制图形样式设置"></a>绘制图形样式设置</h2><ul>
+<li>画笔的状态<ul>
+<li>lineWidth 线宽，默认1px</li>
+<li>lineCap 线末端类型：(butt默认)、round、square </li>
+<li>lineJoin 相交线的拐点 miter(默认)、round、bevel</li>
+<li>strokeStyle 线的颜色</li>
+<li>fileStyle 填充颜色</li>
+<li>setLineDash() 设置虚线</li>
+<li>getLineDash() 获取虚线宽度集合</li>
+<li>lineDashOffset 设置虚线偏移量（负值向右偏移）</li>
+</ul>
+</li>
+</ul>
+<h2 id="渐变色绘制"><a href="#渐变色绘制" class="headerlink" title="渐变色绘制"></a>渐变色绘制</h2><h2 id="面向对象封装"><a href="#面向对象封装" class="headerlink" title="面向对象封装"></a>面向对象封装</h2><h2 id="实例练习"><a href="#实例练习" class="headerlink" title="实例练习"></a>实例练习</h2><ul>
+<li>镂空的房子</li>
+<li>绘制坐标网格</li>
+<li>绘制坐标系</li>
+<li>绘制坐标点</li>
+<li>绘制折线图</li>
+</ul>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D#￧ﾻﾘ￥ﾈﾶ￧ﾟﾩ￥ﾽﾢ" target="_blank" rel="external">MDN</a></li>
+<li><a href="http://www.w3school.com.cn/tags/html_ref_canvas.asp" target="_blank" rel="external">w3schook</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/30/07-canvas/02-canvas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1456,183 +1507,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/30/07-canvas/01-canvas/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/30/07-canvas/01-canvas/" itemprop="url">
-                  canvas基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-30T00:00:00+08:00">
-                2016-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="canvas01"><a href="#canvas01" class="headerlink" title="canvas01"></a>canvas01</h1><h2 id="初识canvas"><a href="#初识canvas" class="headerlink" title="初识canvas"></a>初识canvas</h2><h2 id="canvas基本使用"><a href="#canvas基本使用" class="headerlink" title="canvas基本使用"></a>canvas基本使用</h2><ul>
-<li>canvas坐标系</li>
-</ul>
-<p><img src="img/location.jpg" alt=""></p>
-<ul>
-<li>绘图基本步骤</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 获取canvas画布</span></div><div class="line"><span class="keyword">var</span> cas = <span class="built_in">document</span>.getElementById(<span class="string">'cas'</span>);</div><div class="line"><span class="comment">// 获取绘图工具</span></div><div class="line"><span class="keyword">var</span> ctx = cas.getContext(<span class="string">'2d'</span>);</div><div class="line"><span class="comment">// 设置绘图起始位置</span></div><div class="line">ctx.moveTo(<span class="number">10</span>,<span class="number">10</span>);</div><div class="line"><span class="comment">// 绘制路径</span></div><div class="line">ctx.lineTo(<span class="number">100</span>,<span class="number">100</span>);</div><div class="line"><span class="comment">// 描边</span></div><div class="line">ctx.stroke();</div></pre></td></tr></table></figure>
-<h2 id="绘制图形"><a href="#绘制图形" class="headerlink" title="绘制图形"></a>绘制图形</h2><ul>
-<li>路径的概念</li>
-<li>路径绘制方式(路径与隐形墨水)<ul>
-<li>描边 stroke()</li>
-<li>填充 fill()</li>
-<li>既描边又填充 stroke() 和 fill()</li>
-</ul>
-</li>
-</ul>
-<p><img src="img/path.jpg" alt=""></p>
-<ul>
-<li><p>绘制曲线（函数方程-贝塞尔曲线）</p>
-<ul>
-<li><a href="http://zh.numberempire.com/graphingcalculator.php" target="_blank" rel="external">方程曲线绘制</a></li>
-</ul>
-</li>
-<li><p>手动闭合与closePath()闭合路径</p>
-</li>
-<li><p>非零环绕规则</p>
-</li>
-</ul>
-<p><img src="img/zero.jpg" alt=""></p>
-<ul>
-<li>beginPath() 开启新的路径</li>
-</ul>
-<h2 id="绘制图形样式设置"><a href="#绘制图形样式设置" class="headerlink" title="绘制图形样式设置"></a>绘制图形样式设置</h2><ul>
-<li>画笔的状态<ul>
-<li>lineWidth 线宽，默认1px</li>
-<li>lineCap 线末端类型：(butt默认)、round、square </li>
-<li>lineJoin 相交线的拐点 miter(默认)、round、bevel</li>
-<li>strokeStyle 线的颜色</li>
-<li>fileStyle 填充颜色</li>
-<li>setLineDash() 设置虚线</li>
-<li>getLineDash() 获取虚线宽度集合</li>
-<li>lineDashOffset 设置虚线偏移量（负值向右偏移）</li>
-</ul>
-</li>
-</ul>
-<h2 id="渐变色绘制"><a href="#渐变色绘制" class="headerlink" title="渐变色绘制"></a>渐变色绘制</h2><h2 id="面向对象封装"><a href="#面向对象封装" class="headerlink" title="面向对象封装"></a>面向对象封装</h2><h2 id="实例练习"><a href="#实例练习" class="headerlink" title="实例练习"></a>实例练习</h2><ul>
-<li>镂空的房子</li>
-<li>绘制坐标网格</li>
-<li>绘制坐标系</li>
-<li>绘制坐标点</li>
-<li>绘制折线图</li>
-</ul>
-<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D#￧ﾻﾘ￥ﾈﾶ￧ﾟﾩ￥ﾽﾢ" target="_blank" rel="external">MDN</a></li>
-<li><a href="http://www.w3school.com.cn/tags/html_ref_canvas.asp" target="_blank" rel="external">w3schook</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/04-css3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1919,11 +1793,203 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/02-html5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/11/06-H5+c3/02-html5/" itemprop="url">
+                  html5基础
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-11T00:00:00+08:00">
+                2016-02-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="html5第二天"><a href="#html5第二天" class="headerlink" title="html5第二天"></a>html5第二天</h1><h2 id="1、web存储"><a href="#1、web存储" class="headerlink" title="1、web存储"></a>1、web存储</h2><h3 id="使用特点"><a href="#使用特点" class="headerlink" title="使用特点"></a>使用特点</h3><ul>
+<li>设置读取方便(通过键值对)</li>
+<li>容量较大,<code>sessionStorage</code>大约5m,<code>localStorage</code>大约20m</li>
+<li>如果要保存<code>json</code>数据,可以使用<code>JSON.stringify()</code>将对象编码后保存</li>
+</ul>
+<h3 id="window-sessionStorage"><a href="#window-sessionStorage" class="headerlink" title="window.sessionStorage"></a>window.sessionStorage</h3><ul>
+<li>生命周期为关闭浏览器窗口</li>
+<li>在同一个窗口下数据可以共享</li>
+</ul>
+<h3 id="window-localStorage"><a href="#window-localStorage" class="headerlink" title="window.localStorage"></a>window.localStorage</h3><ul>
+<li>永久生效，除非手动删除</li>
+<li>可以多窗口共享</li>
+</ul>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><blockquote>
+<p>两种存储方式,只是前缀不同,调用方法是一致的</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">setItem(key, value) 设置存储内容</div><div class="line">getItem(key) 读取存储内容</div><div class="line">removeItem(key) 删除键值为key的存储内容</div><div class="line">clear() 清空所有存储内容</div><div class="line">key(n) 以索引值来获取存储内容</div></pre></td></tr></table></figure>
+<h2 id="2、地理定位"><a href="#2、地理定位" class="headerlink" title="2、地理定位"></a>2、地理定位</h2><h3 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h3><p>语义地理位置属于私密信息,所以浏览器会弹出提示框,在征得用户允许的情况下再获取位置</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>navigator.geolocation.getCurrentPosition(successCallback, errorCallback, options) 获取当前地理信息</p>
+<p>navigator.watchPosition(successCallback, errorCallback, options) 重复获取当前地理信息<br>​<br>当成功获取地理信息后，会调用succssCallback，并返回一个包含位置信息的对象position。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">navigator.geolocation.getCurrentPosition(function(position)&#123;</div><div class="line">    // 定位成功会调用该方法</div><div class="line">    // position.coords.latitude 纬度</div><div class="line">    // position.coords.longitude 经度</div><div class="line">    // position.coords.accuracy 精度</div><div class="line">    // position.coords.altitude 海拔高度</div><div class="line">&#125;, function(error)&#123;</div><div class="line">    // 定位失败会调用该方法</div><div class="line">    // error 是错误信息</div><div class="line">&#125;, )</div></pre></td></tr></table></figure>
+<h2 id="3、全屏幕"><a href="#3、全屏幕" class="headerlink" title="3、全屏幕"></a>3、全屏幕</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><ul>
+<li>基础语法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">  requestFullScreen() 开启全屏显示</div><div class="line">cancleFullScreen() 关闭全屏显示</div></pre></td></tr></table></figure>
+<ul>
+<li>使用注意:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">不同浏览器需要添加前缀如：</div><div class="line">webkitRequestFullScreen、mozRequestFullScreen</div><div class="line">webkitCancleFullScreen、mozCancleFullScreen</div></pre></td></tr></table></figure>
+<h2 id="4、网络连接事件"><a href="#4、网络连接事件" class="headerlink" title="4、网络连接事件"></a>4、网络连接事件</h2><h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><ul>
+<li>获取网络状态</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.navigator.onLine</div></pre></td></tr></table></figure>
+<ul>
+<li>网络连接,断开事件</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 网络连接</span></div><div class="line"><span class="built_in">window</span>.ononline = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="string">'网络已连接'</span>);</div><div class="line">	&#125;</div><div class="line"><span class="comment">// 网络断开</span></div><div class="line"><span class="built_in">window</span>.onoffline= <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="string">'网络已断开'</span>);</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h2 id="5、文件读取"><a href="#5、文件读取" class="headerlink" title="5、文件读取"></a>5、文件读取</h2><h3 id="获取文件"><a href="#获取文件" class="headerlink" title="获取文件"></a>获取文件</h3><pre><code>由于`File`标签支持多文件上传,所以我们想要获取到选取的文件,需要配合索引
+</code></pre><ul>
+<li>语法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 其中this为file标签</div><div class="line">    this.files[0]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><p>读取文件需要使用js对象<code>FileReader</code><br>​    </p>
+<ul>
+<li>基础语法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var reader = new FileReader; //实例化一个对象</div><div class="line">reader.readAsDataURL(this.files[0]) //以DataURL形式读取文件 获取的值可以用在任意通过链接指定的地方</div><div class="line"></div><div class="line">// 通过onload事件监测加载完毕</div><div class="line">reader.onload = function ()&#123;</div><div class="line">     // result 就是我们需要的结果</div><div class="line"> console.log(this.result);</div><div class="line">     //可以用在指定连接地址的元素中比如</div><div class="line">         // 设置图片</div><div class="line">     	document.querySelector(&apos;#img&apos;).src = this.result;</div><div class="line">     	// 设置图像</div><div class="line">document.querySelector(&quot;#video&quot;).src= this.result;</div><div class="line">// 设置CSS</div><div class="line">document.querySelector(&quot;#link&quot;).href = this.result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="6、文件拖拽"><a href="#6、文件拖拽" class="headerlink" title="6、文件拖拽"></a>6、文件拖拽</h2><h3 id="拖拽元素"><a href="#拖拽元素" class="headerlink" title="拖拽元素"></a>拖拽元素</h3><p>添加了<code>draggable=&quot;true&quot;</code> 属性即可实现拖拽,除了默认支持拖拽的元素(图片,链接)</p>
+<h3 id="目标元素"><a href="#目标元素" class="headerlink" title="目标元素"></a>目标元素</h3><p>拖拽元素的放置位置,任意元素都可以设置为目标元素</p>
+<h3 id="支持事件"><a href="#支持事件" class="headerlink" title="支持事件"></a>支持事件</h3><ul>
+<li>拖拽元素</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ondrag 		应用于拖拽元素，整个拖拽过程都会调用</div><div class="line">ondragstart	应用于拖拽元素，当拖拽开始时调用</div><div class="line">ondragleave	应用于拖拽元素，当鼠标离开拖拽元素时调用</div><div class="line">ondragend	应用于拖拽元素，当拖拽结束时调用</div></pre></td></tr></table></figure>
+<ul>
+<li>目标元素</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">目标元素</div><div class="line">ondragenter	应用于目标元素，当拖拽元素进入时调用</div><div class="line">ondragover	应用于目标元素，当停留在目标元素上时调用</div><div class="line">ondrop		应用于目标元素，当在目标元素上松开鼠标时调用</div><div class="line">ondragleave	应用于目标元素，当鼠标离开目标元素时调用</div></pre></td></tr></table></figure>
+<ul>
+<li>使用注意:<ul>
+<li>如果想要调用ondrop事件,必须在<code>ondragover</code>中使用事件参数阻止浏览器的默认行为</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">thirdBox.ondragover = function (argument) &#123;</div><div class="line">				// 在 ondragover时 必须阻止默认行为 才能够 看到拖放效果</div><div class="line">				argument.preventDefault();</div><div class="line">			&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>数据传递<ul>
+<li>配合事件对象的<code>dataTransfor</code> 可以实现数据的传递</li>
+<li>setData(key,value) 设置数据</li>
+<li>getData(key) 获取数据<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//dom1为任意的元素</div><div class="line">dom1.ondragstart = function (argument) &#123;</div><div class="line">				argument.dataTransfer.setData(&quot;fox&quot;,this.id);</div><div class="line">			&#125;</div><div class="line"></div><div class="line">//dom2为拖放的目标元素</div><div class="line">dom2.ondrop = function (argument) &#123;</div><div class="line">				console.log(argument);</div><div class="line">				var fromBoxID =argument.dataTransfer.getData(&quot;fox&quot;);</div></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1968,7 +2034,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
