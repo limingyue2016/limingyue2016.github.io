@@ -1181,7 +1181,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/13/wanfu2017/cookie/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/13/wanfu2017/浏览器默认行为 - 副本/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="明月">
@@ -1203,7 +1203,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/13/wanfu2017/cookie/" itemprop="url">
+                <a class="post-title-link" href="/2016/06/13/wanfu2017/浏览器默认行为 - 副本/" itemprop="url">
                   Cookie
                 </a>
               
@@ -1258,32 +1258,31 @@
       
         
           
-            <hr>
-<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><ul>
-<li>ά���ٿ�-Cookie��<a href="https://zh.wikipedia.org/zh-hans/Cookie" target="_blank" rel="external">https://zh.wikipedia.org/zh-hans/Cookie</a></li>
+            <h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><ul>
+<li>维基百科-Cookie：<a href="https://zh.wikipedia.org/zh-hans/Cookie" target="_blank" rel="external">https://zh.wikipedia.org/zh-hans/Cookie</a></li>
 </ul>
-<h3 id="ʲo��-Cookie"><a href="#ʲo��-Cookie" class="headerlink" title="ʲô�� Cookie"></a>ʲô�� Cookie</h3><p>Cookie ��ʵ��BS����ģ�͵�һ�� <strong>״̬����</strong> ����������<br>����ʵ��������ס�ҡ����ﳵ����ס�û����ȹ��ܡ�</p>
-<h3 id="Cookie-��������ʲo������"><a href="#Cookie-��������ʲo������" class="headerlink" title="Cookie ��������ʲô������"></a>Cookie ��������ʲô������</h3><p>BS����ģ�ͣ�HTTP������״̬�ģ�<br>Ҳ����˵�������ͷ����������Ĺ�����ÿһ�ν�������һ���µ���������Ӧ��<br>�����Ļ����ǵ���һЩ���⣬������ϣ����ס��ͬ�û��Ĳ�ͬ״̬��<br>��ͬ�û��Ĺ��ﳵ��״̬���ݾͱȽ��鷳�ˡ�</p>
-<p>��״̬��ʵҲ���Ǿ���һЩ���Ƶģ�</p>
+<h3 id="什么是-Cookie"><a href="#什么是-Cookie" class="headerlink" title="什么是 Cookie"></a>什么是 Cookie</h3><p>Cookie 是实现BS交互模型的一种 <strong>状态保持</strong> 解决方案。<br>可以实现例如记住我、购物车、记住用户名等功能。</p>
+<h3 id="Cookie-用来解决什么问题的"><a href="#Cookie-用来解决什么问题的" class="headerlink" title="Cookie 用来解决什么问题的"></a>Cookie 用来解决什么问题的</h3><p>BS交互模型（HTTP）是无状态的，<br>也就是说浏览器和服务器交互的过程中每一次交互都是一个新的请求和响应，<br>这样的话就是导致一些问题，例如我希望记住不同用户的不同状态，<br>不同用户的购物车等状态数据就比较麻烦了。</p>
+<p>无状态其实也还是具有一些优势的：</p>
 <ul>
-<li>���ٷ���������Դ����</li>
+<li>减少服务器的资源消耗</li>
 </ul>
-<p>������״̬Э������������Ҫ�������Ƶ�ì������������ Cookie ������</p>
-<h3 id="����ʹ��"><a href="#����ʹ��" class="headerlink" title="����ʹ��"></a>����ʹ��</h3><ul>
-<li>Cookie ����ͨ������������Ӧ����ͷ�м��� Cookie ��Ϣ��ʵ�ֿͻ���״̬����</li>
-<li>Cookie �����ݴӷ��������͵���Ӧ����ͷ�е� Set-Cookie �ײ���Ϣ�ֶΣ�ͨ���ͻ��˱��� Cookie</li>
-<li>���´οͻ��������÷�������������ʱ���ͻ��˻��Զ������������м��� Cookie ֵ�����͸�������</li>
-<li>�����˷��ֿͻ��˷��͹����� Cookie ��<ul>
-<li>����ȥ�����Ǵ��ĸ��ͻ��˷��͵�����������Ȼ���Աȷ������ϵļ�¼</li>
-<li>�����õ�֮ǰ��״̬��Ϣ</li>
+<p>保留无状态协议的特征又需要解决类似的矛，于是引入了 Cookie 技术。</p>
+<h3 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h3><ul>
+<li>Cookie 技术通过在请求和响应报文头中加入 Cookie 信息来实现客户端状态保持</li>
+<li>Cookie 会根据从服务器发送的响应报文头中的 Set-Cookie 首部信息字段，通过客户端保存 Cookie</li>
+<li>当下次客户端再往该服务器发送请求时，客户端会自动在请求报文中加入 Cookie 值后发送给服务器</li>
+<li>服务端发现客户端发送过来的 Cookie 后<ul>
+<li>会先去检查是从哪个客户端发送的连接请求，然后对比服务器上的记录</li>
+<li>最后得到之前的状态信息</li>
 </ul>
 </li>
 </ul>
-<h3 id="Cookie-�k���"><a href="#Cookie-�k���" class="headerlink" title="Cookie �ķ���"></a>Cookie �ķ���</h3><ul>
-<li>�Ự Cookie</li>
-<li>�־� Cookie</li>
+<h3 id="Cookie-的分类"><a href="#Cookie-的分类" class="headerlink" title="Cookie 的分类"></a>Cookie 的分类</h3><ul>
+<li>会话 Cookie</li>
+<li>持久 Cookie</li>
 </ul>
-<h3 id="Cookie-��ʹ�o���"><a href="#Cookie-��ʹ�o���" class="headerlink" title="Cookie ��ʹ�ó���"></a>Cookie ��ʹ�ó���</h3><h3 id="Cookie-��o��"><a href="#Cookie-��o��" class="headerlink" title="Cookie ��ȱ��"></a>Cookie ��ȱ��</h3><h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2>
+<h3 id="Cookie-的使用场景"><a href="#Cookie-的使用场景" class="headerlink" title="Cookie 的使用场景"></a>Cookie 的使用场景</h3><h3 id="Cookie-的缺陷"><a href="#Cookie-的缺陷" class="headerlink" title="Cookie 的缺陷"></a>Cookie 的缺陷</h3><h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2>
           
         
       
