@@ -250,6 +250,136 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/20/es6/es7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/20/es6/es7/" itemprop="url">
+                  es7
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-20T00:00:00+08:00">
+                2017-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="ES7"><a href="#ES7" class="headerlink" title="ES7"></a>ES7</h1><h2 id="Array-prototype-includes"><a href="#Array-prototype-includes" class="headerlink" title="Array.prototype.includes"></a>Array.prototype.includes</h2><ul>
+<li><p>它是一个替代indexOf</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [<span class="string">'react'</span>, <span class="string">'angular'</span>, <span class="string">'vue'</span>]</div><div class="line"></div><div class="line"><span class="comment">// Correct</span></div><div class="line"><span class="keyword">if</span> (arr.includes(<span class="string">'react'</span>)) &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Can use React'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>includes第二可选参数fromIndex</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].includes(<span class="number">2</span>)) <span class="comment">// === true)</span></div><div class="line"><span class="built_in">console</span>.log([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].includes(<span class="number">4</span>)) <span class="comment">// === false)</span></div><div class="line"><span class="built_in">console</span>.log([<span class="number">1</span>, <span class="number">2</span>, <span class="literal">NaN</span>].includes(<span class="literal">NaN</span>)) <span class="comment">// === true)</span></div><div class="line"><span class="built_in">console</span>.log([<span class="number">1</span>, <span class="number">2</span>, <span class="number">-0</span>].includes(+<span class="number">0</span>)) <span class="comment">// === true)</span></div><div class="line"><span class="built_in">console</span>.log([<span class="number">1</span>, <span class="number">2</span>, +<span class="number">0</span>].includes(<span class="number">-0</span>)) <span class="comment">// === true)</span></div><div class="line"><span class="built_in">console</span>.log([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>].includes(<span class="string">'a'</span>)) <span class="comment">// === true)</span></div><div class="line"><span class="built_in">console</span>.log([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>].includes(<span class="string">'a'</span>, <span class="number">1</span>)) <span class="comment">// === false)</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="求幂运算"><a href="#求幂运算" class="headerlink" title="求幂运算"></a>求幂运算</h2><hr>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="number">7</span> ** <span class="number">12</span></div><div class="line"><span class="keyword">let</span> b = <span class="number">2</span> ** <span class="number">7</span></div><div class="line"><span class="built_in">console</span>.log(a === <span class="built_in">Math</span>.pow(<span class="number">7</span>,<span class="number">12</span>)) <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(b === <span class="built_in">Math</span>.pow(<span class="number">2</span>,<span class="number">7</span>)) <span class="comment">// true</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/18/es6/es6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1648,316 +1778,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/02/node/node3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/02/node/node3/" itemprop="url">
-                  模块化
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-02T00:00:00+08:00">
-                2016-05-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Node-中的模块化"><a href="#Node-中的模块化" class="headerlink" title="Node 中的模块化"></a>Node 中的模块化</h2><h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><p>Node 中的模块化采用了 CommonJS 模块规范，CommonJS 不仅仅是模块规范，<br>它为 JavaScript 制定了很多服务端的所谓的规范（API），例如二进制操作、网络操作等。</p>
-<ul>
-<li>require</li>
-<li>exports<ul>
-<li>exports 是 module.exports 的一个引用，也就是一个别名</li>
-<li></li>
-</ul>
-</li>
-<li>module.exports</li>
-</ul>
-<h3 id="模块分类"><a href="#模块分类" class="headerlink" title="模块分类"></a>模块分类</h3><ul>
-<li>核心模块<ul>
-<li>由 node 本身提供，通过唯一的模块标识名进行加载</li>
-<li>核心模块本质上也是文件模块，它已经被编译到了可执行文件中了</li>
-</ul>
-</li>
-<li>第三方模块<ul>
-<li>由社区提供</li>
-</ul>
-</li>
-<li>用户自定义模块<ul>
-<li>咱们自己写的</li>
-</ul>
-</li>
-</ul>
-<h3 id="require-加载模块查找规则"><a href="#require-加载模块查找规则" class="headerlink" title="require 加载模块查找规则"></a>require 加载模块查找规则</h3><p>require 函数接收的参数叫做模块标识符：</p>
-<ul>
-<li>核心模块<ul>
-<li>先看下有缓存，如果有直接拿过来</li>
-<li>如果没有，则直接加载</li>
-</ul>
-</li>
-<li>自己写的模块<ul>
-<li>以 <code>./</code> 或者 <code>../</code> 或者 <code>/</code> 或者 <code>c:/xxx</code> 类似于这样的标识路径</li>
-<li><code>/</code> 是当前文件模块所属磁盘根目录</li>
-<li><code>c:/xxx</code> 就是绝对路径</li>
-</ul>
-</li>
-<li>第三方模块：包<ul>
-<li>先基于当前文件模块所属目录找 node_modules 目录</li>
-<li>如果找到，则去该目录中找 moment 目录</li>
-<li>如果找到 moment 目录，则找该目录中的 package.json 文件</li>
-<li>如果找到 package.json 文件，则找该文件中的 main 属性</li>
-<li>如果找到 main 属性，则拿到该属性对应的文件路径</li>
-<li>如果找到 moment 目录之后<ul>
-<li>发现没有 package.json </li>
-<li>或者 有 package.json 没有 main 属性</li>
-<li>或者 有 main 属性，但是指向的路径不存在</li>
-<li>则 node 会默认去看一下 moment 目录中有没有 index.js index.node index.json 文件</li>
-</ul>
-</li>
-<li>如果找不到 index 或者找不到 moment 或者找不到 node_modules</li>
-<li>则进入上一级目录找 node_moudles 查找规则同上</li>
-<li>如果上一级还找不到，继续向上，一直到当前文件所属磁盘根目录，</li>
-<li>如果最后到磁盘根目录还找不到，最后报错：<code>can not find module xxx</code></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="path-模块"><a href="#path-模块" class="headerlink" title="path 模块"></a>path 模块</h2><h2 id="fs-模块"><a href="#fs-模块" class="headerlink" title="fs 模块"></a>fs 模块</h2><h2 id="http-模块"><a href="#http-模块" class="headerlink" title="http 模块"></a>http 模块</h2><h3 id="http-模块相关属性及方法"><a href="#http-模块相关属性及方法" class="headerlink" title="http 模块相关属性及方法"></a>http 模块相关属性及方法</h3><ul>
-<li>http.METHODS<ul>
-<li>获取 http 支持的请求方法</li>
-</ul>
-</li>
-<li>http.STATUS_CODES<ul>
-<li>获取 http 模块支持的状态码</li>
-</ul>
-</li>
-<li>http.createClient([port][, host])<ul>
-<li>创建客户端，使用 Node 发送请求</li>
-</ul>
-</li>
-<li>http.createServer([requestListener])<ul>
-<li>创建服务器，接收客户端请求</li>
-</ul>
-</li>
-<li>http.get(options[, callback])<ul>
-<li>发起 get 请求</li>
-</ul>
-</li>
-<li>http.globalAgent</li>
-<li>http.request(options[, callback])<ul>
-<li>发请求</li>
-</ul>
-</li>
-</ul>
-<h3 id="Class-http-Server-服务实例对象"><a href="#Class-http-Server-服务实例对象" class="headerlink" title="Class: http.Server 服务实例对象"></a>Class: http.Server 服务实例对象</h3><p>事件：</p>
-<ul>
-<li>Event: ‘checkContinue’</li>
-<li>Event: ‘checkExpectation’</li>
-<li>Event: ‘clientError’</li>
-<li>Event: ‘close’</li>
-<li>Event: ‘connect’</li>
-<li>Event: ‘connection’</li>
-<li>Event: ‘request’<ul>
-<li>请求事件</li>
-</ul>
-</li>
-<li>Event: ‘upgrade’</li>
-</ul>
-<p>方法：</p>
-<ul>
-<li>server.close([callback])<ul>
-<li>关闭服务器</li>
-</ul>
-</li>
-<li>server.listen(handle[, callback])<ul>
-<li>绑定监听</li>
-</ul>
-</li>
-<li>server.listen(path[, callback])<ul>
-<li>绑定监听</li>
-</ul>
-</li>
-<li>server.listen([port][, hostname][, backlog][, callback])<ul>
-<li>绑定监听</li>
-</ul>
-</li>
-<li>server.listening</li>
-<li>server.maxHeadersCount</li>
-<li>server.setTimeout(msecs, callback)</li>
-<li>server.timeout</li>
-</ul>
-<h3 id="Class-http-ServerResponse-响应对象"><a href="#Class-http-ServerResponse-响应对象" class="headerlink" title="Class: http.ServerResponse 响应对象"></a>Class: http.ServerResponse 响应对象</h3><p>事件：</p>
-<ul>
-<li>Event: ‘close’</li>
-<li>Event: ‘finish’</li>
-</ul>
-<p>方法：</p>
-<ul>
-<li>response.addTrailers(headers)</li>
-<li>response.end([data][, encoding][, callback])<ul>
-<li>结束响应</li>
-</ul>
-</li>
-<li>response.finished</li>
-<li>response.getHeader(name)</li>
-<li>response.headersSent</li>
-<li>response.removeHeader(name)</li>
-<li>response.sendDate</li>
-<li>response.setHeader(name, value)</li>
-<li>response.setTimeout(msecs, callback)</li>
-<li>response.statusCode<ul>
-<li>状态码</li>
-</ul>
-</li>
-<li>response.statusMessage<ul>
-<li>状态短语</li>
-</ul>
-</li>
-<li>response.write(chunk[, encoding][, callback])<ul>
-<li>写入响应流数据</li>
-</ul>
-</li>
-<li>response.writeContinue()</li>
-<li>response.writeHead(statusCode[, statusMessage][, headers])<ul>
-<li>写入响应头</li>
-</ul>
-</li>
-</ul>
-<h3 id="Request（http-IncomingMessage）请求对象"><a href="#Request（http-IncomingMessage）请求对象" class="headerlink" title="Request（http.IncomingMessage）请求对象"></a>Request（http.IncomingMessage）请求对象</h3><p>事件：</p>
-<p>Event: ‘aborted’<br>Event: ‘close’</p>
-<p>方法：</p>
-<ul>
-<li>message.destroy([error])</li>
-<li>message.headers<ul>
-<li>获取请求头</li>
-</ul>
-</li>
-<li>message.httpVersion<ul>
-<li>获取 http 协议版本</li>
-</ul>
-</li>
-<li>message.method<ul>
-<li>获取请求方法</li>
-</ul>
-</li>
-<li>message.rawHeaders</li>
-<li>message.rawTrailers</li>
-<li>message.setTimeout(msecs, callback)</li>
-<li>message.statusCode</li>
-<li>message.statusMessage</li>
-<li>message.socket</li>
-<li>message.trailers</li>
-<li>message.url<ul>
-<li>获取请求路径</li>
-</ul>
-</li>
-</ul>
-<hr>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2007,7 +1827,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
