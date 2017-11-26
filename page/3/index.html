@@ -250,6 +250,199 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/30/07-canvas/03-canvas/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/30/07-canvas/03-canvas/" itemprop="url">
+                  canvas基础
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-30T00:00:00+08:00">
+                2016-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="outline-day03"><a href="#outline-day03" class="headerlink" title="outline-day03"></a>outline-day03</h1><h2 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h2><ul>
+<li>ctx.font = ‘微软雅黑’ 设置字体</li>
+<li>strokeText()</li>
+<li>fillText(text,x,y,maxWidth)<ul>
+<li>text 要绘制的文本</li>
+<li>x,y 文本绘制的坐标（文本左下角）</li>
+<li>maxWidth 设置文本最大宽度，可选参数</li>
+</ul>
+</li>
+<li>ctx.textAlign文本水平对齐方式，相对绘制坐标来说的<ul>
+<li>left</li>
+<li>center</li>
+<li>right</li>
+<li>start 默认</li>
+<li>end</li>
+<li>direction属性css(rtl ltr) start和end于此相关<ul>
+<li>如果是ltr,start和left表现一致</li>
+<li>如果是rtl,start和right表现一致</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ctx.textBaseline 设置基线（垂直对齐方式  ）<ul>
+<li>top 文本的基线处于文本的正上方，并且有一段距离</li>
+<li>middle 文本的基线处于文本的正中间</li>
+<li>bottom 文本的基线处于文本的证下发，并且有一段距离</li>
+<li>hanging 文本的基线处于文本的正上方，并且和文本粘合</li>
+<li>alphabetic 默认值，基线处于文本的下方，并且穿过文字</li>
+<li>ideographic 和bottom相似，但是不一样</li>
+</ul>
+</li>
+<li>measureText() 获取文本宽度obj.width</li>
+</ul>
+<h2 id="水平和垂直对齐练习"><a href="#水平和垂直对齐练习" class="headerlink" title="水平和垂直对齐练习"></a>水平和垂直对齐练习</h2><h2 id="绘制完整的饼图"><a href="#绘制完整的饼图" class="headerlink" title="绘制完整的饼图"></a>绘制完整的饼图</h2><h2 id="绘制图片"><a href="#绘制图片" class="headerlink" title="绘制图片"></a>绘制图片</h2><ul>
+<li>drawImage()<ul>
+<li>三个参数drawImage(img,x,y)<ul>
+<li>img 图片对象、canvas对象、video对象</li>
+<li>x,y 图片绘制的左上角</li>
+</ul>
+</li>
+<li>五个参数drawImage(img,x,y,w,h)<ul>
+<li>img 图片对象、canvas对象、video对象</li>
+<li>x,y 图片绘制的左上角</li>
+<li>w,h 图片绘制尺寸设置(图片缩放，不是截取)</li>
+</ul>
+</li>
+<li>九个参数drawImage(img,x,y,w,h,x1,y1,w1,h1)<ul>
+<li>img 图片对象、canvas对象、video对象</li>
+<li>x,y,w,h 图片中的一个矩形区域</li>
+<li>x1,y1,w1,h1 画布中的一个矩形区域<h2 id="序列帧动画"><a href="#序列帧动画" class="headerlink" title="序列帧动画"></a>序列帧动画</h2></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>绘制精灵图</li>
+<li>动起来</li>
+<li>控制边界</li>
+<li>键盘控制</li>
+</ul>
+<h2 id="变换"><a href="#变换" class="headerlink" title="变换"></a>变换</h2><ul>
+<li>平移 移动画布的原点<ul>
+<li>translate(x,y) 参数表示移动目标点的坐标</li>
+</ul>
+</li>
+<li>旋转<ul>
+<li>scale(x,y) 参数表示宽高的缩放比例</li>
+</ul>
+</li>
+<li>缩放<ul>
+<li>rotate(angle) 参数表示旋转角度</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/04-css3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -385,7 +578,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/01-css3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/03-css3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="明月">
@@ -407,8 +600,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/02/11/06-H5+c3/01-css3/" itemprop="url">
-                  CSS3基础
+                <a class="post-title-link" href="/2016/02/11/06-H5+c3/03-css3/" itemprop="url">
+                  css3基础
                 </a>
               
             
@@ -462,45 +655,78 @@
       
         
           
-            <h1 id="CSS3第一天"><a href="#CSS3第一天" class="headerlink" title="CSS3第一天"></a>CSS3第一天</h1><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
-<li>兄弟选择器 E~ F 只能获取E后边的兄弟元素</li>
-<li>属性选择器 </li>
-<li>E[attr], E[attr=”val”],E<a href="开头">attr^=”val”</a>，E<a href="结尾">attr$=”val”</a>，E<a href="包含val属性的">attr~=”val”</a>,E<a href="包含val字符串的">attr*=”val”</a></li>
-<li>伪类选择器 E:first-child{}，E:last-child{},E:nth-child{} <h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2></li>
-<li>box-sizing: border-box; 保证的是盒子的尺寸，内容会变小<h2 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h2></li>
-<li>E::first-letter(首字母)，E::first-line(首行)，E::placeholder(设置占位符的前景色 背景色)，E::before(常用),E::after(常用)</li>
-<li>E::before 伪元素必须设置content:””,默认是行内元素，一般设置定位<h2 id="border-radius"><a href="#border-radius" class="headerlink" title="border-radius"></a>border-radius</h2></li>
-<li>设置圆角 顺时针方向设置四个值<h2 id="文本阴影"><a href="#文本阴影" class="headerlink" title="文本阴影"></a>文本阴影</h2></li>
-<li>text-shadow (水平偏移，垂直偏移，模糊放大，阴影颜色)<h2 id="盒子阴影"><a href="#盒子阴影" class="headerlink" title="盒子阴影"></a>盒子阴影</h2></li>
-<li>box-shadow(inset 水平偏移，垂直偏移，模糊放大，阴影颜色)<h2 id="两种颜色设置"><a href="#两种颜色设置" class="headerlink" title="两种颜色设置"></a>两种颜色设置</h2></li>
-<li>rgba(),hsla()</li>
-<li><p>网页f12 Elements-&gt;style中点击颜色 即可出现调色板</p>
-<h2 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h2><ul>
-<li>注意渐变产生的是<code>图像</code>,换句话来说,所有可以设置<code>图像</code>的地方都能够使用它,能够减少我们页面图片的使用</li>
-<li><p>线性渐变 linear-gradient()</p>
+            <h1 id="css3第二天"><a href="#css3第二天" class="headerlink" title="css3第二天"></a>css3第二天</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
+<li><p><strong>background-size:</strong></p>
+<blockquote>
+<p>设置背景的大小,通过这个属性可以使用多张图片作为背景</p>
 <ul>
-<li>/<em>语法组合方式 可以添加多个颜色</em>/</li>
-<li>background-image: linear-gradient(方向,开始颜色 开始位置 ,颜色2 开始位置,颜色3 开始位置…..);</li>
-<li>background-image: linear-gradient(to top left,red,yellow);</li>
+<li>cover(等比例放大，直到两边都顶格，如果图片变大，超出的会切掉) </li>
+<li>contain(等比例放大，某一边顶格，立刻停止)</li>
 </ul>
+</blockquote>
 </li>
-<li><p>径向渐变 </p>
+<li><p><strong>background-origin:</strong></p>
+<blockquote>
+<p>设置的是背景图片的开始位置</p>
 <ul>
-<li>/<em> 圆形渐变写法 </em>/</li>
-<li><p>background:radial-gradient(半径  ,颜色1,颜色2等等);</p>
-</li>
-<li><p>/<em> 椭圆渐变写法 </em>/</p>
-</li>
-<li>background:radial-gradient(横向半径,竖向半径  ,颜色1,颜色2等等);</li>
+<li>border-box</li>
+<li>content-box</li>
+<li>padding-box</li>
 </ul>
+</blockquote>
 </li>
-<li><p><strong>注意</strong></p>
+<li><p><strong>background-repeat</strong></p>
+<blockquote>
+<p>在原来只能设置平铺,不平铺的基础上,增加了两个属性,让我们在设置背景图时更为灵活</p>
+</blockquote>
 <ul>
-<li>跟线性渐变一样如果上一个颜色的结束,跟下一个颜色的开始相等,那么不会出现过度</li>
+<li>/<em> 自动缩放 直到填满 </em>/</li>
+<li>background-repeat:round;</li>
+<li>/<em> 两个方法都缩放,直到某一边充满容器为止 </em>/</li>
+<li>background-repeat:space;</li>
+</ul>
+</li>
+<li><p><strong>border-image:</strong></p>
+<ul>
+<li>border这个属性必须设置</li>
+<li>border-image-source:url(“”)</li>
+<li>border-image-slice: x y 没有单位</li>
+<li>border-image-width：</li>
+<li>border-image-repeat:stretch/round/repeat<ul>
+<li>round 可以保证图片完整性</li>
+<li>repeat 只是简单的重复 可能会有半个图片显示</li>
 </ul>
 </li>
 </ul>
 </li>
+<li><p>background 支持设置多个背景图，最后放一个背景颜色</p>
+<ul>
+<li>background：source repeat position /size  origin(注意：position要有才能写size)</li>
+</ul>
+</li>
+</ul>
+<h2 id="body-的注意事项："><a href="#body-的注意事项：" class="headerlink" title="body 的注意事项："></a>body 的注意事项：</h2><ul>
+<li>默认没有高度 需要设置html，body{height：100%；}</li>
+<li>body{margin:0;box-sizing:border-box;} //如果设置了border</li>
+</ul>
+<h2 id="过渡-transition"><a href="#过渡-transition" class="headerlink" title="过渡 transition"></a>过渡 transition</h2><ul>
+<li>transition-property:</li>
+<li>transition-duration:</li>
+<li>transition-delay:</li>
+<li>transition-timing-function:ease/linear(线性匀速)/steps()（步骤动画）<ul>
+<li>贝塞尔曲线动画 <code>cubic-bezier()</code></li>
+</ul>
+</li>
+<li>transition:property duration delay timing-function，…</li>
+</ul>
+<h2 id="2D转换-transform"><a href="#2D转换-transform" class="headerlink" title="2D转换 transform"></a>2D转换 transform</h2><ul>
+<li>transform-translate(x,y)//移动元素不会影响其他元素</li>
+<li>transform-rotate(n deg)//旋转  %也可以</li>
+<li>transform-scale() //缩放 默认是1</li>
+<li>transform-skew() //扭曲 如果两个轴扭曲角度一致，元素会消失</li>
+<li>transform-origin:具体位置单词 /具体坐标</li>
+<li>transform:translate() rotate() scale()</li>
+<li>注意：先走还是先旋转 效果不一样的</li>
 </ul>
 
           
@@ -1151,7 +1377,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/03-css3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/01-css3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="明月">
@@ -1173,8 +1399,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/02/11/06-H5+c3/03-css3/" itemprop="url">
-                  css3基础
+                <a class="post-title-link" href="/2016/02/11/06-H5+c3/01-css3/" itemprop="url">
+                  CSS3基础
                 </a>
               
             
@@ -1228,78 +1454,45 @@
       
         
           
-            <h1 id="css3第二天"><a href="#css3第二天" class="headerlink" title="css3第二天"></a>css3第二天</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
-<li><p><strong>background-size:</strong></p>
-<blockquote>
-<p>设置背景的大小,通过这个属性可以使用多张图片作为背景</p>
+            <h1 id="CSS3第一天"><a href="#CSS3第一天" class="headerlink" title="CSS3第一天"></a>CSS3第一天</h1><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
+<li>兄弟选择器 E~ F 只能获取E后边的兄弟元素</li>
+<li>属性选择器 </li>
+<li>E[attr], E[attr=”val”],E<a href="开头">attr^=”val”</a>，E<a href="结尾">attr$=”val”</a>，E<a href="包含val属性的">attr~=”val”</a>,E<a href="包含val字符串的">attr*=”val”</a></li>
+<li>伪类选择器 E:first-child{}，E:last-child{},E:nth-child{} <h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2></li>
+<li>box-sizing: border-box; 保证的是盒子的尺寸，内容会变小<h2 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h2></li>
+<li>E::first-letter(首字母)，E::first-line(首行)，E::placeholder(设置占位符的前景色 背景色)，E::before(常用),E::after(常用)</li>
+<li>E::before 伪元素必须设置content:””,默认是行内元素，一般设置定位<h2 id="border-radius"><a href="#border-radius" class="headerlink" title="border-radius"></a>border-radius</h2></li>
+<li>设置圆角 顺时针方向设置四个值<h2 id="文本阴影"><a href="#文本阴影" class="headerlink" title="文本阴影"></a>文本阴影</h2></li>
+<li>text-shadow (水平偏移，垂直偏移，模糊放大，阴影颜色)<h2 id="盒子阴影"><a href="#盒子阴影" class="headerlink" title="盒子阴影"></a>盒子阴影</h2></li>
+<li>box-shadow(inset 水平偏移，垂直偏移，模糊放大，阴影颜色)<h2 id="两种颜色设置"><a href="#两种颜色设置" class="headerlink" title="两种颜色设置"></a>两种颜色设置</h2></li>
+<li>rgba(),hsla()</li>
+<li><p>网页f12 Elements-&gt;style中点击颜色 即可出现调色板</p>
+<h2 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h2><ul>
+<li>注意渐变产生的是<code>图像</code>,换句话来说,所有可以设置<code>图像</code>的地方都能够使用它,能够减少我们页面图片的使用</li>
+<li><p>线性渐变 linear-gradient()</p>
 <ul>
-<li>cover(等比例放大，直到两边都顶格，如果图片变大，超出的会切掉) </li>
-<li>contain(等比例放大，某一边顶格，立刻停止)</li>
+<li>/<em>语法组合方式 可以添加多个颜色</em>/</li>
+<li>background-image: linear-gradient(方向,开始颜色 开始位置 ,颜色2 开始位置,颜色3 开始位置…..);</li>
+<li>background-image: linear-gradient(to top left,red,yellow);</li>
 </ul>
-</blockquote>
 </li>
-<li><p><strong>background-origin:</strong></p>
-<blockquote>
-<p>设置的是背景图片的开始位置</p>
+<li><p>径向渐变 </p>
 <ul>
-<li>border-box</li>
-<li>content-box</li>
-<li>padding-box</li>
-</ul>
-</blockquote>
+<li>/<em> 圆形渐变写法 </em>/</li>
+<li><p>background:radial-gradient(半径  ,颜色1,颜色2等等);</p>
 </li>
-<li><p><strong>background-repeat</strong></p>
-<blockquote>
-<p>在原来只能设置平铺,不平铺的基础上,增加了两个属性,让我们在设置背景图时更为灵活</p>
-</blockquote>
+<li><p>/<em> 椭圆渐变写法 </em>/</p>
+</li>
+<li>background:radial-gradient(横向半径,竖向半径  ,颜色1,颜色2等等);</li>
+</ul>
+</li>
+<li><p><strong>注意</strong></p>
 <ul>
-<li>/<em> 自动缩放 直到填满 </em>/</li>
-<li>background-repeat:round;</li>
-<li>/<em> 两个方法都缩放,直到某一边充满容器为止 </em>/</li>
-<li>background-repeat:space;</li>
-</ul>
-</li>
-<li><p><strong>border-image:</strong></p>
-<ul>
-<li>border这个属性必须设置</li>
-<li>border-image-source:url(“”)</li>
-<li>border-image-slice: x y 没有单位</li>
-<li>border-image-width：</li>
-<li>border-image-repeat:stretch/round/repeat<ul>
-<li>round 可以保证图片完整性</li>
-<li>repeat 只是简单的重复 可能会有半个图片显示</li>
+<li>跟线性渐变一样如果上一个颜色的结束,跟下一个颜色的开始相等,那么不会出现过度</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>background 支持设置多个背景图，最后放一个背景颜色</p>
-<ul>
-<li>background：source repeat position /size  origin(注意：position要有才能写size)</li>
-</ul>
-</li>
-</ul>
-<h2 id="body-的注意事项："><a href="#body-的注意事项：" class="headerlink" title="body 的注意事项："></a>body 的注意事项：</h2><ul>
-<li>默认没有高度 需要设置html，body{height：100%；}</li>
-<li>body{margin:0;box-sizing:border-box;} //如果设置了border</li>
-</ul>
-<h2 id="过渡-transition"><a href="#过渡-transition" class="headerlink" title="过渡 transition"></a>过渡 transition</h2><ul>
-<li>transition-property:</li>
-<li>transition-duration:</li>
-<li>transition-delay:</li>
-<li>transition-timing-function:ease/linear(线性匀速)/steps()（步骤动画）<ul>
-<li>贝塞尔曲线动画 <code>cubic-bezier()</code></li>
-</ul>
-</li>
-<li>transition:property duration delay timing-function，…</li>
-</ul>
-<h2 id="2D转换-transform"><a href="#2D转换-transform" class="headerlink" title="2D转换 transform"></a>2D转换 transform</h2><ul>
-<li>transform-translate(x,y)//移动元素不会影响其他元素</li>
-<li>transform-rotate(n deg)//旋转  %也可以</li>
-<li>transform-scale() //缩放 默认是1</li>
-<li>transform-skew() //扭曲 如果两个轴扭曲角度一致，元素会消失</li>
-<li>transform-origin:具体位置单词 /具体坐标</li>
-<li>transform:translate() rotate() scale()</li>
-<li>注意：先走还是先旋转 效果不一样的</li>
 </ul>
 
           
@@ -1958,180 +2151,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/01/03/03-js/js/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/03/03-js/js/" itemprop="url">
-                  js基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-03T00:00:00+08:00">
-                2016-01-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="js基础"><a href="#js基础" class="headerlink" title="js基础"></a>js基础</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ol>
-<li>运行在客户端的脚本编程语言</li>
-<li>三部分组成 </li>
-</ol>
-<ul>
-<li>ECMAScript</li>
-<li>DOM<ul>
-<li>BOM</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>特点：解释执行语言，基于对象，具有继承性，封装性，多肽特点</li>
-<li>书写位置类似css<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2></li>
-</ol>
-<ul>
-<li>简单数据类型：string,number,boolean,undefined</li>
-<li>复杂数据类型：array,object</li>
-<li>补充：数据类型是确认变量存储数据的位置的</li>
-<li>判断数据类型使用typeof关键字<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2></li>
-<li>算数运算符</li>
-<li>比较运算符</li>
-<li>逻辑运算符<h2 id="Math方法"><a href="#Math方法" class="headerlink" title="Math方法"></a>Math方法</h2></li>
-<li>.ceil() .floor() .random() .round() .pow() .abs()<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2></li>
-</ul>
-<ol>
-<li>string-&gt;number <ul>
-<li>Number() parseInt() parseFloat()</li>
-</ul>
-</li>
-<li>number-&gt;string<ul>
-<li>String() 变量.toString()</li>
-</ul>
-</li>
-<li>转boolean<ul>
-<li>0 null undefined  NaN  ‘’是false</li>
-</ul>
-</li>
-<li>boolean-&gt;number<ul>
-<li>Number()<h2 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h2></li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>if语句</li>
-<li>三元运算符<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2></li>
-<li>for（）</li>
-<li>do（） while</li>
-<li>while<h2 id="break和continue"><a href="#break和continue" class="headerlink" title="break和continue"></a>break和continue</h2></li>
-<li>break 遇到后循环程序会立即结束</li>
-<li>continue 遇到后结束本次循环，开始下一次循环,continue后的代码不执行，整个循环还在执行<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2></li>
-<li>js对小数不精确，不能用“==”来比较</li>
-<li>number.toFixed  保留小数位数，0-20</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2181,7 +2200,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

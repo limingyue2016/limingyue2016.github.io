@@ -250,6 +250,157 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/05/node/node4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/05/node/node4/" itemprop="url">
+                  Express
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-05T00:00:00+08:00">
+                2016-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Express"><a href="#Express" class="headerlink" title="Express"></a>Express</h2><ul>
+<li>作者：<a href="https://github.com/tj" target="_blank" rel="external">https://github.com/tj</a></li>
+<li>Github：<a href="https://github.com/expressjs/express" target="_blank" rel="external">https://github.com/expressjs/express</a></li>
+<li>官网：<a href="http://expressjs.com/" target="_blank" rel="external">http://expressjs.com/</a></li>
+<li>中文翻译：<a href="http://www.expressjs.com.cn/" target="_blank" rel="external">http://www.expressjs.com.cn/</a></li>
+<li>awesome-express: <a href="https://github.com/wabg/awesome-express" target="_blank" rel="external">https://github.com/wabg/awesome-express</a></li>
+</ul>
+<h3 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h3><p>安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save express</div></pre></td></tr></table></figure>
+<p>hello world：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"><span class="keyword">var</span> app = express()</div><div class="line"></div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'Hello World!'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Example app listening on port 3000!'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>基本路由：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'Hello World!'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.post(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'Got a POST request'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.put(<span class="string">'/user'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'Got a PUT request at /user'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.delete(<span class="string">'/user'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'Got a DELETE request at /user'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="Express-中外置路由使用"><a href="#Express-中外置路由使用" class="headerlink" title="Express 中外置路由使用"></a>Express 中外置路由使用</h3><p>router.js 文件代码如下:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1. 加载 express 模块</span></div><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 2. 调用 express.Router() 方法，得到一个路由容器实例</span></div><div class="line"><span class="keyword">var</span> router = express.Router()</div><div class="line"></div><div class="line"><span class="comment">// 3. 为 router 添加不同的路由</span></div><div class="line">router.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.send(<span class="string">'hello express'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">router.get(<span class="string">'/add'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line">router.get(<span class="string">'/info'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 4. 将 router 路由容器导出</span></div><div class="line"><span class="built_in">module</span>.exports = router</div></pre></td></tr></table></figure>
+<p>在 app.js 文件中：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 1. 加载路由模块</span></div><div class="line"><span class="keyword">var</span> router = <span class="built_in">require</span>(<span class="string">'./router'</span>)</div><div class="line"></div><div class="line"><span class="keyword">var</span> app = express()</div><div class="line"></div><div class="line"><span class="comment">// 2. 将路由模块导出的路由容器 router 通过 app.use() 方法挂载到 app 实例上</span></div><div class="line"><span class="comment">//    这样的话咱们的 app 实例程序就拥有了 router 的路由了</span></div><div class="line">app.use(router)</div><div class="line"></div><div class="line">app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'running...'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="在-Express-中处理静态资源"><a href="#在-Express-中处理静态资源" class="headerlink" title="在 Express 中处理静态资源"></a>在 Express 中处理静态资源</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">app.use(express.static(<span class="string">'public'</span>))</div><div class="line">app.use(express.static(<span class="string">'files'</span>))</div><div class="line"></div><div class="line">app.use(<span class="string">'/public'</span>, express.static(<span class="string">'public'</span>))</div><div class="line">app.use(<span class="string">'/aaa'</span>, express.static(<span class="string">'public'</span>))</div><div class="line"></div><div class="line">app.use(<span class="string">'/static'</span>, express.static(path.join(__dirname, <span class="string">'public'</span>)))</div></pre></td></tr></table></figure>
+<h3 id="使用-Express-中的路由"><a href="#使用-Express-中的路由" class="headerlink" title="使用 Express 中的路由"></a>使用 Express 中的路由</h3><h3 id="在-Express-中使用-ejs-模板引擎"><a href="#在-Express-中使用-ejs-模板引擎" class="headerlink" title="在 Express 中使用 ejs 模板引擎"></a>在 Express 中使用 ejs 模板引擎</h3><p>安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i -S ejs</div></pre></td></tr></table></figure>
+<p>配置：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'ejs'</span>)</div><div class="line"></div><div class="line"><span class="comment">// Express 默认去 views 目录中查找视图模板文件，可以通过下面的 API 修改</span></div><div class="line">app.set(<span class="string">'views'</span>, 模板文件存储路径)</div></pre></td></tr></table></figure>
+<p>如果要自定义修改模板文件的 <code>.ejs</code> 后缀或者修改 <code>&lt;%</code> 语法，则需要通过加载 <code>ejs</code> 模块做详细配置</p>
+<h3 id="Express-中间件"><a href="#Express-中间件" class="headerlink" title="Express 中间件"></a>Express 中间件</h3><h4 id="中间件函数"><a href="#中间件函数" class="headerlink" title="中间件函数"></a>中间件函数</h4><h4 id="中间件执行流程"><a href="#中间件执行流程" class="headerlink" title="中间件执行流程"></a>中间件执行流程</h4><h4 id="中间件使用场景"><a href="#中间件使用场景" class="headerlink" title="中间件使用场景"></a>中间件使用场景</h4><h4 id="第三方中间件推荐"><a href="#第三方中间件推荐" class="headerlink" title="第三方中间件推荐"></a>第三方中间件推荐</h4><h3 id="在-Express-中使用中间件处理-404-页面"><a href="#在-Express-中使用中间件处理-404-页面" class="headerlink" title="在 Express 中使用中间件处理 404 页面"></a>在 Express 中使用中间件处理 404 页面</h3><h3 id="在-Express-中使用中间件全局处理错误"><a href="#在-Express-中使用中间件全局处理错误" class="headerlink" title="在 Express 中使用中间件全局处理错误"></a>在 Express 中使用中间件全局处理错误</h3><h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><ul>
+<li>express()</li>
+<li>Application</li>
+<li>Request</li>
+<li>Response</li>
+<li>Router</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/02/node/node3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -516,6 +667,606 @@
 </ul>
 </li>
 </ul>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/01/node/node2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/01/node/node2/" itemprop="url">
+                  文件操作和HTTP服务
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-01T00:00:00+08:00">
+                2016-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 引包</span></div><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 读取文件</span></div><div class="line"><span class="comment">// 第一个参数：要读取文件的路径</span></div><div class="line"><span class="comment">// 第二个参数：回调函数</span></div><div class="line"><span class="comment">//    err</span></div><div class="line"><span class="comment">//      如果操作失败，err 是一个错误对象，data undefined</span></div><div class="line"><span class="comment">//      如果操作成功，err 是一个 null，data 是 读取到的数据</span></div><div class="line"><span class="comment">//    data</span></div><div class="line"><span class="comment">//      读取到的文件数据，取决于第一个参数是否是错误对象</span></div><div class="line">fs.readFile(<span class="string">'../1.md'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (err) &#123;</div><div class="line">    <span class="comment">// console.log('读取文件失败了')</span></div><div class="line">    <span class="built_in">console</span>.log(err)</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="comment">// console.log(data)</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'读取文件的回调函数执行了'</span>)</div><div class="line">    <span class="built_in">console</span>.log(data.toString())</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="文件写入"><a href="#文件写入" class="headerlink" title="文件写入"></a>文件写入</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 写文件</span></div><div class="line"><span class="comment">// 第一个参数：文件路径</span></div><div class="line"><span class="comment">//    如果没有，会自动新建，如果已存在，则会将内容覆盖</span></div><div class="line"><span class="comment">// 第二个参数：回调函数</span></div><div class="line"><span class="comment">//    err：如果操作成功，err 就是 null，如果操作失败，err 就是错误对象</span></div><div class="line">fs.writeFile(<span class="string">'./data/a.txt'</span>, <span class="string">'你好，NOde.js'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (err) &#123;</div><div class="line">    <span class="comment">// 这里使用 return 的目的是不让代码继续往后执行（后面是逻辑是针对成功之后的操作）</span></div><div class="line">    <span class="comment">// 使用 return 的方式就是不用再去 else 嵌套了</span></div><div class="line">    <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'写入文件失败了'</span>)</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'写入文件成功'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="构建-HTTP-服务"><a href="#构建-HTTP-服务" class="headerlink" title="构建 HTTP 服务"></a>构建 HTTP 服务</h2><h3 id="编写一个响应-hello-world-的服务"><a href="#编写一个响应-hello-world-的服务" class="headerlink" title="编写一个响应 hello world 的服务"></a>编写一个响应 <code>hello world</code> 的服务</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 1. 通过 http.createServer 创建一个服务，得到一个 server 服务实例</span></div><div class="line"><span class="keyword">var</span> server = http.createServer()</div><div class="line"></div><div class="line"><span class="keyword">var</span> count = <span class="number">0</span></div><div class="line"></div><div class="line"><span class="comment">// 2. 为 server 设置 request 请求事件的请求处理函数</span></div><div class="line"><span class="comment">//    request 请求事件是所有请求的入口</span></div><div class="line"><span class="comment">//      也就是说任务请求都会触发该事件，然后执行对应的回调处理函数</span></div><div class="line"><span class="comment">//    第二个参数 callback 需要接收两个参数</span></div><div class="line"><span class="comment">//    Request</span></div><div class="line"><span class="comment">//      请求对象：用来获取客户端的一些数据</span></div><div class="line"><span class="comment">//    Response</span></div><div class="line"><span class="comment">//      响应对象：用来给客户端发送响应数据</span></div><div class="line"><span class="comment">//      res.write</span></div><div class="line"><span class="comment">//        write 可以使用多次</span></div><div class="line"><span class="comment">//      res.end</span></div><div class="line"><span class="comment">//        write 之后一定要通过 res.end 结束响应</span></div><div class="line"><span class="comment">//        res.end 可以在结束响应的同时，直接发送响应数据</span></div><div class="line">server.on(<span class="string">'request'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="comment">// res.end('hello world')</span></div><div class="line"></div><div class="line">  <span class="comment">// 一个请求对应一个响应，发送多次响应数据是不管用的</span></div><div class="line">  <span class="comment">// 如果发送的数据是中文，要在响应头中加入 Content-Type 指定 charset 具体编码才可以</span></div><div class="line">  res.writeHead(<span class="number">200</span>, &#123;</div><div class="line">    <span class="string">'Content-Type'</span>: <span class="string">'text/plain; charset=utf-8'</span></div><div class="line">  &#125;)</div><div class="line"></div><div class="line">  <span class="comment">// 发送响应数据</span></div><div class="line">  res.end(<span class="string">'河北人民非常 happy：，被拆了'</span> + (++count) + <span class="string">'套房子'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 3. 绑定端口号，启动服务</span></div><div class="line">server.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'服务已启动，请访问: http://127.0.0.1:3000/'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="根据不同请求输出不同响应数据"><a href="#根据不同请求输出不同响应数据" class="headerlink" title="根据不同请求输出不同响应数据"></a>根据不同请求输出不同响应数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line"></div><div class="line"><span class="keyword">var</span> server = http.createServer()</div><div class="line"></div><div class="line"><span class="comment">// 在请求处理函数中，通过 req.url 获取请求路径作不同的响应处理</span></div><div class="line">server.on(<span class="string">'request'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="comment">// 可以通过 req 请求对象的 url 属性来获取请求路径</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'请求路径：'</span>, req.url)</div><div class="line">  </div><div class="line">  <span class="keyword">var</span> url = req.url</div><div class="line">  </div><div class="line">  <span class="keyword">if</span> (url === <span class="string">'/'</span>) &#123;</div><div class="line">    res.end(<span class="string">'home index'</span>)</div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url === <span class="string">'/a'</span>) &#123;</div><div class="line">    res.end(<span class="string">'aaa index'</span>)</div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url === <span class="string">'/about'</span>) &#123;</div><div class="line">    <span class="comment">// 建议：如果发送的数据是 HTML 格式字符串，最好加入 Content-Type 响应头</span></div><div class="line">    res.writeHead(<span class="number">200</span>, &#123;</div><div class="line">      <span class="string">'Content-Type'</span>: <span class="string">'text/html; charset=utf-8'</span></div><div class="line">    &#125;)</div><div class="line">    res.end(<span class="string">'&lt;div&gt;&lt;h2&gt;erji biaoti&lt;/h2&gt;&lt;p&gt;this is paragraph&lt;/p&gt;&lt;h1&gt;about me&lt;/h1&gt;&lt;/div&gt;'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">server.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'running...'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="实现-Apache-的功能：静态资源服务器"><a href="#实现-Apache-的功能：静态资源服务器" class="headerlink" title="实现 Apache 的功能：静态资源服务器"></a>实现 Apache 的功能：静态资源服务器</h3><h3 id="构建动态网站"><a href="#构建动态网站" class="headerlink" title="构建动态网站"></a>构建动态网站</h3><hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/01/node/node1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/01/node/node1/" itemprop="url">
+                  Node组成部分
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-01T00:00:00+08:00">
+                2016-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Node-中的-JavaScript"><a href="#Node-中的-JavaScript" class="headerlink" title="Node 中的 JavaScript"></a>Node 中的 JavaScript</h2><h3 id="Ecmascript"><a href="#Ecmascript" class="headerlink" title="Ecmascript"></a>Ecmascript</h3><ul>
+<li>var</li>
+<li>if else </li>
+<li>function </li>
+<li>{}</li>
+<li>Object</li>
+<li>Number</li>
+<li>String</li>
+<li>Date</li>
+<li>Math</li>
+<li>…</li>
+<li>console</li>
+<li>定时器函数<ul>
+<li>setTimeout clearTimeout</li>
+<li>setInterval clearInterval</li>
+</ul>
+</li>
+<li>global</li>
+</ul>
+<h3 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h3><ul>
+<li>核心模块是由 Node 环境平台本身提供的</li>
+<li>以一个唯一的核心模块标识名称进行暴露</li>
+<li>使用的时候，直接通过 <code>require</code> 函数进行加载</li>
+</ul>
+<p>Node 把绝大多数的 API 都封装到了一个具名的核心模块中了，例如文件操作的：<code>fs</code><br>网络操作的 <code>http</code> 等。</p>
+<p>也就是说你如果想要使用核心模块，必须先加载才可以使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> 起个名字 = <span class="built_in">require</span>(<span class="string">'唯一的核心模块标识名称'</span>)</div></pre></td></tr></table></figure>
+<h3 id="第三方模块（由社区提供）"><a href="#第三方模块（由社区提供）" class="headerlink" title="第三方模块（由社区提供）"></a>第三方模块（由社区提供）</h3><ul>
+<li>由社区提供，也就是所谓的第三方<ul>
+<li>可以是公司</li>
+<li>可以是个人</li>
+</ul>
+</li>
+<li>举个例子：moment 时间处理库</li>
+</ul>
+<p>如何在 Node 中使用第三方包：</p>
+<ol>
+<li>通过 <code>npm</code> 下载</li>
+<li>通过 <code>require</code> 函数引包</li>
+<li>查看第三方包的 API 文档，<code>try-try-see</code></li>
+</ol>
+<h3 id="用户自定义模块"><a href="#用户自定义模块" class="headerlink" title="用户自定义模块"></a>用户自定义模块</h3><ul>
+<li>require</li>
+<li>module.exports</li>
+</ul>
+<p>在 Node 中，也提供了一种所谓的 JavaScript 模块化解决方案（类似于之前学过的 requirejs）：</p>
+<p>在 Node 中对模块化的支持非常好，<br>也就是说 Node 开发就是结合：</p>
+<ul>
+<li>Ecmascript</li>
+<li>核心模块</li>
+<li>第三方模块</li>
+<li>自己写的模块</li>
+</ul>
+<p>结合以上的功能去开发 Node 应用程序，这里先宏观了解一下，<br>随着课程的不断深入，会讲解到具体的模块加载机制及细节。</p>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/01/node/node0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/01/node/node0/" itemprop="url">
+                  Node基础
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-01T00:00:00+08:00">
+                2016-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Node-介绍"><a href="#Node-介绍" class="headerlink" title="Node 介绍"></a>Node 介绍</h2><ul>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="external">官网</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/Node.js" target="_blank" rel="external">维基百科</a></li>
+<li><a href="http://www.infoq.com/cn/articles/what-is-nodejs" target="_blank" rel="external">深入浅出Node.js（一）：什么是Node.js</a></li>
+<li><p><a href="http://blog.jobbole.com/1254/" target="_blank" rel="external">Node.js 究竟是什么？</a></p>
+</li>
+<li><p>Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine. </p>
+<ul>
+<li>NodeJS 是一个构建与 Chrome V8 引擎之上的一个 JavaScript 运行时环境</li>
+<li>Node 可以像浏览器一样去解析和执行 JavaScript 代码</li>
+<li>JavaScript 是一个动态脚本语言<ul>
+<li>预编译</li>
+<li>再执行</li>
+</ul>
+</li>
+<li>JavaScript 之前的解析和执行一直停留在浏览器环境<ul>
+<li>通过编译解析引擎：解析和执行 JavaScript 脚本代码</li>
+<li>Chrome V8 引擎是所有浏览器里面解析和执行 JS 代码最快的</li>
+<li>Node 作者做了一件事儿，把 Chrome 的 V8 引擎移植出来了</li>
+<li>又基于 V8 引擎至上构建了一系列的 API</li>
+<li>在 Node 中，没有界面，不再需要关心 HTML、CSS</li>
+<li>只需要关注 JavaScript</li>
+<li>和 DOM、Style 等没有任何关系了</li>
+<li>纯粹的 JavaScript 代码：Ecmascript<ul>
+<li>var</li>
+<li>function</li>
+<li>Object</li>
+<li>Date</li>
+<li>Math</li>
+<li>x window</li>
+<li>x document</li>
+<li>文件操作</li>
+<li>网络操作</li>
+<li>让 JavaScript 代码具有了服务器编程能力</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. <ul>
+<li>事件驱动</li>
+<li>非阻塞IO模型：大量的异步编程接口<ul>
+<li>充满了类似于客户端中 ajax 一样的 API</li>
+<li>异步：回调</li>
+</ul>
+</li>
+<li>跨平台</li>
+<li>单线程</li>
+<li>轻量和高效</li>
+</ul>
+</li>
+<li>Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.<ul>
+<li>npm 是世界上最大的开源库生态系统</li>
+<li>在 npm  上发布的第三方包已经接近 35 万个之多</li>
+<li>包只能帮你解决某一个单一的问题，解决不了你的业务</li>
+</ul>
+</li>
+</ul>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><h3 id="可以做什么"><a href="#可以做什么" class="headerlink" title="可以做什么"></a>可以做什么</h3><p>Node 说白了就是为 JavaScript 提供了服务端编程的能力（不处理UI）。</p>
+<ul>
+<li>Java、PHP、Python、.Net、Ruby 等 能做的 Node 都能做</li>
+<li>网站开发，提供网站服务端</li>
+<li>数据库交互</li>
+<li>移动应用：后台</li>
+<li>网络游戏：后台</li>
+<li>CLI（Command Line Interface） 程序：<ul>
+<li>git</li>
+<li>gulp</li>
+<li>hexo</li>
+<li>Node 具有开发命令行工具的能力<ul>
+<li>webpack 打包构建工具</li>
+<li>http-server 在终端中快速提供一个服务</li>
+<li>browser-sync 提供服务，提供浏览器自动刷新的能力</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>虽然 Node 很强大，而且也是前端进阶必备的一个节能。</p>
+<ul>
+<li>对 IO 操作比较频繁的操作<ul>
+<li>文件读写</li>
+<li>和数据库交互：网络数据IO</li>
+</ul>
+</li>
+<li>实时通信<ul>
+<li>聊天：微信、QQ、直播</li>
+</ul>
+</li>
+</ul>
+<h3 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h3><ul>
+<li>朴灵：《深入浅出Node.js》</li>
+<li>《Node.js 权威指南》：官方API详解<ul>
+<li>参考 API</li>
+</ul>
+</li>
+<li>JavaScript 标准参考教程（alpha）：<a href="http://javascript.ruanyifeng.com/" target="_blank" rel="external">http://javascript.ruanyifeng.com/</a></li>
+<li>Node 入门：<a href="http://www.nodebeginner.org/index-zh-cn.html" target="_blank" rel="external">http://www.nodebeginner.org/index-zh-cn.html</a></li>
+<li>官方API文档：<a href="https://nodejs.org/dist/latest-v6.x/docs/api/" target="_blank" rel="external">https://nodejs.org/dist/latest-v6.x/docs/api/</a></li>
+<li>中文文档（版本比较旧，凑合看）：<a href="http://www.nodeclass.com/api/node.html" target="_blank" rel="external">http://www.nodeclass.com/api/node.html</a></li>
+<li>CNODE社区：<a href="http://cnodejs.org" target="_blank" rel="external">http://cnodejs.org</a></li>
+<li>CNODE-新手入门：<a href="http://cnodejs.org/getstart" target="_blank" rel="external">http://cnodejs.org/getstart</a></li>
+</ul>
+<hr>
+<h2 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h2><h3 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h3><p>各个环境版本下载地址：<a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a></p>
+<h4 id="如何确认是否有-Node-环境"><a href="#如何确认是否有-Node-环境" class="headerlink" title="如何确认是否有 Node 环境"></a>如何确认是否有 Node 环境</h4><p>打开终端，在终端中输入以下命令：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node --version</div></pre></td></tr></table></figure>
+<p>如果能看到类似于 <code>v6.8.0</code> 这样的版本号（版本号不一定和我的一致）输出，<br>说明当前计算机具有 Node 环境。</p>
+<h4 id="普通安装方式（下一步下一步）"><a href="#普通安装方式（下一步下一步）" class="headerlink" title="普通安装方式（下一步下一步）"></a>普通安装方式（下一步下一步）</h4><h4 id="使用-nvm（Node-version-manager）-安装和管理-Node（补充）"><a href="#使用-nvm（Node-version-manager）-安装和管理-Node（补充）" class="headerlink" title="使用 nvm（Node version manager） 安装和管理 Node（补充）"></a>使用 nvm（Node version manager） 安装和管理 Node（补充）</h4><h3 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h3><h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><h3 id="构建-HTTP-服务"><a href="#构建-HTTP-服务" class="headerlink" title="构建 HTTP 服务"></a>构建 HTTP 服务</h3><h3 id="path-环境变量"><a href="#path-环境变量" class="headerlink" title="path 环境变量"></a>path 环境变量</h3><p>问题：为什么在终端的任何目录下输入 <code>node</code> 命令，<br>执行的都是 <code>node.exe</code> 这个可执行文件？</p>
+<p>核心就在于可以通过操作系统的终端启动或者打开软件（GUI、CLI）：</p>
+<p>当你在终端输入一个字符串的时候：</p>
+<ul>
+<li>终端会在当前目录下找和该字符串相关的执行文件</li>
+<li>如果找不到，优先进入用户 path 环境变量<ul>
+<li>path 换件变量通过 <strong>英文分号</strong> 作为分割保存了多个目录</li>
+<li>终端会一个一个进入该目录找你刚才输入的字符串所对应的可执行文件</li>
+<li>如果在其中一个目录找到，则直接打开执行</li>
+<li>如果在用户 path 环境变量中找不到，则进入系统 path 换将变量</li>
+<li>查找规则如上，如果最后还找不到，则报错：<code>&#39;A&#39; 不是内部或外部命令，也不是可运行的程序或批处理文件。</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Node-中的-JavaScript"><a href="#Node-中的-JavaScript" class="headerlink" title="Node 中的 JavaScript"></a>Node 中的 JavaScript</h2><h3 id="Ecmascript"><a href="#Ecmascript" class="headerlink" title="Ecmascript"></a>Ecmascript</h3><ul>
+<li>var</li>
+<li>if else </li>
+<li>function </li>
+<li>{}</li>
+<li>Object</li>
+<li>Number</li>
+<li>String</li>
+<li>Date</li>
+<li>Math</li>
+<li>…</li>
+<li>console</li>
+<li>定时器函数<ul>
+<li>setTimeout clearTimeout</li>
+<li>setInterval clearInterval</li>
+</ul>
+</li>
+<li>global</li>
+</ul>
+<h3 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h3><ul>
+<li>核心模块是由 Node 环境平台本身提供的</li>
+<li>以一个唯一的核心模块标识名称进行暴露</li>
+<li>使用的时候，直接通过 <code>require</code> 函数进行加载</li>
+</ul>
+<p>Node 把绝大多数的 API 都封装到了一个具名的核心模块中了，例如文件操作的：<code>fs</code><br>网络操作的 <code>http</code> 等。</p>
+<p>也就是说你如果想要使用核心模块，必须先加载才可以使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> 起个名字 = <span class="built_in">require</span>(<span class="string">'唯一的核心模块标识名称'</span>)</div></pre></td></tr></table></figure>
+<h3 id="第三方模块（由社区提供）"><a href="#第三方模块（由社区提供）" class="headerlink" title="第三方模块（由社区提供）"></a>第三方模块（由社区提供）</h3><ul>
+<li>由社区提供，也就是所谓的第三方<ul>
+<li>可以是公司</li>
+<li>可以是个人</li>
+</ul>
+</li>
+<li>举个例子：moment 时间处理库</li>
+</ul>
+<p>如何在 Node 中使用第三方包：</p>
+<ol>
+<li>通过 <code>npm</code> 下载</li>
+<li>通过 <code>require</code> 函数引包</li>
+<li>查看第三方包的 API 文档，<code>try-try-see</code></li>
+</ol>
+<h3 id="用户自定义模块"><a href="#用户自定义模块" class="headerlink" title="用户自定义模块"></a>用户自定义模块</h3><ul>
+<li>require</li>
+<li>module.exports</li>
+</ul>
+<p>在 Node 中，也提供了一种所谓的 JavaScript 模块化解决方案（类似于之前学过的 requirejs）：</p>
+<p>在 Node 中对模块化的支持非常好，<br>也就是说 Node 开发就是结合：</p>
+<ul>
+<li>Ecmascript</li>
+<li>核心模块</li>
+<li>第三方模块</li>
+<li>自己写的模块</li>
+</ul>
+<p>结合以上的功能去开发 Node 应用程序，这里先宏观了解一下，<br>随着课程的不断深入，会讲解到具体的模块加载机制及细节。</p>
 <hr>
 
           
@@ -1194,606 +1945,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/01/node/node2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/01/node/node2/" itemprop="url">
-                  文件操作和HTTP服务
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-01T00:00:00+08:00">
-                2016-05-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 引包</span></div><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 读取文件</span></div><div class="line"><span class="comment">// 第一个参数：要读取文件的路径</span></div><div class="line"><span class="comment">// 第二个参数：回调函数</span></div><div class="line"><span class="comment">//    err</span></div><div class="line"><span class="comment">//      如果操作失败，err 是一个错误对象，data undefined</span></div><div class="line"><span class="comment">//      如果操作成功，err 是一个 null，data 是 读取到的数据</span></div><div class="line"><span class="comment">//    data</span></div><div class="line"><span class="comment">//      读取到的文件数据，取决于第一个参数是否是错误对象</span></div><div class="line">fs.readFile(<span class="string">'../1.md'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (err) &#123;</div><div class="line">    <span class="comment">// console.log('读取文件失败了')</span></div><div class="line">    <span class="built_in">console</span>.log(err)</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="comment">// console.log(data)</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'读取文件的回调函数执行了'</span>)</div><div class="line">    <span class="built_in">console</span>.log(data.toString())</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="文件写入"><a href="#文件写入" class="headerlink" title="文件写入"></a>文件写入</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 写文件</span></div><div class="line"><span class="comment">// 第一个参数：文件路径</span></div><div class="line"><span class="comment">//    如果没有，会自动新建，如果已存在，则会将内容覆盖</span></div><div class="line"><span class="comment">// 第二个参数：回调函数</span></div><div class="line"><span class="comment">//    err：如果操作成功，err 就是 null，如果操作失败，err 就是错误对象</span></div><div class="line">fs.writeFile(<span class="string">'./data/a.txt'</span>, <span class="string">'你好，NOde.js'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (err) &#123;</div><div class="line">    <span class="comment">// 这里使用 return 的目的是不让代码继续往后执行（后面是逻辑是针对成功之后的操作）</span></div><div class="line">    <span class="comment">// 使用 return 的方式就是不用再去 else 嵌套了</span></div><div class="line">    <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'写入文件失败了'</span>)</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'写入文件成功'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<hr>
-<h2 id="构建-HTTP-服务"><a href="#构建-HTTP-服务" class="headerlink" title="构建 HTTP 服务"></a>构建 HTTP 服务</h2><h3 id="编写一个响应-hello-world-的服务"><a href="#编写一个响应-hello-world-的服务" class="headerlink" title="编写一个响应 hello world 的服务"></a>编写一个响应 <code>hello world</code> 的服务</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 1. 通过 http.createServer 创建一个服务，得到一个 server 服务实例</span></div><div class="line"><span class="keyword">var</span> server = http.createServer()</div><div class="line"></div><div class="line"><span class="keyword">var</span> count = <span class="number">0</span></div><div class="line"></div><div class="line"><span class="comment">// 2. 为 server 设置 request 请求事件的请求处理函数</span></div><div class="line"><span class="comment">//    request 请求事件是所有请求的入口</span></div><div class="line"><span class="comment">//      也就是说任务请求都会触发该事件，然后执行对应的回调处理函数</span></div><div class="line"><span class="comment">//    第二个参数 callback 需要接收两个参数</span></div><div class="line"><span class="comment">//    Request</span></div><div class="line"><span class="comment">//      请求对象：用来获取客户端的一些数据</span></div><div class="line"><span class="comment">//    Response</span></div><div class="line"><span class="comment">//      响应对象：用来给客户端发送响应数据</span></div><div class="line"><span class="comment">//      res.write</span></div><div class="line"><span class="comment">//        write 可以使用多次</span></div><div class="line"><span class="comment">//      res.end</span></div><div class="line"><span class="comment">//        write 之后一定要通过 res.end 结束响应</span></div><div class="line"><span class="comment">//        res.end 可以在结束响应的同时，直接发送响应数据</span></div><div class="line">server.on(<span class="string">'request'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="comment">// res.end('hello world')</span></div><div class="line"></div><div class="line">  <span class="comment">// 一个请求对应一个响应，发送多次响应数据是不管用的</span></div><div class="line">  <span class="comment">// 如果发送的数据是中文，要在响应头中加入 Content-Type 指定 charset 具体编码才可以</span></div><div class="line">  res.writeHead(<span class="number">200</span>, &#123;</div><div class="line">    <span class="string">'Content-Type'</span>: <span class="string">'text/plain; charset=utf-8'</span></div><div class="line">  &#125;)</div><div class="line"></div><div class="line">  <span class="comment">// 发送响应数据</span></div><div class="line">  res.end(<span class="string">'河北人民非常 happy：，被拆了'</span> + (++count) + <span class="string">'套房子'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 3. 绑定端口号，启动服务</span></div><div class="line">server.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'服务已启动，请访问: http://127.0.0.1:3000/'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="根据不同请求输出不同响应数据"><a href="#根据不同请求输出不同响应数据" class="headerlink" title="根据不同请求输出不同响应数据"></a>根据不同请求输出不同响应数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line"></div><div class="line"><span class="keyword">var</span> server = http.createServer()</div><div class="line"></div><div class="line"><span class="comment">// 在请求处理函数中，通过 req.url 获取请求路径作不同的响应处理</span></div><div class="line">server.on(<span class="string">'request'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="comment">// 可以通过 req 请求对象的 url 属性来获取请求路径</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'请求路径：'</span>, req.url)</div><div class="line">  </div><div class="line">  <span class="keyword">var</span> url = req.url</div><div class="line">  </div><div class="line">  <span class="keyword">if</span> (url === <span class="string">'/'</span>) &#123;</div><div class="line">    res.end(<span class="string">'home index'</span>)</div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url === <span class="string">'/a'</span>) &#123;</div><div class="line">    res.end(<span class="string">'aaa index'</span>)</div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url === <span class="string">'/about'</span>) &#123;</div><div class="line">    <span class="comment">// 建议：如果发送的数据是 HTML 格式字符串，最好加入 Content-Type 响应头</span></div><div class="line">    res.writeHead(<span class="number">200</span>, &#123;</div><div class="line">      <span class="string">'Content-Type'</span>: <span class="string">'text/html; charset=utf-8'</span></div><div class="line">    &#125;)</div><div class="line">    res.end(<span class="string">'&lt;div&gt;&lt;h2&gt;erji biaoti&lt;/h2&gt;&lt;p&gt;this is paragraph&lt;/p&gt;&lt;h1&gt;about me&lt;/h1&gt;&lt;/div&gt;'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">server.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'running...'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="实现-Apache-的功能：静态资源服务器"><a href="#实现-Apache-的功能：静态资源服务器" class="headerlink" title="实现 Apache 的功能：静态资源服务器"></a>实现 Apache 的功能：静态资源服务器</h3><h3 id="构建动态网站"><a href="#构建动态网站" class="headerlink" title="构建动态网站"></a>构建动态网站</h3><hr>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/01/node/node1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/01/node/node1/" itemprop="url">
-                  Node组成部分
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-01T00:00:00+08:00">
-                2016-05-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Node-中的-JavaScript"><a href="#Node-中的-JavaScript" class="headerlink" title="Node 中的 JavaScript"></a>Node 中的 JavaScript</h2><h3 id="Ecmascript"><a href="#Ecmascript" class="headerlink" title="Ecmascript"></a>Ecmascript</h3><ul>
-<li>var</li>
-<li>if else </li>
-<li>function </li>
-<li>{}</li>
-<li>Object</li>
-<li>Number</li>
-<li>String</li>
-<li>Date</li>
-<li>Math</li>
-<li>…</li>
-<li>console</li>
-<li>定时器函数<ul>
-<li>setTimeout clearTimeout</li>
-<li>setInterval clearInterval</li>
-</ul>
-</li>
-<li>global</li>
-</ul>
-<h3 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h3><ul>
-<li>核心模块是由 Node 环境平台本身提供的</li>
-<li>以一个唯一的核心模块标识名称进行暴露</li>
-<li>使用的时候，直接通过 <code>require</code> 函数进行加载</li>
-</ul>
-<p>Node 把绝大多数的 API 都封装到了一个具名的核心模块中了，例如文件操作的：<code>fs</code><br>网络操作的 <code>http</code> 等。</p>
-<p>也就是说你如果想要使用核心模块，必须先加载才可以使用：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> 起个名字 = <span class="built_in">require</span>(<span class="string">'唯一的核心模块标识名称'</span>)</div></pre></td></tr></table></figure>
-<h3 id="第三方模块（由社区提供）"><a href="#第三方模块（由社区提供）" class="headerlink" title="第三方模块（由社区提供）"></a>第三方模块（由社区提供）</h3><ul>
-<li>由社区提供，也就是所谓的第三方<ul>
-<li>可以是公司</li>
-<li>可以是个人</li>
-</ul>
-</li>
-<li>举个例子：moment 时间处理库</li>
-</ul>
-<p>如何在 Node 中使用第三方包：</p>
-<ol>
-<li>通过 <code>npm</code> 下载</li>
-<li>通过 <code>require</code> 函数引包</li>
-<li>查看第三方包的 API 文档，<code>try-try-see</code></li>
-</ol>
-<h3 id="用户自定义模块"><a href="#用户自定义模块" class="headerlink" title="用户自定义模块"></a>用户自定义模块</h3><ul>
-<li>require</li>
-<li>module.exports</li>
-</ul>
-<p>在 Node 中，也提供了一种所谓的 JavaScript 模块化解决方案（类似于之前学过的 requirejs）：</p>
-<p>在 Node 中对模块化的支持非常好，<br>也就是说 Node 开发就是结合：</p>
-<ul>
-<li>Ecmascript</li>
-<li>核心模块</li>
-<li>第三方模块</li>
-<li>自己写的模块</li>
-</ul>
-<p>结合以上的功能去开发 Node 应用程序，这里先宏观了解一下，<br>随着课程的不断深入，会讲解到具体的模块加载机制及细节。</p>
-<hr>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/01/node/node0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/01/node/node0/" itemprop="url">
-                  Node基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-01T00:00:00+08:00">
-                2016-05-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Node-介绍"><a href="#Node-介绍" class="headerlink" title="Node 介绍"></a>Node 介绍</h2><ul>
-<li><a href="https://nodejs.org/en/" target="_blank" rel="external">官网</a></li>
-<li><a href="https://zh.wikipedia.org/wiki/Node.js" target="_blank" rel="external">维基百科</a></li>
-<li><a href="http://www.infoq.com/cn/articles/what-is-nodejs" target="_blank" rel="external">深入浅出Node.js（一）：什么是Node.js</a></li>
-<li><p><a href="http://blog.jobbole.com/1254/" target="_blank" rel="external">Node.js 究竟是什么？</a></p>
-</li>
-<li><p>Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine. </p>
-<ul>
-<li>NodeJS 是一个构建与 Chrome V8 引擎之上的一个 JavaScript 运行时环境</li>
-<li>Node 可以像浏览器一样去解析和执行 JavaScript 代码</li>
-<li>JavaScript 是一个动态脚本语言<ul>
-<li>预编译</li>
-<li>再执行</li>
-</ul>
-</li>
-<li>JavaScript 之前的解析和执行一直停留在浏览器环境<ul>
-<li>通过编译解析引擎：解析和执行 JavaScript 脚本代码</li>
-<li>Chrome V8 引擎是所有浏览器里面解析和执行 JS 代码最快的</li>
-<li>Node 作者做了一件事儿，把 Chrome 的 V8 引擎移植出来了</li>
-<li>又基于 V8 引擎至上构建了一系列的 API</li>
-<li>在 Node 中，没有界面，不再需要关心 HTML、CSS</li>
-<li>只需要关注 JavaScript</li>
-<li>和 DOM、Style 等没有任何关系了</li>
-<li>纯粹的 JavaScript 代码：Ecmascript<ul>
-<li>var</li>
-<li>function</li>
-<li>Object</li>
-<li>Date</li>
-<li>Math</li>
-<li>x window</li>
-<li>x document</li>
-<li>文件操作</li>
-<li>网络操作</li>
-<li>让 JavaScript 代码具有了服务器编程能力</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. <ul>
-<li>事件驱动</li>
-<li>非阻塞IO模型：大量的异步编程接口<ul>
-<li>充满了类似于客户端中 ajax 一样的 API</li>
-<li>异步：回调</li>
-</ul>
-</li>
-<li>跨平台</li>
-<li>单线程</li>
-<li>轻量和高效</li>
-</ul>
-</li>
-<li>Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.<ul>
-<li>npm 是世界上最大的开源库生态系统</li>
-<li>在 npm  上发布的第三方包已经接近 35 万个之多</li>
-<li>包只能帮你解决某一个单一的问题，解决不了你的业务</li>
-</ul>
-</li>
-</ul>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><h3 id="可以做什么"><a href="#可以做什么" class="headerlink" title="可以做什么"></a>可以做什么</h3><p>Node 说白了就是为 JavaScript 提供了服务端编程的能力（不处理UI）。</p>
-<ul>
-<li>Java、PHP、Python、.Net、Ruby 等 能做的 Node 都能做</li>
-<li>网站开发，提供网站服务端</li>
-<li>数据库交互</li>
-<li>移动应用：后台</li>
-<li>网络游戏：后台</li>
-<li>CLI（Command Line Interface） 程序：<ul>
-<li>git</li>
-<li>gulp</li>
-<li>hexo</li>
-<li>Node 具有开发命令行工具的能力<ul>
-<li>webpack 打包构建工具</li>
-<li>http-server 在终端中快速提供一个服务</li>
-<li>browser-sync 提供服务，提供浏览器自动刷新的能力</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>虽然 Node 很强大，而且也是前端进阶必备的一个节能。</p>
-<ul>
-<li>对 IO 操作比较频繁的操作<ul>
-<li>文件读写</li>
-<li>和数据库交互：网络数据IO</li>
-</ul>
-</li>
-<li>实时通信<ul>
-<li>聊天：微信、QQ、直播</li>
-</ul>
-</li>
-</ul>
-<h3 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h3><ul>
-<li>朴灵：《深入浅出Node.js》</li>
-<li>《Node.js 权威指南》：官方API详解<ul>
-<li>参考 API</li>
-</ul>
-</li>
-<li>JavaScript 标准参考教程（alpha）：<a href="http://javascript.ruanyifeng.com/" target="_blank" rel="external">http://javascript.ruanyifeng.com/</a></li>
-<li>Node 入门：<a href="http://www.nodebeginner.org/index-zh-cn.html" target="_blank" rel="external">http://www.nodebeginner.org/index-zh-cn.html</a></li>
-<li>官方API文档：<a href="https://nodejs.org/dist/latest-v6.x/docs/api/" target="_blank" rel="external">https://nodejs.org/dist/latest-v6.x/docs/api/</a></li>
-<li>中文文档（版本比较旧，凑合看）：<a href="http://www.nodeclass.com/api/node.html" target="_blank" rel="external">http://www.nodeclass.com/api/node.html</a></li>
-<li>CNODE社区：<a href="http://cnodejs.org" target="_blank" rel="external">http://cnodejs.org</a></li>
-<li>CNODE-新手入门：<a href="http://cnodejs.org/getstart" target="_blank" rel="external">http://cnodejs.org/getstart</a></li>
-</ul>
-<hr>
-<h2 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h2><h3 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h3><p>各个环境版本下载地址：<a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a></p>
-<h4 id="如何确认是否有-Node-环境"><a href="#如何确认是否有-Node-环境" class="headerlink" title="如何确认是否有 Node 环境"></a>如何确认是否有 Node 环境</h4><p>打开终端，在终端中输入以下命令：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node --version</div></pre></td></tr></table></figure>
-<p>如果能看到类似于 <code>v6.8.0</code> 这样的版本号（版本号不一定和我的一致）输出，<br>说明当前计算机具有 Node 环境。</p>
-<h4 id="普通安装方式（下一步下一步）"><a href="#普通安装方式（下一步下一步）" class="headerlink" title="普通安装方式（下一步下一步）"></a>普通安装方式（下一步下一步）</h4><h4 id="使用-nvm（Node-version-manager）-安装和管理-Node（补充）"><a href="#使用-nvm（Node-version-manager）-安装和管理-Node（补充）" class="headerlink" title="使用 nvm（Node version manager） 安装和管理 Node（补充）"></a>使用 nvm（Node version manager） 安装和管理 Node（补充）</h4><h3 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h3><h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><h3 id="构建-HTTP-服务"><a href="#构建-HTTP-服务" class="headerlink" title="构建 HTTP 服务"></a>构建 HTTP 服务</h3><h3 id="path-环境变量"><a href="#path-环境变量" class="headerlink" title="path 环境变量"></a>path 环境变量</h3><p>问题：为什么在终端的任何目录下输入 <code>node</code> 命令，<br>执行的都是 <code>node.exe</code> 这个可执行文件？</p>
-<p>核心就在于可以通过操作系统的终端启动或者打开软件（GUI、CLI）：</p>
-<p>当你在终端输入一个字符串的时候：</p>
-<ul>
-<li>终端会在当前目录下找和该字符串相关的执行文件</li>
-<li>如果找不到，优先进入用户 path 环境变量<ul>
-<li>path 换件变量通过 <strong>英文分号</strong> 作为分割保存了多个目录</li>
-<li>终端会一个一个进入该目录找你刚才输入的字符串所对应的可执行文件</li>
-<li>如果在其中一个目录找到，则直接打开执行</li>
-<li>如果在用户 path 环境变量中找不到，则进入系统 path 换将变量</li>
-<li>查找规则如上，如果最后还找不到，则报错：<code>&#39;A&#39; 不是内部或外部命令，也不是可运行的程序或批处理文件。</code></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="Node-中的-JavaScript"><a href="#Node-中的-JavaScript" class="headerlink" title="Node 中的 JavaScript"></a>Node 中的 JavaScript</h2><h3 id="Ecmascript"><a href="#Ecmascript" class="headerlink" title="Ecmascript"></a>Ecmascript</h3><ul>
-<li>var</li>
-<li>if else </li>
-<li>function </li>
-<li>{}</li>
-<li>Object</li>
-<li>Number</li>
-<li>String</li>
-<li>Date</li>
-<li>Math</li>
-<li>…</li>
-<li>console</li>
-<li>定时器函数<ul>
-<li>setTimeout clearTimeout</li>
-<li>setInterval clearInterval</li>
-</ul>
-</li>
-<li>global</li>
-</ul>
-<h3 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h3><ul>
-<li>核心模块是由 Node 环境平台本身提供的</li>
-<li>以一个唯一的核心模块标识名称进行暴露</li>
-<li>使用的时候，直接通过 <code>require</code> 函数进行加载</li>
-</ul>
-<p>Node 把绝大多数的 API 都封装到了一个具名的核心模块中了，例如文件操作的：<code>fs</code><br>网络操作的 <code>http</code> 等。</p>
-<p>也就是说你如果想要使用核心模块，必须先加载才可以使用：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> 起个名字 = <span class="built_in">require</span>(<span class="string">'唯一的核心模块标识名称'</span>)</div></pre></td></tr></table></figure>
-<h3 id="第三方模块（由社区提供）"><a href="#第三方模块（由社区提供）" class="headerlink" title="第三方模块（由社区提供）"></a>第三方模块（由社区提供）</h3><ul>
-<li>由社区提供，也就是所谓的第三方<ul>
-<li>可以是公司</li>
-<li>可以是个人</li>
-</ul>
-</li>
-<li>举个例子：moment 时间处理库</li>
-</ul>
-<p>如何在 Node 中使用第三方包：</p>
-<ol>
-<li>通过 <code>npm</code> 下载</li>
-<li>通过 <code>require</code> 函数引包</li>
-<li>查看第三方包的 API 文档，<code>try-try-see</code></li>
-</ol>
-<h3 id="用户自定义模块"><a href="#用户自定义模块" class="headerlink" title="用户自定义模块"></a>用户自定义模块</h3><ul>
-<li>require</li>
-<li>module.exports</li>
-</ul>
-<p>在 Node 中，也提供了一种所谓的 JavaScript 模块化解决方案（类似于之前学过的 requirejs）：</p>
-<p>在 Node 中对模块化的支持非常好，<br>也就是说 Node 开发就是结合：</p>
-<ul>
-<li>Ecmascript</li>
-<li>核心模块</li>
-<li>第三方模块</li>
-<li>自己写的模块</li>
-</ul>
-<p>结合以上的功能去开发 Node 应用程序，这里先宏观了解一下，<br>随着课程的不断深入，会讲解到具体的模块加载机制及细节。</p>
-<hr>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/01/08-OOP/01-oop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2054,6 +2205,159 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/30/07-canvas/02-canvas/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/30/07-canvas/02-canvas/" itemprop="url">
+                  canvas基础
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-30T00:00:00+08:00">
+                2016-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="canvas02"><a href="#canvas02" class="headerlink" title="canvas02"></a>canvas02</h1><h2 id="练习分析"><a href="#练习分析" class="headerlink" title="练习分析"></a>练习分析</h2><ul>
+<li>绘制网格</li>
+<li>绘制坐标系</li>
+<li>绘制坐标点（坐标系转换）</li>
+<li>绘制折线图</li>
+<li>绘制彩虹</li>
+</ul>
+<h2 id="面向对象封装"><a href="#面向对象封装" class="headerlink" title="面向对象封装"></a>面向对象封装</h2><h2 id="save-和restore"><a href="#save-和restore" class="headerlink" title="save()和restore()"></a>save()和restore()</h2><h2 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h2><ul>
+<li>rect(x,y,w,h) 没有独立路径</li>
+<li>strokeRect(x,y,w,h) 有独立路径，不影响别的绘制</li>
+<li>fillRect(x,y,w,h) 有独立路径，不影响别的绘制</li>
+<li>clearRect(x,y,w,h) 擦除矩形区域</li>
+</ul>
+<h2 id="逐帧动画"><a href="#逐帧动画" class="headerlink" title="逐帧动画"></a>逐帧动画</h2><ul>
+<li>setInterval()</li>
+</ul>
+<h2 id="绘制圆弧"><a href="#绘制圆弧" class="headerlink" title="绘制圆弧"></a>绘制圆弧</h2><ul>
+<li>弧度概念</li>
+<li>arc()<ul>
+<li>x 圆心横坐标</li>
+<li>y 圆心纵坐标</li>
+<li>r 半径</li>
+<li>startAngle 开始角度</li>
+<li>endAngle 结束角度</li>
+<li>anticlockwise 是否逆时针方向绘制（默认false表示顺时针；true表示逆时针）</li>
+</ul>
+</li>
+<li>绘制扇形</li>
+<li>绘制圆</li>
+<li>动画绘制圆</li>
+<li>绘制饼图</li>
+<li>绘制圆角矩形</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/30/07-canvas/01-canvas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2222,352 +2526,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/30/07-canvas/02-canvas/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/30/07-canvas/02-canvas/" itemprop="url">
-                  canvas基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-30T00:00:00+08:00">
-                2016-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="canvas02"><a href="#canvas02" class="headerlink" title="canvas02"></a>canvas02</h1><h2 id="练习分析"><a href="#练习分析" class="headerlink" title="练习分析"></a>练习分析</h2><ul>
-<li>绘制网格</li>
-<li>绘制坐标系</li>
-<li>绘制坐标点（坐标系转换）</li>
-<li>绘制折线图</li>
-<li>绘制彩虹</li>
-</ul>
-<h2 id="面向对象封装"><a href="#面向对象封装" class="headerlink" title="面向对象封装"></a>面向对象封装</h2><h2 id="save-和restore"><a href="#save-和restore" class="headerlink" title="save()和restore()"></a>save()和restore()</h2><h2 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h2><ul>
-<li>rect(x,y,w,h) 没有独立路径</li>
-<li>strokeRect(x,y,w,h) 有独立路径，不影响别的绘制</li>
-<li>fillRect(x,y,w,h) 有独立路径，不影响别的绘制</li>
-<li>clearRect(x,y,w,h) 擦除矩形区域</li>
-</ul>
-<h2 id="逐帧动画"><a href="#逐帧动画" class="headerlink" title="逐帧动画"></a>逐帧动画</h2><ul>
-<li>setInterval()</li>
-</ul>
-<h2 id="绘制圆弧"><a href="#绘制圆弧" class="headerlink" title="绘制圆弧"></a>绘制圆弧</h2><ul>
-<li>弧度概念</li>
-<li>arc()<ul>
-<li>x 圆心横坐标</li>
-<li>y 圆心纵坐标</li>
-<li>r 半径</li>
-<li>startAngle 开始角度</li>
-<li>endAngle 结束角度</li>
-<li>anticlockwise 是否逆时针方向绘制（默认false表示顺时针；true表示逆时针）</li>
-</ul>
-</li>
-<li>绘制扇形</li>
-<li>绘制圆</li>
-<li>动画绘制圆</li>
-<li>绘制饼图</li>
-<li>绘制圆角矩形</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/30/07-canvas/03-canvas/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/30/07-canvas/03-canvas/" itemprop="url">
-                  canvas基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-30T00:00:00+08:00">
-                2016-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="outline-day03"><a href="#outline-day03" class="headerlink" title="outline-day03"></a>outline-day03</h1><h2 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h2><ul>
-<li>ctx.font = ‘微软雅黑’ 设置字体</li>
-<li>strokeText()</li>
-<li>fillText(text,x,y,maxWidth)<ul>
-<li>text 要绘制的文本</li>
-<li>x,y 文本绘制的坐标（文本左下角）</li>
-<li>maxWidth 设置文本最大宽度，可选参数</li>
-</ul>
-</li>
-<li>ctx.textAlign文本水平对齐方式，相对绘制坐标来说的<ul>
-<li>left</li>
-<li>center</li>
-<li>right</li>
-<li>start 默认</li>
-<li>end</li>
-<li>direction属性css(rtl ltr) start和end于此相关<ul>
-<li>如果是ltr,start和left表现一致</li>
-<li>如果是rtl,start和right表现一致</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>ctx.textBaseline 设置基线（垂直对齐方式  ）<ul>
-<li>top 文本的基线处于文本的正上方，并且有一段距离</li>
-<li>middle 文本的基线处于文本的正中间</li>
-<li>bottom 文本的基线处于文本的证下发，并且有一段距离</li>
-<li>hanging 文本的基线处于文本的正上方，并且和文本粘合</li>
-<li>alphabetic 默认值，基线处于文本的下方，并且穿过文字</li>
-<li>ideographic 和bottom相似，但是不一样</li>
-</ul>
-</li>
-<li>measureText() 获取文本宽度obj.width</li>
-</ul>
-<h2 id="水平和垂直对齐练习"><a href="#水平和垂直对齐练习" class="headerlink" title="水平和垂直对齐练习"></a>水平和垂直对齐练习</h2><h2 id="绘制完整的饼图"><a href="#绘制完整的饼图" class="headerlink" title="绘制完整的饼图"></a>绘制完整的饼图</h2><h2 id="绘制图片"><a href="#绘制图片" class="headerlink" title="绘制图片"></a>绘制图片</h2><ul>
-<li>drawImage()<ul>
-<li>三个参数drawImage(img,x,y)<ul>
-<li>img 图片对象、canvas对象、video对象</li>
-<li>x,y 图片绘制的左上角</li>
-</ul>
-</li>
-<li>五个参数drawImage(img,x,y,w,h)<ul>
-<li>img 图片对象、canvas对象、video对象</li>
-<li>x,y 图片绘制的左上角</li>
-<li>w,h 图片绘制尺寸设置(图片缩放，不是截取)</li>
-</ul>
-</li>
-<li>九个参数drawImage(img,x,y,w,h,x1,y1,w1,h1)<ul>
-<li>img 图片对象、canvas对象、video对象</li>
-<li>x,y,w,h 图片中的一个矩形区域</li>
-<li>x1,y1,w1,h1 画布中的一个矩形区域<h2 id="序列帧动画"><a href="#序列帧动画" class="headerlink" title="序列帧动画"></a>序列帧动画</h2></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>绘制精灵图</li>
-<li>动起来</li>
-<li>控制边界</li>
-<li>键盘控制</li>
-</ul>
-<h2 id="变换"><a href="#变换" class="headerlink" title="变换"></a>变换</h2><ul>
-<li>平移 移动画布的原点<ul>
-<li>translate(x,y) 参数表示移动目标点的坐标</li>
-</ul>
-</li>
-<li>旋转<ul>
-<li>scale(x,y) 参数表示宽高的缩放比例</li>
-</ul>
-</li>
-<li>缩放<ul>
-<li>rotate(angle) 参数表示旋转角度</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2617,7 +2575,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
