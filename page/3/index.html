@@ -327,7 +327,7 @@
       
         
           
-            <h1 id="html5第二天"><a href="#html5第二天" class="headerlink" title="html5第二天"></a>html5第二天</h1><h2 id="1、web存储"><a href="#1、web存储" class="headerlink" title="1、web存储"></a>1、web存储</h2><h3 id="使用特点"><a href="#使用特点" class="headerlink" title="使用特点"></a>使用特点</h3><ul>
+            <h1 id="html5"><a href="#html5" class="headerlink" title="html5"></a>html5</h1><h2 id="web存储"><a href="#web存储" class="headerlink" title="web存储"></a>web存储</h2><h3 id="使用特点"><a href="#使用特点" class="headerlink" title="使用特点"></a>使用特点</h3><ul>
 <li>设置读取方便(通过键值对)</li>
 <li>容量较大,<code>sessionStorage</code>大约5m,<code>localStorage</code>大约20m</li>
 <li>如果要保存<code>json</code>数据,可以使用<code>JSON.stringify()</code>将对象编码后保存</li>
@@ -344,14 +344,15 @@
 <p>两种存储方式,只是前缀不同,调用方法是一致的</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">setItem(key, value) 设置存储内容</div><div class="line">getItem(key) 读取存储内容</div><div class="line">removeItem(key) 删除键值为key的存储内容</div><div class="line">clear() 清空所有存储内容</div><div class="line">key(n) 以索引值来获取存储内容</div></pre></td></tr></table></figure>
-<h2 id="2、地理定位"><a href="#2、地理定位" class="headerlink" title="2、地理定位"></a>2、地理定位</h2><h3 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h3><p>语义地理位置属于私密信息,所以浏览器会弹出提示框,在征得用户允许的情况下再获取位置</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>navigator.geolocation.getCurrentPosition(successCallback, errorCallback, options) 获取当前地理信息</p>
-<p>navigator.watchPosition(successCallback, errorCallback, options) 重复获取当前地理信息<br>​<br>当成功获取地理信息后，会调用succssCallback，并返回一个包含位置信息的对象position。</p>
+<h2 id="地理定位"><a href="#地理定位" class="headerlink" title="地理定位"></a>地理定位</h2><h3 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h3><ul>
+<li>语义地理位置属于私密信息,所以浏览器会弹出提示框,在征得用户允许的情况下再获取位置</li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">navigator.geolocation.getCurrentPosition(successCallback, errorCallback, options) 获取当前地理信息</div><div class="line"></div><div class="line">navigator.watchPosition(successCallback, errorCallback, options) 重复获取当前地理信息</div><div class="line">​    </div><div class="line">当成功获取地理信息后，会调用succssCallback，并返回一个包含位置信息的对象position。</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">navigator.geolocation.getCurrentPosition(function(position)&#123;</div><div class="line">    // 定位成功会调用该方法</div><div class="line">    // position.coords.latitude 纬度</div><div class="line">    // position.coords.longitude 经度</div><div class="line">    // position.coords.accuracy 精度</div><div class="line">    // position.coords.altitude 海拔高度</div><div class="line">&#125;, function(error)&#123;</div><div class="line">    // 定位失败会调用该方法</div><div class="line">    // error 是错误信息</div><div class="line">&#125;, )</div></pre></td></tr></table></figure>
-<h2 id="3、全屏幕"><a href="#3、全屏幕" class="headerlink" title="3、全屏幕"></a>3、全屏幕</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><ul>
+<h2 id="全屏幕"><a href="#全屏幕" class="headerlink" title="全屏幕"></a>全屏幕</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><ul>
 <li>基础语法</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">  requestFullScreen() 开启全屏显示</div><div class="line">cancleFullScreen() 关闭全屏显示</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">requestFullScreen() 开启全屏显示</div><div class="line">cancleFullScreen() 关闭全屏显示</div></pre></td></tr></table></figure>
 <ul>
 <li>使用注意:</li>
 </ul>
@@ -364,8 +365,10 @@
 <li>网络连接,断开事件</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 网络连接</span></div><div class="line"><span class="built_in">window</span>.ononline = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="string">'网络已连接'</span>);</div><div class="line">	&#125;</div><div class="line"><span class="comment">// 网络断开</span></div><div class="line"><span class="built_in">window</span>.onoffline= <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="string">'网络已断开'</span>);</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
-<h2 id="5、文件读取"><a href="#5、文件读取" class="headerlink" title="5、文件读取"></a>5、文件读取</h2><h3 id="获取文件"><a href="#获取文件" class="headerlink" title="获取文件"></a>获取文件</h3><pre><code>由于`File`标签支持多文件上传,所以我们想要获取到选取的文件,需要配合索引
-</code></pre><ul>
+<h2 id="5、文件读取"><a href="#5、文件读取" class="headerlink" title="5、文件读取"></a>5、文件读取</h2><h3 id="获取文件"><a href="#获取文件" class="headerlink" title="获取文件"></a>获取文件</h3><ul>
+<li>由于<code>File</code>标签支持多文件上传,所以我们想要获取到选取的文件,需要配合索引</li>
+</ul>
+<ul>
 <li>语法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 其中this为file标签</div><div class="line">    this.files[0]</div></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -395,10 +398,11 @@
 <li>数据传递<ul>
 <li>配合事件对象的<code>dataTransfor</code> 可以实现数据的传递</li>
 <li>setData(key,value) 设置数据</li>
-<li>getData(key) 获取数据<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//dom1为任意的元素</div><div class="line">dom1.ondragstart = function (argument) &#123;</div><div class="line">				argument.dataTransfer.setData(&quot;fox&quot;,this.id);</div><div class="line">			&#125;</div><div class="line"></div><div class="line">//dom2为拖放的目标元素</div><div class="line">dom2.ondrop = function (argument) &#123;</div><div class="line">				console.log(argument);</div><div class="line">				var fromBoxID =argument.dataTransfer.getData(&quot;fox&quot;);</div></pre></td></tr></table></figure></li>
+<li>getData(key) 获取数据</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//dom1为任意的元素</div><div class="line">dom1.ondragstart = function (argument) &#123;</div><div class="line">				argument.dataTransfer.setData(&quot;fox&quot;,this.id);</div><div class="line">			&#125;</div><div class="line"></div><div class="line">//dom2为拖放的目标元素</div><div class="line">dom2.ondrop = function (argument) &#123;</div><div class="line">				console.log(argument);</div><div class="line">				var fromBoxID =argument.dataTransfer.getData(&quot;fox&quot;);</div></pre></td></tr></table></figure>
 
           
         
@@ -519,7 +523,7 @@
       
         
           
-            <h1 id="css3第四天"><a href="#css3第四天" class="headerlink" title="css3第四天"></a>css3第四天</h1><h2 id="弹性布局补充"><a href="#弹性布局补充" class="headerlink" title="弹性布局补充"></a>弹性布局补充</h2><ul>
+            <h1 id="css3"><a href="#css3" class="headerlink" title="css3"></a>css3</h1><h2 id="弹性布局补充"><a href="#弹性布局补充" class="headerlink" title="弹性布局补充"></a>弹性布局补充</h2><ul>
 <li><strong>换行</strong>    <ul>
 <li><code>flew-wrap</code>默认为<code>nowrap</code></li>
 <li>当我们设置的子元素宽度,一行无法装满时,配合该属性可以设置换行</li>
@@ -531,9 +535,9 @@
 <h2 id="两根轴"><a href="#两根轴" class="headerlink" title="两根轴"></a>两根轴</h2><ul>
 <li>默认主轴是x轴</li>
 <li>副轴是y轴</li>
-<li>通过以下代码可以改变默认轴<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">display:flex;</div><div class="line">/* 使用行布局, 从上往下  */</div><div class="line">flex-direction:column;</div></pre></td></tr></table></figure>
-</li>
+<li>通过以下代码可以改变默认轴</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">display:flex;</div><div class="line">/* 使用行布局, 从上往下  */</div><div class="line">flex-direction:column;</div></pre></td></tr></table></figure>
 <h2 id="flex-设置的是比例"><a href="#flex-设置的是比例" class="headerlink" title="flex: 设置的是比例"></a>flex: 设置的是比例</h2>
           
         
@@ -654,12 +658,14 @@
       
         
           
-            <h1 id="css3第三天"><a href="#css3第三天" class="headerlink" title="css3第三天"></a>css3第三天</h1><h2 id="3D"><a href="#3D" class="headerlink" title="3D"></a>3D</h2><ul>
+            <h1 id="css3"><a href="#css3" class="headerlink" title="css3"></a>css3</h1><h2 id="3D"><a href="#3D" class="headerlink" title="3D"></a>3D</h2><ul>
 <li>近大远小 给祖先元素设置perspective: px;<ul>
 <li>这个属性的理解 需要配合transformZ()</li>
 </ul>
 </li>
-<li>开启3D效果 给父级元素设置：transform-style:preserve-3d;<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2></li>
+<li>开启3D效果 给父级元素设置：transform-style:preserve-3d;</li>
+</ul>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><ul>
 <li>定义需要使用的动画@keyframes 名字{}</li>
 <li>将动画设置给需要使用的元素</li>
 <li>animation-name:</li>
@@ -810,19 +816,32 @@
       
         
           
-            <h1 id="CSS3第一天"><a href="#CSS3第一天" class="headerlink" title="CSS3第一天"></a>CSS3第一天</h1><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
+            <h1 id="CSS3"><a href="#CSS3" class="headerlink" title="CSS3"></a>CSS3</h1><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
 <li>兄弟选择器 E~ F 只能获取E后边的兄弟元素</li>
 <li>属性选择器 </li>
 <li>E[attr], E[attr=”val”],E<a href="开头">attr^=”val”</a>，E<a href="结尾">attr$=”val”</a>，E<a href="包含val属性的">attr~=”val”</a>,E<a href="包含val字符串的">attr*=”val”</a></li>
-<li>伪类选择器 E:first-child{}，E:last-child{},E:nth-child{} <h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2></li>
-<li>box-sizing: border-box; 保证的是盒子的尺寸，内容会变小<h2 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h2></li>
+<li>伪类选择器 E:first-child{}，E:last-child{},E:nth-child{} </li>
+</ul>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><ul>
+<li>box-sizing: border-box; 保证的是盒子的尺寸，内容会变小</li>
+</ul>
+<h2 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h2><ul>
 <li>E::first-letter(首字母)，E::first-line(首行)，E::placeholder(设置占位符的前景色 背景色)，E::before(常用),E::after(常用)</li>
-<li>E::before 伪元素必须设置content:””,默认是行内元素，一般设置定位<h2 id="border-radius"><a href="#border-radius" class="headerlink" title="border-radius"></a>border-radius</h2></li>
-<li>设置圆角 顺时针方向设置四个值<h2 id="文本阴影"><a href="#文本阴影" class="headerlink" title="文本阴影"></a>文本阴影</h2></li>
-<li>text-shadow (水平偏移，垂直偏移，模糊放大，阴影颜色)<h2 id="盒子阴影"><a href="#盒子阴影" class="headerlink" title="盒子阴影"></a>盒子阴影</h2></li>
-<li>box-shadow(inset 水平偏移，垂直偏移，模糊放大，阴影颜色)<h2 id="两种颜色设置"><a href="#两种颜色设置" class="headerlink" title="两种颜色设置"></a>两种颜色设置</h2></li>
+<li>E::before 伪元素必须设置content:””,默认是行内元素，一般设置定位</li>
+</ul>
+<h2 id="border-radius"><a href="#border-radius" class="headerlink" title="border-radius"></a>border-radius</h2><ul>
+<li>设置圆角 顺时针方向设置四个值</li>
+</ul>
+<h2 id="文本阴影"><a href="#文本阴影" class="headerlink" title="文本阴影"></a>文本阴影</h2><ul>
+<li>text-shadow (水平偏移，垂直偏移，模糊放大，阴影颜色)</li>
+</ul>
+<h2 id="盒子阴影"><a href="#盒子阴影" class="headerlink" title="盒子阴影"></a>盒子阴影</h2><ul>
+<li>box-shadow(inset 水平偏移，垂直偏移，模糊放大，阴影颜色)</li>
+</ul>
+<h2 id="两种颜色设置"><a href="#两种颜色设置" class="headerlink" title="两种颜色设置"></a>两种颜色设置</h2><ul>
 <li>rgba(),hsla()</li>
-<li><p>网页f12 Elements-&gt;style中点击颜色 即可出现调色板</p>
+<li>网页f12 Elements-&gt;style中点击颜色 即可出现调色板</li>
+</ul>
 <h2 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h2><ul>
 <li>注意渐变产生的是<code>图像</code>,换句话来说,所有可以设置<code>图像</code>的地方都能够使用它,能够减少我们页面图片的使用</li>
 <li><p>线性渐变 linear-gradient()</p>
@@ -841,14 +860,9 @@
 </li>
 <li>background:radial-gradient(横向半径,竖向半径  ,颜色1,颜色2等等);</li>
 </ul>
+<p><strong>注意</strong></p>
 </li>
-<li><p><strong>注意</strong></p>
-<ul>
 <li>跟线性渐变一样如果上一个颜色的结束,跟下一个颜色的开始相等,那么不会出现过度</li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 
           
@@ -1597,30 +1611,32 @@
           
             <h1 id="js基础"><a href="#js基础" class="headerlink" title="js基础"></a>js基础</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ol>
 <li>运行在客户端的脚本编程语言</li>
-<li>三部分组成 </li>
-</ol>
+<li><p>三部分组成 </p>
 <ul>
 <li>ECMAScript</li>
-<li>DOM<ul>
+<li>DOM</li>
 <li>BOM</li>
 </ul>
 </li>
-</ul>
-<ol>
-<li>特点：解释执行语言，基于对象，具有继承性，封装性，多肽特点</li>
-<li>书写位置类似css<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2></li>
+<li><p>特点：解释执行语言，基于对象，具有继承性，封装性，多肽特点</p>
+</li>
+<li>书写位置类似css</li>
 </ol>
-<ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
 <li>简单数据类型：string,number,boolean,undefined</li>
 <li>复杂数据类型：array,object</li>
 <li>补充：数据类型是确认变量存储数据的位置的</li>
-<li>判断数据类型使用typeof关键字<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2></li>
+<li>判断数据类型使用typeof关键字</li>
+</ul>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><ul>
 <li>算数运算符</li>
 <li>比较运算符</li>
-<li>逻辑运算符<h2 id="Math方法"><a href="#Math方法" class="headerlink" title="Math方法"></a>Math方法</h2></li>
-<li>.ceil() .floor() .random() .round() .pow() .abs()<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2></li>
+<li>逻辑运算符</li>
 </ul>
-<ol>
+<h2 id="Math方法"><a href="#Math方法" class="headerlink" title="Math方法"></a>Math方法</h2><ul>
+<li>.ceil() .floor() .random() .round() .pow() .abs()</li>
+</ul>
+<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><ol>
 <li>string-&gt;number <ul>
 <li>Number() parseInt() parseFloat()</li>
 </ul>
@@ -1634,18 +1650,24 @@
 </ul>
 </li>
 <li>boolean-&gt;number<ul>
-<li>Number()<h2 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h2></li>
+<li>Number()</li>
 </ul>
 </li>
 </ol>
-<ul>
+<h2 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h2><ul>
 <li>if语句</li>
-<li>三元运算符<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2></li>
+<li>三元运算符</li>
+</ul>
+<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><ul>
 <li>for（）</li>
 <li>do（） while</li>
-<li>while<h2 id="break和continue"><a href="#break和continue" class="headerlink" title="break和continue"></a>break和continue</h2></li>
+<li>while</li>
+</ul>
+<h2 id="break和continue"><a href="#break和continue" class="headerlink" title="break和continue"></a>break和continue</h2><ul>
 <li>break 遇到后循环程序会立即结束</li>
-<li>continue 遇到后结束本次循环，开始下一次循环,continue后的代码不执行，整个循环还在执行<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2></li>
+<li>continue 遇到后结束本次循环，开始下一次循环,continue后的代码不执行，整个循环还在执行</li>
+</ul>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><ul>
 <li>js对小数不精确，不能用“==”来比较</li>
 <li>number.toFixed  保留小数位数，0-20</li>
 </ul>

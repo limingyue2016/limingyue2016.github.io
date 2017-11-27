@@ -87,7 +87,7 @@
 
 
 
-<meta name="description" content="html5第二天1、web存储使用特点
+<meta name="description" content="html5web存储使用特点
 设置读取方便(通过键值对)
 容量较大,sessionStorage大约5m,localStorage大约20m
 如果要保存json数据,可以使用JSON.stringify()将对象编码后保存
@@ -97,12 +97,13 @@ window.sessionStorage
 在同一个窗口下数据可以共享
 
 window.localStorage
-永久生效，除非手动删除">
+永久生效，除非手动删除
+可以多窗口">
 <meta property="og:type" content="article">
 <meta property="og:title" content="html5基础">
 <meta property="og:url" content="http://yoursite.com/2016/02/11/06-H5+c3/02-html5/index.html">
 <meta property="og:site_name" content="小博客园">
-<meta property="og:description" content="html5第二天1、web存储使用特点
+<meta property="og:description" content="html5web存储使用特点
 设置读取方便(通过键值对)
 容量较大,sessionStorage大约5m,localStorage大约20m
 如果要保存json数据,可以使用JSON.stringify()将对象编码后保存
@@ -112,11 +113,12 @@ window.sessionStorage
 在同一个窗口下数据可以共享
 
 window.localStorage
-永久生效，除非手动删除">
-<meta property="og:updated_time" content="2017-05-04T05:20:59.450Z">
+永久生效，除非手动删除
+可以多窗口">
+<meta property="og:updated_time" content="2017-11-27T13:44:49.010Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html5基础">
-<meta name="twitter:description" content="html5第二天1、web存储使用特点
+<meta name="twitter:description" content="html5web存储使用特点
 设置读取方便(通过键值对)
 容量较大,sessionStorage大约5m,localStorage大约20m
 如果要保存json数据,可以使用JSON.stringify()将对象编码后保存
@@ -126,7 +128,8 @@ window.sessionStorage
 在同一个窗口下数据可以共享
 
 window.localStorage
-永久生效，除非手动删除">
+永久生效，除非手动删除
+可以多窗口">
 
 
 
@@ -351,7 +354,7 @@ window.localStorage
       
 
       
-        <h1 id="html5第二天"><a href="#html5第二天" class="headerlink" title="html5第二天"></a>html5第二天</h1><h2 id="1、web存储"><a href="#1、web存储" class="headerlink" title="1、web存储"></a>1、web存储</h2><h3 id="使用特点"><a href="#使用特点" class="headerlink" title="使用特点"></a>使用特点</h3><ul>
+        <h1 id="html5"><a href="#html5" class="headerlink" title="html5"></a>html5</h1><h2 id="web存储"><a href="#web存储" class="headerlink" title="web存储"></a>web存储</h2><h3 id="使用特点"><a href="#使用特点" class="headerlink" title="使用特点"></a>使用特点</h3><ul>
 <li>设置读取方便(通过键值对)</li>
 <li>容量较大,<code>sessionStorage</code>大约5m,<code>localStorage</code>大约20m</li>
 <li>如果要保存<code>json</code>数据,可以使用<code>JSON.stringify()</code>将对象编码后保存</li>
@@ -368,14 +371,15 @@ window.localStorage
 <p>两种存储方式,只是前缀不同,调用方法是一致的</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">setItem(key, value) 设置存储内容</div><div class="line">getItem(key) 读取存储内容</div><div class="line">removeItem(key) 删除键值为key的存储内容</div><div class="line">clear() 清空所有存储内容</div><div class="line">key(n) 以索引值来获取存储内容</div></pre></td></tr></table></figure>
-<h2 id="2、地理定位"><a href="#2、地理定位" class="headerlink" title="2、地理定位"></a>2、地理定位</h2><h3 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h3><p>语义地理位置属于私密信息,所以浏览器会弹出提示框,在征得用户允许的情况下再获取位置</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>navigator.geolocation.getCurrentPosition(successCallback, errorCallback, options) 获取当前地理信息</p>
-<p>navigator.watchPosition(successCallback, errorCallback, options) 重复获取当前地理信息<br>​<br>当成功获取地理信息后，会调用succssCallback，并返回一个包含位置信息的对象position。</p>
+<h2 id="地理定位"><a href="#地理定位" class="headerlink" title="地理定位"></a>地理定位</h2><h3 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h3><ul>
+<li>语义地理位置属于私密信息,所以浏览器会弹出提示框,在征得用户允许的情况下再获取位置</li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">navigator.geolocation.getCurrentPosition(successCallback, errorCallback, options) 获取当前地理信息</div><div class="line"></div><div class="line">navigator.watchPosition(successCallback, errorCallback, options) 重复获取当前地理信息</div><div class="line">​    </div><div class="line">当成功获取地理信息后，会调用succssCallback，并返回一个包含位置信息的对象position。</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">navigator.geolocation.getCurrentPosition(function(position)&#123;</div><div class="line">    // 定位成功会调用该方法</div><div class="line">    // position.coords.latitude 纬度</div><div class="line">    // position.coords.longitude 经度</div><div class="line">    // position.coords.accuracy 精度</div><div class="line">    // position.coords.altitude 海拔高度</div><div class="line">&#125;, function(error)&#123;</div><div class="line">    // 定位失败会调用该方法</div><div class="line">    // error 是错误信息</div><div class="line">&#125;, )</div></pre></td></tr></table></figure>
-<h2 id="3、全屏幕"><a href="#3、全屏幕" class="headerlink" title="3、全屏幕"></a>3、全屏幕</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><ul>
+<h2 id="全屏幕"><a href="#全屏幕" class="headerlink" title="全屏幕"></a>全屏幕</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><ul>
 <li>基础语法</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">  requestFullScreen() 开启全屏显示</div><div class="line">cancleFullScreen() 关闭全屏显示</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">requestFullScreen() 开启全屏显示</div><div class="line">cancleFullScreen() 关闭全屏显示</div></pre></td></tr></table></figure>
 <ul>
 <li>使用注意:</li>
 </ul>
@@ -388,8 +392,10 @@ window.localStorage
 <li>网络连接,断开事件</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 网络连接</span></div><div class="line"><span class="built_in">window</span>.ononline = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="string">'网络已连接'</span>);</div><div class="line">	&#125;</div><div class="line"><span class="comment">// 网络断开</span></div><div class="line"><span class="built_in">window</span>.onoffline= <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="string">'网络已断开'</span>);</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
-<h2 id="5、文件读取"><a href="#5、文件读取" class="headerlink" title="5、文件读取"></a>5、文件读取</h2><h3 id="获取文件"><a href="#获取文件" class="headerlink" title="获取文件"></a>获取文件</h3><pre><code>由于`File`标签支持多文件上传,所以我们想要获取到选取的文件,需要配合索引
-</code></pre><ul>
+<h2 id="5、文件读取"><a href="#5、文件读取" class="headerlink" title="5、文件读取"></a>5、文件读取</h2><h3 id="获取文件"><a href="#获取文件" class="headerlink" title="获取文件"></a>获取文件</h3><ul>
+<li>由于<code>File</code>标签支持多文件上传,所以我们想要获取到选取的文件,需要配合索引</li>
+</ul>
+<ul>
 <li>语法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 其中this为file标签</div><div class="line">    this.files[0]</div></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -419,10 +425,11 @@ window.localStorage
 <li>数据传递<ul>
 <li>配合事件对象的<code>dataTransfor</code> 可以实现数据的传递</li>
 <li>setData(key,value) 设置数据</li>
-<li>getData(key) 获取数据<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//dom1为任意的元素</div><div class="line">dom1.ondragstart = function (argument) &#123;</div><div class="line">				argument.dataTransfer.setData(&quot;fox&quot;,this.id);</div><div class="line">			&#125;</div><div class="line"></div><div class="line">//dom2为拖放的目标元素</div><div class="line">dom2.ondrop = function (argument) &#123;</div><div class="line">				console.log(argument);</div><div class="line">				var fromBoxID =argument.dataTransfer.getData(&quot;fox&quot;);</div></pre></td></tr></table></figure></li>
+<li>getData(key) 获取数据</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//dom1为任意的元素</div><div class="line">dom1.ondragstart = function (argument) &#123;</div><div class="line">				argument.dataTransfer.setData(&quot;fox&quot;,this.id);</div><div class="line">			&#125;</div><div class="line"></div><div class="line">//dom2为拖放的目标元素</div><div class="line">dom2.ondrop = function (argument) &#123;</div><div class="line">				console.log(argument);</div><div class="line">				var fromBoxID =argument.dataTransfer.getData(&quot;fox&quot;);</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -582,7 +589,7 @@ window.localStorage
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#html5第二天"><span class="nav-number">1.</span> <span class="nav-text">html5第二天</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、web存储"><span class="nav-number">1.1.</span> <span class="nav-text">1、web存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用特点"><span class="nav-number">1.1.1.</span> <span class="nav-text">使用特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window-sessionStorage"><span class="nav-number">1.1.2.</span> <span class="nav-text">window.sessionStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window-localStorage"><span class="nav-number">1.1.3.</span> <span class="nav-text">window.localStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方法"><span class="nav-number">1.1.4.</span> <span class="nav-text">使用方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、地理定位"><span class="nav-number">1.2.</span> <span class="nav-text">2、地理定位</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安全性"><span class="nav-number">1.2.1.</span> <span class="nav-text">安全性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">1.2.2.</span> <span class="nav-text">语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、全屏幕"><span class="nav-number">1.3.</span> <span class="nav-text">3、全屏幕</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、网络连接事件"><span class="nav-number">1.4.</span> <span class="nav-text">4、网络连接事件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法-2"><span class="nav-number">1.4.1.</span> <span class="nav-text">语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、文件读取"><span class="nav-number">1.5.</span> <span class="nav-text">5、文件读取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取文件"><span class="nav-number">1.5.1.</span> <span class="nav-text">获取文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取文件"><span class="nav-number">1.5.2.</span> <span class="nav-text">读取文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、文件拖拽"><span class="nav-number">1.6.</span> <span class="nav-text">6、文件拖拽</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#拖拽元素"><span class="nav-number">1.6.1.</span> <span class="nav-text">拖拽元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目标元素"><span class="nav-number">1.6.2.</span> <span class="nav-text">目标元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支持事件"><span class="nav-number">1.6.3.</span> <span class="nav-text">支持事件</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#html5"><span class="nav-number">1.</span> <span class="nav-text">html5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#web存储"><span class="nav-number">1.1.</span> <span class="nav-text">web存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用特点"><span class="nav-number">1.1.1.</span> <span class="nav-text">使用特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window-sessionStorage"><span class="nav-number">1.1.2.</span> <span class="nav-text">window.sessionStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window-localStorage"><span class="nav-number">1.1.3.</span> <span class="nav-text">window.localStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方法"><span class="nav-number">1.1.4.</span> <span class="nav-text">使用方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#地理定位"><span class="nav-number">1.2.</span> <span class="nav-text">地理定位</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安全性"><span class="nav-number">1.2.1.</span> <span class="nav-text">安全性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">1.2.2.</span> <span class="nav-text">语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全屏幕"><span class="nav-number">1.3.</span> <span class="nav-text">全屏幕</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、网络连接事件"><span class="nav-number">1.4.</span> <span class="nav-text">4、网络连接事件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法-2"><span class="nav-number">1.4.1.</span> <span class="nav-text">语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、文件读取"><span class="nav-number">1.5.</span> <span class="nav-text">5、文件读取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取文件"><span class="nav-number">1.5.1.</span> <span class="nav-text">获取文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读取文件"><span class="nav-number">1.5.2.</span> <span class="nav-text">读取文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、文件拖拽"><span class="nav-number">1.6.</span> <span class="nav-text">6、文件拖拽</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#拖拽元素"><span class="nav-number">1.6.1.</span> <span class="nav-text">拖拽元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目标元素"><span class="nav-number">1.6.2.</span> <span class="nav-text">目标元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支持事件"><span class="nav-number">1.6.3.</span> <span class="nav-text">支持事件</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
