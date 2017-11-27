@@ -1700,18 +1700,8 @@
       
         
           
-            <h2 id="搭建自动刷新环境"><a href="#搭建自动刷新环境" class="headerlink" title="搭建自动刷新环境"></a>搭建自动刷新环境</h2><p>创建一个 <code>package.josn</code> 文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm init -y</div></pre></td></tr></table></figure>
-<p>安装 <code>browser-sync</code>:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># npm install --save-dev browser-sync</span></div><div class="line"><span class="comment"># 将 browser-sync 包保存到开发依赖中</span></div><div class="line"><span class="comment"># 就可以执行 npm install 的时候加入 --production 选项不安装这个包</span></div><div class="line">npm i -D browser-sync</div></pre></td></tr></table></figure>
-<p>在 package.json 文件中加入以下内容：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">"scripts": &#123;</div><div class="line">  "test": "echo \"Error: no test specified\" &amp;&amp; exit 1",</div><div class="line">  "start": "browser-sync start --server --directory --files \"code/*.html\""</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>打开终端，启动开发预览服务：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm start</div></pre></td></tr></table></figure>
-<hr>
-<h2 id="Vue-实例"><a href="#Vue-实例" class="headerlink" title="Vue 实例"></a>Vue 实例</h2><ul>
+            <h2 id="Vue-实例"><a href="#Vue-实例" class="headerlink" title="Vue 实例"></a>Vue 实例</h2><ul>
 <li>每个 Vue.js 应用都是通过构造函数 Vue 创建的<ul>
-<li>new Vue 可以认为是 ng 中的控制器</li>
 <li>这个控制器管理 el 属性指定的节点</li>
 </ul>
 </li>
@@ -1729,15 +1719,12 @@
 </li>
 <li><p>实例选项：data</p>
 <ul>
-<li><a href="https://cn.vuejs.org/v2/guide/instance.html#属性与方法" target="_blank" rel="external">https://cn.vuejs.org/v2/guide/instance.html#属性与方法</a></li>
-<li><a href="https://cn.vuejs.org/v2/api/#data" target="_blank" rel="external">选项/数据 - data</a></li>
-<li><a href="https://cn.vuejs.org/v2/guide/reactivity.html" target="_blank" rel="external">深入响应式原理</a></li>
 <li>作用：根据视图抽象数据模型，data 就是 ViewModel</li>
 <li>data 就是数据驱动视图中的 数据</li>
 <li><strong>注意：视图中使用的数据必须在 data 中初始化</strong></li>
 <li>每个 Vue 实例都会代理其 data 对象里所有的属性<ul>
 <li>也可以通过 vue 实例的 $data 属性访问 data 中的数据</li>
-<li>建议：如果要使用 vm 读取或修改  data 中的数据，建议通过 <code>vm.$data</code> 去访问修改</li>
+<li>建议：如果要使用 vm 读取或修改  data 中的数据，建议通过 <code>vm.$data</code> 去访问修改,直观</li>
 </ul>
 </li>
 <li>只有被初始代理的属性是响应式的<ul>
@@ -1767,9 +1754,8 @@
 </li>
 </ul>
 <ul>
-<li><p>实例选项：methods</p>
+<li><p>实例选项：methods  </p>
 <ul>
-<li><a href="https://cn.vuejs.org/v2/api/#methods" target="_blank" rel="external">https://cn.vuejs.org/v2/api/#methods</a></li>
 <li>作用：为视图交互提供行为函数</li>
 <li>可以在行为函数中通过 <code>this</code> 访问 data 中的数据成员</li>
 <li>注意：methods 中的行为函数不要写箭头函数<ul>
@@ -1782,8 +1768,7 @@
 <ul>
 <li>vue 实例可以直接访问 data 中的数据成员</li>
 <li>也可以通过 实例.$data.data中的数据成员 进行访问</li>
-<li>建议使用 实例.$data.数据成员 去修改</li>
-<li><a href="https://cn.vuejs.org/v2/api/#实例属性" target="_blank" rel="external">https://cn.vuejs.org/v2/api/#实例属性</a></li>
+<li>建议使用 实例.$data.数据成员 去修改  </li>
 <li>$data<ul>
 <li>Vue 实例观察的数据对象。Vue 实例代理了对其 data 对象属性的访问。</li>
 </ul>
@@ -1794,9 +1779,8 @@
 </li>
 </ul>
 </li>
-<li><p>实例方法/数据</p>
+<li><p>实例方法/数据  </p>
 <ul>
-<li><a href="https://cn.vuejs.org/v2/api/#实例方法-数据" target="_blank" rel="external">https://cn.vuejs.org/v2/api/#实例方法-数据</a></li>
 <li>$watch<ul>
 <li>可以用来监视数据成员的变化，当数据成员发生变化，执行 watch 函数</li>
 </ul>
@@ -1890,7 +1874,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

@@ -250,704 +250,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/30/07-canvas/01-canvas/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/30/07-canvas/01-canvas/" itemprop="url">
-                  canvas基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-30T00:00:00+08:00">
-                2016-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="canvas01"><a href="#canvas01" class="headerlink" title="canvas01"></a>canvas01</h1><h2 id="初识canvas"><a href="#初识canvas" class="headerlink" title="初识canvas"></a>初识canvas</h2><h2 id="canvas基本使用"><a href="#canvas基本使用" class="headerlink" title="canvas基本使用"></a>canvas基本使用</h2><ul>
-<li>canvas坐标系</li>
-</ul>
-<p><img src="img/location.jpg" alt=""></p>
-<ul>
-<li>绘图基本步骤</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 获取canvas画布</span></div><div class="line"><span class="keyword">var</span> cas = <span class="built_in">document</span>.getElementById(<span class="string">'cas'</span>);</div><div class="line"><span class="comment">// 获取绘图工具</span></div><div class="line"><span class="keyword">var</span> ctx = cas.getContext(<span class="string">'2d'</span>);</div><div class="line"><span class="comment">// 设置绘图起始位置</span></div><div class="line">ctx.moveTo(<span class="number">10</span>,<span class="number">10</span>);</div><div class="line"><span class="comment">// 绘制路径</span></div><div class="line">ctx.lineTo(<span class="number">100</span>,<span class="number">100</span>);</div><div class="line"><span class="comment">// 描边</span></div><div class="line">ctx.stroke();</div></pre></td></tr></table></figure>
-<h2 id="绘制图形"><a href="#绘制图形" class="headerlink" title="绘制图形"></a>绘制图形</h2><ul>
-<li>路径的概念</li>
-<li>路径绘制方式(路径与隐形墨水)<ul>
-<li>描边 stroke()</li>
-<li>填充 fill()</li>
-<li>既描边又填充 stroke() 和 fill()</li>
-</ul>
-</li>
-</ul>
-<p><img src="img/path.jpg" alt=""></p>
-<ul>
-<li><p>绘制曲线（函数方程-贝塞尔曲线）</p>
-<ul>
-<li><a href="http://zh.numberempire.com/graphingcalculator.php" target="_blank" rel="external">方程曲线绘制</a></li>
-</ul>
-</li>
-<li><p>手动闭合与closePath()闭合路径</p>
-</li>
-<li><p>非零环绕规则</p>
-</li>
-</ul>
-<p><img src="img/zero.jpg" alt=""></p>
-<ul>
-<li>beginPath() 开启新的路径</li>
-</ul>
-<h2 id="绘制图形样式设置"><a href="#绘制图形样式设置" class="headerlink" title="绘制图形样式设置"></a>绘制图形样式设置</h2><ul>
-<li>画笔的状态<ul>
-<li>lineWidth 线宽，默认1px</li>
-<li>lineCap 线末端类型：(butt默认)、round、square </li>
-<li>lineJoin 相交线的拐点 miter(默认)、round、bevel</li>
-<li>strokeStyle 线的颜色</li>
-<li>fileStyle 填充颜色</li>
-<li>setLineDash() 设置虚线</li>
-<li>getLineDash() 获取虚线宽度集合</li>
-<li>lineDashOffset 设置虚线偏移量（负值向右偏移）</li>
-</ul>
-</li>
-</ul>
-<h2 id="渐变色绘制"><a href="#渐变色绘制" class="headerlink" title="渐变色绘制"></a>渐变色绘制</h2><h2 id="面向对象封装"><a href="#面向对象封装" class="headerlink" title="面向对象封装"></a>面向对象封装</h2><h2 id="实例练习"><a href="#实例练习" class="headerlink" title="实例练习"></a>实例练习</h2><ul>
-<li>镂空的房子</li>
-<li>绘制坐标网格</li>
-<li>绘制坐标系</li>
-<li>绘制坐标点</li>
-<li>绘制折线图</li>
-</ul>
-<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D#￧ﾻﾘ￥ﾈﾶ￧ﾟﾩ￥ﾽﾢ" target="_blank" rel="external">MDN</a></li>
-<li><a href="http://www.w3school.com.cn/tags/html_ref_canvas.asp" target="_blank" rel="external">w3schook</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/30/07-canvas/03-canvas/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/30/07-canvas/03-canvas/" itemprop="url">
-                  canvas基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-30T00:00:00+08:00">
-                2016-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="outline-day03"><a href="#outline-day03" class="headerlink" title="outline-day03"></a>outline-day03</h1><h2 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h2><ul>
-<li>ctx.font = ‘微软雅黑’ 设置字体</li>
-<li>strokeText()</li>
-<li>fillText(text,x,y,maxWidth)<ul>
-<li>text 要绘制的文本</li>
-<li>x,y 文本绘制的坐标（文本左下角）</li>
-<li>maxWidth 设置文本最大宽度，可选参数</li>
-</ul>
-</li>
-<li>ctx.textAlign文本水平对齐方式，相对绘制坐标来说的<ul>
-<li>left</li>
-<li>center</li>
-<li>right</li>
-<li>start 默认</li>
-<li>end</li>
-<li>direction属性css(rtl ltr) start和end于此相关<ul>
-<li>如果是ltr,start和left表现一致</li>
-<li>如果是rtl,start和right表现一致</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>ctx.textBaseline 设置基线（垂直对齐方式  ）<ul>
-<li>top 文本的基线处于文本的正上方，并且有一段距离</li>
-<li>middle 文本的基线处于文本的正中间</li>
-<li>bottom 文本的基线处于文本的证下发，并且有一段距离</li>
-<li>hanging 文本的基线处于文本的正上方，并且和文本粘合</li>
-<li>alphabetic 默认值，基线处于文本的下方，并且穿过文字</li>
-<li>ideographic 和bottom相似，但是不一样</li>
-</ul>
-</li>
-<li>measureText() 获取文本宽度obj.width</li>
-</ul>
-<h2 id="水平和垂直对齐练习"><a href="#水平和垂直对齐练习" class="headerlink" title="水平和垂直对齐练习"></a>水平和垂直对齐练习</h2><h2 id="绘制完整的饼图"><a href="#绘制完整的饼图" class="headerlink" title="绘制完整的饼图"></a>绘制完整的饼图</h2><h2 id="绘制图片"><a href="#绘制图片" class="headerlink" title="绘制图片"></a>绘制图片</h2><ul>
-<li>drawImage()<ul>
-<li>三个参数drawImage(img,x,y)<ul>
-<li>img 图片对象、canvas对象、video对象</li>
-<li>x,y 图片绘制的左上角</li>
-</ul>
-</li>
-<li>五个参数drawImage(img,x,y,w,h)<ul>
-<li>img 图片对象、canvas对象、video对象</li>
-<li>x,y 图片绘制的左上角</li>
-<li>w,h 图片绘制尺寸设置(图片缩放，不是截取)</li>
-</ul>
-</li>
-<li>九个参数drawImage(img,x,y,w,h,x1,y1,w1,h1)<ul>
-<li>img 图片对象、canvas对象、video对象</li>
-<li>x,y,w,h 图片中的一个矩形区域</li>
-<li>x1,y1,w1,h1 画布中的一个矩形区域<h2 id="序列帧动画"><a href="#序列帧动画" class="headerlink" title="序列帧动画"></a>序列帧动画</h2></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>绘制精灵图</li>
-<li>动起来</li>
-<li>控制边界</li>
-<li>键盘控制</li>
-</ul>
-<h2 id="变换"><a href="#变换" class="headerlink" title="变换"></a>变换</h2><ul>
-<li>平移 移动画布的原点<ul>
-<li>translate(x,y) 参数表示移动目标点的坐标</li>
-</ul>
-</li>
-<li>旋转<ul>
-<li>scale(x,y) 参数表示宽高的缩放比例</li>
-</ul>
-</li>
-<li>缩放<ul>
-<li>rotate(angle) 参数表示旋转角度</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/04-css3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/02/11/06-H5+c3/04-css3/" itemprop="url">
-                  css3基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-11T00:00:00+08:00">
-                2016-02-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="css3第四天"><a href="#css3第四天" class="headerlink" title="css3第四天"></a>css3第四天</h1><h2 id="弹性布局补充"><a href="#弹性布局补充" class="headerlink" title="弹性布局补充"></a>弹性布局补充</h2><ul>
-<li><strong>换行</strong>    <ul>
-<li><code>flew-wrap</code>默认为<code>nowrap</code></li>
-<li>当我们设置的子元素宽度,一行无法装满时,配合该属性可以设置换行</li>
-<li>需要注意的是,如果使用<code>flex</code>按照比例,只会切割一行,无法实现换行寸</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/*设置换行*/</div><div class="line">flex-wrap:wrap;换行</div></pre></td></tr></table></figure>
-<h2 id="两根轴"><a href="#两根轴" class="headerlink" title="两根轴"></a>两根轴</h2><ul>
-<li>默认主轴是x轴</li>
-<li>副轴是y轴</li>
-<li>通过以下代码可以改变默认轴<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">display:flex;</div><div class="line">/* 使用行布局, 从上往下  */</div><div class="line">flex-direction:column;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="flex-设置的是比例"><a href="#flex-设置的是比例" class="headerlink" title="flex: 设置的是比例"></a>flex: 设置的是比例</h2>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/03-css3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/02/11/06-H5+c3/03-css3/" itemprop="url">
-                  css3基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-11T00:00:00+08:00">
-                2016-02-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="css3第二天"><a href="#css3第二天" class="headerlink" title="css3第二天"></a>css3第二天</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
-<li><p><strong>background-size:</strong></p>
-<blockquote>
-<p>设置背景的大小,通过这个属性可以使用多张图片作为背景</p>
-<ul>
-<li>cover(等比例放大，直到两边都顶格，如果图片变大，超出的会切掉) </li>
-<li>contain(等比例放大，某一边顶格，立刻停止)</li>
-</ul>
-</blockquote>
-</li>
-<li><p><strong>background-origin:</strong></p>
-<blockquote>
-<p>设置的是背景图片的开始位置</p>
-<ul>
-<li>border-box</li>
-<li>content-box</li>
-<li>padding-box</li>
-</ul>
-</blockquote>
-</li>
-<li><p><strong>background-repeat</strong></p>
-<blockquote>
-<p>在原来只能设置平铺,不平铺的基础上,增加了两个属性,让我们在设置背景图时更为灵活</p>
-</blockquote>
-<ul>
-<li>/<em> 自动缩放 直到填满 </em>/</li>
-<li>background-repeat:round;</li>
-<li>/<em> 两个方法都缩放,直到某一边充满容器为止 </em>/</li>
-<li>background-repeat:space;</li>
-</ul>
-</li>
-<li><p><strong>border-image:</strong></p>
-<ul>
-<li>border这个属性必须设置</li>
-<li>border-image-source:url(“”)</li>
-<li>border-image-slice: x y 没有单位</li>
-<li>border-image-width：</li>
-<li>border-image-repeat:stretch/round/repeat<ul>
-<li>round 可以保证图片完整性</li>
-<li>repeat 只是简单的重复 可能会有半个图片显示</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>background 支持设置多个背景图，最后放一个背景颜色</p>
-<ul>
-<li>background：source repeat position /size  origin(注意：position要有才能写size)</li>
-</ul>
-</li>
-</ul>
-<h2 id="body-的注意事项："><a href="#body-的注意事项：" class="headerlink" title="body 的注意事项："></a>body 的注意事项：</h2><ul>
-<li>默认没有高度 需要设置html，body{height：100%；}</li>
-<li>body{margin:0;box-sizing:border-box;} //如果设置了border</li>
-</ul>
-<h2 id="过渡-transition"><a href="#过渡-transition" class="headerlink" title="过渡 transition"></a>过渡 transition</h2><ul>
-<li>transition-property:</li>
-<li>transition-duration:</li>
-<li>transition-delay:</li>
-<li>transition-timing-function:ease/linear(线性匀速)/steps()（步骤动画）<ul>
-<li>贝塞尔曲线动画 <code>cubic-bezier()</code></li>
-</ul>
-</li>
-<li>transition:property duration delay timing-function，…</li>
-</ul>
-<h2 id="2D转换-transform"><a href="#2D转换-transform" class="headerlink" title="2D转换 transform"></a>2D转换 transform</h2><ul>
-<li>transform-translate(x,y)//移动元素不会影响其他元素</li>
-<li>transform-rotate(n deg)//旋转  %也可以</li>
-<li>transform-scale() //缩放 默认是1</li>
-<li>transform-skew() //扭曲 如果两个轴扭曲角度一致，元素会消失</li>
-<li>transform-origin:具体位置单词 /具体坐标</li>
-<li>transform:translate() rotate() scale()</li>
-<li>注意：先走还是先旋转 效果不一样的</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/02-html5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1140,7 +442,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/01-html5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/04-css3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="明月">
@@ -1162,8 +464,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/02/11/06-H5+c3/01-html5/" itemprop="url">
-                  html5基础
+                <a class="post-title-link" href="/2016/02/11/06-H5+c3/04-css3/" itemprop="url">
+                  css3基础
                 </a>
               
             
@@ -1217,145 +519,22 @@
       
         
           
-            <h1 id="html5第一天"><a href="#html5第一天" class="headerlink" title="html5第一天"></a>html5第一天</h1><h2 id="DOCTYPE"><a href="#DOCTYPE" class="headerlink" title="DOCTYPE"></a>DOCTYPE</h2><blockquote>
-<p><code>DOCTYPE</code>并不是<code>HTML标签</code>,而是一个<code>声明</code>,告诉浏览器按哪种规范解析</p>
-</blockquote>
-<h2 id="新的语义标签"><a href="#新的语义标签" class="headerlink" title="新的语义标签"></a>新的语义标签</h2><blockquote>
-<p>目的：有利于SEO和后期维护<br>header nav main article section aside footer</p>
-</blockquote>
-<h2 id="新语义标签兼容问题"><a href="#新语义标签兼容问题" class="headerlink" title="新语义标签兼容问题"></a>新语义标签兼容问题</h2><ul>
-<li>兼容ie8以下<ul>
-<li>cc:ie6+tab <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if lte IE 8]&gt;</div><div class="line">    &lt;script src=&quot;js/html5shiv.min.js&quot;&gt;&lt;/script&gt;   </div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-</li>
+            <h1 id="css3第四天"><a href="#css3第四天" class="headerlink" title="css3第四天"></a>css3第四天</h1><h2 id="弹性布局补充"><a href="#弹性布局补充" class="headerlink" title="弹性布局补充"></a>弹性布局补充</h2><ul>
+<li><strong>换行</strong>    <ul>
+<li><code>flew-wrap</code>默认为<code>nowrap</code></li>
+<li>当我们设置的子元素宽度,一行无法装满时,配合该属性可以设置换行</li>
+<li>需要注意的是,如果使用<code>flex</code>按照比例,只会切割一行,无法实现换行寸</li>
 </ul>
 </li>
 </ul>
-<h2 id="input标签的新type属性"><a href="#input标签的新type属性" class="headerlink" title="input标签的新type属性"></a>input标签的新type属性</h2><p><img src="images/HTML5中的type.png" alt=""></p>
-<h2 id="input表单验证"><a href="#input表单验证" class="headerlink" title="input表单验证"></a>input表单验证</h2><ul>
-<li><code>email</code>自带格式</li>
-<li>对于没有自带验证效果的标签,就需要手动添加属性增加验证了<ul>
-<li><code>required</code> 当控件没有输入信息，会弹出提示信息</li>
-<li><code>pattern</code> 自定义规则 赋值正则表达式<ul>
-<li>自定义验证信息：</li>
-<li>oninvalid事件 //元素验证失败会触发 这个事件需要绑定给 对应的表单元素</li>
-<li>setCustomValidity()方法 //自定义验证信息</li>
-<li>输入时会弹出<code>oninput</code>绑定的代码</li>
-<li><img src="images/输入中.png" alt="输入中"></li>
-<li>验证失败时,会弹出<code>oninvalid</code>绑定的代码!</li>
-<li><a href="images/验证失败.png">验证失败</a></li>
-<li>自定义验证属性 </li>
-<li><img src="images/自定义验证.png" alt="自定义"></li>
-<li>代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"> &lt;!DOCTYPE html&gt;</div><div class="line"> &lt;html lang=&quot;en&quot;&gt;</div><div class="line"> &lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line"> &lt;/head&gt;</div><div class="line"> &lt;body&gt;</div><div class="line">    &lt;form action=&quot;&quot;&gt;</div><div class="line">        email:&lt;input type=&quot;email&quot; name=&quot;userEmail&quot;&gt;</div><div class="line">        &lt;br/&gt;</div><div class="line">        tel:&lt;input type=&quot;tel&quot; required pattern=&quot;[0-9]&#123;3&#125;&quot; id=&quot;telInput&quot;&gt;</div><div class="line">        &lt;br/&gt;</div><div class="line">        &lt;input type=&quot;submit&quot;&gt;</div><div class="line">    &lt;/form&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">&lt;script&gt;</div><div class="line">var telInput = document.getElementById(&quot;telInput&quot;);</div><div class="line">// 正在输入时</div><div class="line">telInput.oninput=function () &#123;</div><div class="line">    this.setCustomValidity(&quot;请正确输入哦&quot;);</div><div class="line">&#125;</div><div class="line">// 验证失败时</div><div class="line">telInput.oninvalid=function()&#123;</div><div class="line">    this.setCustomValidity(&quot;请不要输入火星的手机号好吗？&quot;);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/*设置换行*/</div><div class="line">flex-wrap:wrap;换行</div></pre></td></tr></table></figure>
+<h2 id="两根轴"><a href="#两根轴" class="headerlink" title="两根轴"></a>两根轴</h2><ul>
+<li>默认主轴是x轴</li>
+<li>副轴是y轴</li>
+<li>通过以下代码可以改变默认轴<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">display:flex;</div><div class="line">/* 使用行布局, 从上往下  */</div><div class="line">flex-direction:column;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="新表单属性"><a href="#新表单属性" class="headerlink" title="新表单属性"></a>新表单属性</h2><ul>
-<li><code>placeholder</code>(占位符)<ul>
-<li><blockquote>
-<p>输入元素内默认显示一些提示信息,当用户输入之后自动消失</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><code>autofocus</code>(获取焦点)<ul>
-<li><blockquote>
-<p>当某一页有很多个可供输入的元素时,用户需要使用鼠标点选元素进行输入,为了提升用户体验,我们可以通过<code>autofocus</code>属性来指定页面中默认选中的元素</p>
-<h2 id="新的表单元素"><a href="#新的表单元素" class="headerlink" title="新的表单元素"></a>新的表单元素</h2></blockquote>
-</li>
-</ul>
-</li>
-<li>datalist<ul>
-<li><blockquote>
-<p>该元素规定了输入区域的选项列表,可以让用户有一些选项</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>id:id属性,想要使用该datalist的元素需要通过list=id的方式来指定</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>option:   </p>
-<ul>
-<li>value制定具体的值</li>
-</ul>
-<ul>
-<li>代码：</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">网址:&lt;input type=&quot;url&quot; list=&quot;url_list&quot; name=&quot;link&quot;/&gt;</div><div class="line">&lt;datalist id=&quot;url_list&quot;&gt;</div><div class="line">    &lt;option label=&quot;W3School&quot; value=&quot;http://www.W3School.com.cn&quot;/&gt;</div><div class="line">    &lt;option label=&quot;Google&quot; value=&quot;http://www.google.com&quot;/&gt;</div><div class="line">    &lt;option label=&quot;Microsoft&quot; value=&quot;http://www.microsoft.com&quot;/&gt;</div><div class="line">&lt;/datalist&gt;</div><div class="line"></div><div class="line">电话: &lt;input type=&quot;tel&quot; list=&quot;tel_list&quot;&gt;</div><div class="line">&lt;datalist id=&quot;tel_list&quot;&gt;</div><div class="line">    &lt;option value=&quot;186xxx&quot; label=&quot;移动&quot;&gt;移动&lt;/option&gt;</div><div class="line">    &lt;option value=&quot;187xxx&quot; label=&quot;联通&quot;&gt;联通&lt;/option&gt;</div><div class="line">    &lt;option value=&quot;135xxx&quot; label=&quot;天翼&quot;&gt;天翼&lt;/option&gt;</div><div class="line">&lt;/datalist&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="多媒体"><a href="#多媒体" class="headerlink" title="多媒体"></a>多媒体</h2><ul>
-<li><p><code>audio</code>标签</p>
-<ul>
-<li>src:音频的地址</li>
-<li>controls:音频播放控制器</li>
-<li>autoplay:自动播放</li>
-<li>loop:循环</li>
-<li>poster:指定视频不播放时显示的封面</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">  &lt;audio src=&quot;song.ogg&quot; controls=&quot;controls&quot; autoplay loop&gt;</div><div class="line">  &lt;/audio&gt;</div><div class="line">  ``` </div><div class="line">* 由于音频格式在不同浏览器中支持情况不同,考虑兼容性问题,我们需要使用下述代码</div><div class="line">* source:指定多个音频,如果找到了当前浏览器支持的,那么会直接使用,如果所有的`source`标签格式都不支持,会显示最后的文本内容</div><div class="line">* src:音频的地址</div><div class="line"></div><div class="line">*</div></pre></td></tr></table></figure>
-<pre><code>&lt;audio controls=&quot;controls&quot;&gt;
-    &lt;source src=&quot;song.ogg&quot; type=&quot;audio/ogg&quot;&gt;
-    &lt;source src=&quot;song.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
-    你的浏览器不支持此种格式
-&lt;/audio&gt;
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">* `video`标签 </div><div class="line">  * 用法跟audio一样</div><div class="line"></div><div class="line">## 两种进度条</div><div class="line">*</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><meter value=".5"></meter> //value(0-1)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">*  ```  </div><div class="line">   &lt;progress value=&quot;50&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;  //value(0-100)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="Dom语法"><a href="#Dom语法" class="headerlink" title="Dom语法"></a>Dom语法</h2><ul>
-<li>document.querySelector()<blockquote>
-<p>可以传入的选择器 还有CSS3的选择器 获取满足条件的第一个元素 从上往下 查找</p>
-</blockquote>
-</li>
-<li>document.querySelectorAll()<blockquote>
-<p>返回数组</p>
-</blockquote>
-</li>
-<li>classList<blockquote>
-<p>这个元素返回的是dom元素的class 列表,这个属性本身是只读的，但是我们可以通过几个方法去操作元素的class</p>
-<ul>
-<li><strong>可用方法：</strong><ul>
-<li><strong>add</strong> ： 添加一个 class 到元素的 class 列表中</li>
-<li><strong>remove</strong> ： 从元素的 class 列表中移除一个 class</li>
-<li><strong>toggle</strong> ： 切换一个 class 是否存在于一个元素的 class 列表中</li>
-<li><strong>contains</strong> ： 查询一个指定的 class 是否存在于元素的 class 列表中</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<h2 id="data-添加属性"><a href="#data-添加属性" class="headerlink" title="data-添加属性"></a>data-添加属性</h2><ul>
-<li><strong>语法:</strong><ul>
-<li>data-:这个是固定格式</li>
-<li>data-xxx:xxx是自定义的值</li>
-</ul>
-</li>
-<li><strong>注意:</strong><ul>
-<li>属性名不应该包含任何大写字母，并且在前缀 “data-“ 之后必须有至少一个字符</li>
-<li>属性值可以是任意字符串</li>
-<li>不要使用纯数字,特殊字符等作为自定义值</li>
-<li>如果data之后使用<code>-</code>连接多个值,取值时,需要使用<code>驼峰命名</code></li>
-</ul>
-</li>
-<li>获取：<ul>
-<li>对象.dataset 返回是自定义属性的对象，可以<code>.</code>出想要的属性值或者 也可以 对象.dataset[“属性名”]</li>
-<li>如果定义的时候使用了大写字母获取的时候 会变成小写,我们需要通过小写字母来获取</li>
-<li>如果 我们使用 多个 - 进行分割会去掉横线,横线之后的 首字母变为大写</li>
-</ul>
-</li>
-</ul>
-
+<h2 id="flex-设置的是比例"><a href="#flex-设置的是比例" class="headerlink" title="flex: 设置的是比例"></a>flex: 设置的是比例</h2>
           
         
       
@@ -1714,179 +893,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/01/05-jquery/03/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/02/01/05-jquery/03/" itemprop="url">
-                  jquery基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-01T00:00:00+08:00">
-                2016-02-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="jquery"><a href="#jquery" class="headerlink" title="jquery"></a>jquery</h1><h2 id="表单标签中的value属性值设置和获取"><a href="#表单标签中的value属性值设置和获取" class="headerlink" title="表单标签中的value属性值设置和获取"></a>表单标签中的value属性值设置和获取</h2><ul>
-<li>文本框,按钮,复选框,单选框,文本域,下拉框都可以使用.val()方法获取value属性值</li>
-<li>通过$(“select”).val(值);可以设置某个选项选中<h2 id="attr-方法可以设置或者获取标签自带属性和自定义属性的值"><a href="#attr-方法可以设置或者获取标签自带属性和自定义属性的值" class="headerlink" title="attr()方法可以设置或者获取标签自带属性和自定义属性的值"></a>attr()方法可以设置或者获取标签自带属性和自定义属性的值</h2><code>$(&quot;chekcbox&quot;).attr(&quot;checked&quot;); undefined</code></li>
-<li>prop()方法可以设置或者获取标签的属性值,而且可以获取复选框checked的true或者false值<h2 id="获取宽高"><a href="#获取宽高" class="headerlink" title="获取宽高"></a>获取宽高</h2></li>
-<li>通过 .width()方法和.height()方法可以获取元素的宽和高,而且是数字类型</li>
-<li>通过 .width(数字)和.height(数字)可以设置元素的宽和高</li>
-<li>通过 .scrollLeft()和.scrollTop()方法可以获取卷曲出去的距离</li>
-<li>通过.offset().left和.offset().top可以获取元素的横纵坐标</li>
-<li>通过.offset({“left”:值,”top”:值})可以设置元素的横纵坐标</li>
-</ul>
-<h2 id="绑定事件"><a href="#绑定事件" class="headerlink" title="绑定事件"></a>绑定事件</h2><ul>
-<li>第一种:<ul>
-<li>对象.事件名字(匿名函数);</li>
-<li>举例子: $(“#btn”).click(function(){});</li>
-</ul>
-</li>
-<li>第二种:<ul>
-<li>对象.bind(事件的类型,匿名函数);</li>
-<li>举例子:$(“#btn”).bind(“click”,function(){});</li>
-<li>$(“#btn”).bind({“事件”:匿名函数,”事件”:匿名函数});</li>
-</ul>
-</li>
-<li>第三种:<ul>
-<li>父级元素对象.delegate(子级元素对象,事件的类型,匿名函数);</li>
-<li>举例子:$(“div”).delegate(“p”,”click”,function(){})</li>
-<li>delegate()方法内部调用的是on()这个方法实现的</li>
-</ul>
-</li>
-<li>第四种:<ul>
-<li>父级元素对象.on(事件的类型,子级元素对象,匿名函数);</li>
-<li>举例子:$(“div”).on(“click”,”p”,function(){});</li>
-<li>但是.on()方法也可以这么写</li>
-<li>对象.on(事件的类型,匿名函数);</li>
-<li>举例子:$(“#btn”).on(“click”,function(){});</li>
-</ul>
-</li>
-</ul>
-<h2 id="解除绑定事件"><a href="#解除绑定事件" class="headerlink" title="解除绑定事件:"></a>解除绑定事件:</h2><ul>
-<li>bind()绑定用unbind()解除</li>
-<li>delegate()绑定用undelegate()解除</li>
-<li>on()绑定用off()解除<h2 id="触发事件"><a href="#触发事件" class="headerlink" title="触发事件"></a>触发事件</h2></li>
-</ul>
-<ol>
-<li>对象.事件名();</li>
-<li>对象.trigger(“事件名”);<ul>
-<li>前两种触发事件会触发浏览器的默认事件,下面的不会</li>
-</ul>
-</li>
-<li>对象.triggetHanele(“事件名”);</li>
-</ol>
-<h2 id="事件对象可以调用keycode属性获取键的值"><a href="#事件对象可以调用keycode属性获取键的值" class="headerlink" title="事件对象可以调用keycode属性获取键的值"></a>事件对象可以调用keycode属性获取键的值</h2><h2 id="在jquery中阻止事件冒泡"><a href="#在jquery中阻止事件冒泡" class="headerlink" title="在jquery中阻止事件冒泡"></a>在jquery中阻止事件冒泡</h2><ul>
-<li>return false可以取消浏览器的默认事件，阻止事件冒泡<h2 id="链式编程原理-就是在对象方法内部返回了当前对象"><a href="#链式编程原理-就是在对象方法内部返回了当前对象" class="headerlink" title="链式编程原理,就是在对象方法内部返回了当前对象"></a>链式编程原理,就是在对象方法内部返回了当前对象</h2></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/01/05-jquery/01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2145,6 +1151,981 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/01/05-jquery/03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/01/05-jquery/03/" itemprop="url">
+                  jquery基础
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-01T00:00:00+08:00">
+                2016-02-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="jquery"><a href="#jquery" class="headerlink" title="jquery"></a>jquery</h1><h2 id="表单标签中的value属性值设置和获取"><a href="#表单标签中的value属性值设置和获取" class="headerlink" title="表单标签中的value属性值设置和获取"></a>表单标签中的value属性值设置和获取</h2><ul>
+<li>文本框,按钮,复选框,单选框,文本域,下拉框都可以使用.val()方法获取value属性值</li>
+<li>通过$(“select”).val(值);可以设置某个选项选中<h2 id="attr-方法可以设置或者获取标签自带属性和自定义属性的值"><a href="#attr-方法可以设置或者获取标签自带属性和自定义属性的值" class="headerlink" title="attr()方法可以设置或者获取标签自带属性和自定义属性的值"></a>attr()方法可以设置或者获取标签自带属性和自定义属性的值</h2><code>$(&quot;chekcbox&quot;).attr(&quot;checked&quot;); undefined</code></li>
+<li>prop()方法可以设置或者获取标签的属性值,而且可以获取复选框checked的true或者false值<h2 id="获取宽高"><a href="#获取宽高" class="headerlink" title="获取宽高"></a>获取宽高</h2></li>
+<li>通过 .width()方法和.height()方法可以获取元素的宽和高,而且是数字类型</li>
+<li>通过 .width(数字)和.height(数字)可以设置元素的宽和高</li>
+<li>通过 .scrollLeft()和.scrollTop()方法可以获取卷曲出去的距离</li>
+<li>通过.offset().left和.offset().top可以获取元素的横纵坐标</li>
+<li>通过.offset({“left”:值,”top”:值})可以设置元素的横纵坐标</li>
+</ul>
+<h2 id="绑定事件"><a href="#绑定事件" class="headerlink" title="绑定事件"></a>绑定事件</h2><ul>
+<li>第一种:<ul>
+<li>对象.事件名字(匿名函数);</li>
+<li>举例子: $(“#btn”).click(function(){});</li>
+</ul>
+</li>
+<li>第二种:<ul>
+<li>对象.bind(事件的类型,匿名函数);</li>
+<li>举例子:$(“#btn”).bind(“click”,function(){});</li>
+<li>$(“#btn”).bind({“事件”:匿名函数,”事件”:匿名函数});</li>
+</ul>
+</li>
+<li>第三种:<ul>
+<li>父级元素对象.delegate(子级元素对象,事件的类型,匿名函数);</li>
+<li>举例子:$(“div”).delegate(“p”,”click”,function(){})</li>
+<li>delegate()方法内部调用的是on()这个方法实现的</li>
+</ul>
+</li>
+<li>第四种:<ul>
+<li>父级元素对象.on(事件的类型,子级元素对象,匿名函数);</li>
+<li>举例子:$(“div”).on(“click”,”p”,function(){});</li>
+<li>但是.on()方法也可以这么写</li>
+<li>对象.on(事件的类型,匿名函数);</li>
+<li>举例子:$(“#btn”).on(“click”,function(){});</li>
+</ul>
+</li>
+</ul>
+<h2 id="解除绑定事件"><a href="#解除绑定事件" class="headerlink" title="解除绑定事件:"></a>解除绑定事件:</h2><ul>
+<li>bind()绑定用unbind()解除</li>
+<li>delegate()绑定用undelegate()解除</li>
+<li>on()绑定用off()解除<h2 id="触发事件"><a href="#触发事件" class="headerlink" title="触发事件"></a>触发事件</h2></li>
+</ul>
+<ol>
+<li>对象.事件名();</li>
+<li>对象.trigger(“事件名”);<ul>
+<li>前两种触发事件会触发浏览器的默认事件,下面的不会</li>
+</ul>
+</li>
+<li>对象.triggetHanele(“事件名”);</li>
+</ol>
+<h2 id="事件对象可以调用keycode属性获取键的值"><a href="#事件对象可以调用keycode属性获取键的值" class="headerlink" title="事件对象可以调用keycode属性获取键的值"></a>事件对象可以调用keycode属性获取键的值</h2><h2 id="在jquery中阻止事件冒泡"><a href="#在jquery中阻止事件冒泡" class="headerlink" title="在jquery中阻止事件冒泡"></a>在jquery中阻止事件冒泡</h2><ul>
+<li>return false可以取消浏览器的默认事件，阻止事件冒泡<h2 id="链式编程原理-就是在对象方法内部返回了当前对象"><a href="#链式编程原理-就是在对象方法内部返回了当前对象" class="headerlink" title="链式编程原理,就是在对象方法内部返回了当前对象"></a>链式编程原理,就是在对象方法内部返回了当前对象</h2></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/01/05-jquery/02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/01/05-jquery/02/" itemprop="url">
+                  jquery基础
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-01T00:00:00+08:00">
+                2016-02-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="jquery"><a href="#jquery" class="headerlink" title="jquery"></a>jquery</h1><h2 id="设置样式"><a href="#设置样式" class="headerlink" title="设置样式:"></a>设置样式:</h2><ul>
+<li>.css(“width”,”200px”)属性,值—-设置一个元素可以写多行</li>
+<li><p>.css({“width”:”200px”})键值对—一行代码,多个属性和值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var o=&#123;&quot;width&quot;:&quot;200px&quot;&#125;;</div><div class="line">对象.css(o)---对象</div></pre></td></tr></table></figure>
+</li>
+<li><p>.css().css()—-链式编程</p>
+<ul>
+<li>对象.方法() 返回的仍然是这个对象,才能链式编程</li>
+</ul>
+</li>
+<li>设置样式还可以使用类样式的方式<ul>
+<li>addClass(“类样式的名字”);—-没点–添加类样式<figure class="highlight plain"><figcaption><span>class="cls1 cls2"> $("div").addClass("cls2");```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">    * 保留原来的类样式---在这个基础之上添加类样式</div><div class="line">  * removeClass(&quot;类样式的名字&quot;)---没点---移除</div><div class="line">  * hasClass(&quot;类样式的名字&quot;);---判断有没有类样式</div><div class="line">  * toggleClass(&quot;类样式的名字&quot;);----切换类样式</div><div class="line">* 链式编程----一定要要注意:断链---当前对象调用方法之后返回的是不是当前的对象</div><div class="line">    * .end();恢复到断链之前的状态----修复断链</div><div class="line"> ``` $(&quot;div&quot;).text().html(&quot;&lt;p&gt;&lt;/p&gt;&quot;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>prev()当前元素的前一个兄弟元素</li>
+<li>prevAll()当前元素前面兄弟元素</li>
+<li>next()当前元素的后一个兄弟元素</li>
+<li>nextAll()当前元素后面所有的兄弟元素</li>
+</ul>
+<h2 id="动画的方法"><a href="#动画的方法" class="headerlink" title="动画的方法:"></a>动画的方法:</h2><ul>
+<li>参数:<ul>
+<li>可以是一个数字</li>
+<li>可以是一个字符串:slow,normal fast</li>
+<li>可以是两个参数:第一个是数字或者字符串,第二个是一个函数</li>
+</ul>
+</li>
+<li>show()–显示</li>
+<li>hide()–隐藏</li>
+<li>slideDown()—滑出—显示</li>
+<li>slideUp()—滑入—-隐藏</li>
+<li>slideToggle()—切换滑入和滑出</li>
+<li>fadeIn()— 淡出—显示</li>
+<li>fadeOut()– 淡入—隐藏</li>
+<li>fadeToggle()–切换</li>
+<li>fadeTo()–可以设置透明度:第一个时间,透明度</li>
+<li>animate({属性:值,属性:值},1000,function(){})方法      <ul>
+<li>参数:</li>
+<li>1—键值对</li>
+<li>2—时间</li>
+<li>3—-函数</li>
+</ul>
+</li>
+<li>stop();停止当前动画<h2 id="动态创建元素-两种"><a href="#动态创建元素-两种" class="headerlink" title="动态创建元素:两种"></a>动态创建元素:两种</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.html(&quot;&lt;p&gt;这是一个p&lt;/p&gt;&quot;);创建元素</div><div class="line">$(&quot;&lt;p&gt;这是一个p&lt;/p&gt;&quot;);</div><div class="line">append();添加方法(追加)</div><div class="line">$(&quot;div&quot;).append($(&quot;&lt;p&gt;哈哈&lt;/p&gt;&quot;))</div><div class="line">$(&quot;&lt;p&gt;哈哈&lt;/p&gt;&quot;).appendTo($(&quot;div&quot;));被添加</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="清空"><a href="#清空" class="headerlink" title="清空:"></a>清空:</h2><ul>
+<li>.html(“”);清空</li>
+<li>.empty();清空</li>
+<li>remove();自杀了—当前元素移除了<h2 id="克隆"><a href="#克隆" class="headerlink" title="克隆"></a>克隆</h2>*　clone();克隆后的元素样式保留,也可以继续设置样式<br>##　表单的val()方法的使用</li>
+<li>textarea文本域, 可以使用.val方法也可以使用.text方法</li>
+<li>在DOM中如果是获取文本域的内容,使用value属性</li>
+<li>如果是设置文本域的内容,最好使用innerText</li>
+<li>jQuery中设置和获取文本域的内容最好使用text()方法</li>
+<li>console.log($(“#tt”).text());</li>
+<li>设置某个下拉框选中<ul>
+<li>.val()方法针对下拉框的内容选中的时候,方法中传入的是某个option的value属性值</li>
+<li>$(“#s1”).val(4);</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/01/03/03-js/js/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/03/03-js/js/" itemprop="url">
+                  js基础
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-03T00:00:00+08:00">
+                2016-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="js基础"><a href="#js基础" class="headerlink" title="js基础"></a>js基础</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ol>
+<li>运行在客户端的脚本编程语言</li>
+<li>三部分组成 </li>
+</ol>
+<ul>
+<li>ECMAScript</li>
+<li>DOM<ul>
+<li>BOM</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>特点：解释执行语言，基于对象，具有继承性，封装性，多肽特点</li>
+<li>书写位置类似css<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2></li>
+</ol>
+<ul>
+<li>简单数据类型：string,number,boolean,undefined</li>
+<li>复杂数据类型：array,object</li>
+<li>补充：数据类型是确认变量存储数据的位置的</li>
+<li>判断数据类型使用typeof关键字<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2></li>
+<li>算数运算符</li>
+<li>比较运算符</li>
+<li>逻辑运算符<h2 id="Math方法"><a href="#Math方法" class="headerlink" title="Math方法"></a>Math方法</h2></li>
+<li>.ceil() .floor() .random() .round() .pow() .abs()<h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2></li>
+</ul>
+<ol>
+<li>string-&gt;number <ul>
+<li>Number() parseInt() parseFloat()</li>
+</ul>
+</li>
+<li>number-&gt;string<ul>
+<li>String() 变量.toString()</li>
+</ul>
+</li>
+<li>转boolean<ul>
+<li>0 null undefined  NaN  ‘’是false</li>
+</ul>
+</li>
+<li>boolean-&gt;number<ul>
+<li>Number()<h2 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h2></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>if语句</li>
+<li>三元运算符<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2></li>
+<li>for（）</li>
+<li>do（） while</li>
+<li>while<h2 id="break和continue"><a href="#break和continue" class="headerlink" title="break和continue"></a>break和continue</h2></li>
+<li>break 遇到后循环程序会立即结束</li>
+<li>continue 遇到后结束本次循环，开始下一次循环,continue后的代码不执行，整个循环还在执行<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2></li>
+<li>js对小数不精确，不能用“==”来比较</li>
+<li>number.toFixed  保留小数位数，0-20</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/01/03/03-js/array/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/03/03-js/array/" itemprop="url">
+                  数组和函数
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-03T00:00:00+08:00">
+                2016-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数组和函数"><a href="#数组和函数" class="headerlink" title="数组和函数"></a>数组和函数</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ul>
+<li>定义 <ul>
+<li>var ary=[1,2,3]</li>
+<li>var ary=  new Array()  <ul>
+<li>参数位置一个数值时为数组长度，多个数值时为数组中的元素</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>遍历<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3];</div><div class="line">for(var i = 0;i&lt;arr.length;i++)&#123;</div><div class="line">    arr[i]  //如此操作数组中的每一个元素</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><ul>
+<li>定义：可以重复执行的代码块<ul>
+<li>function 名字（）{程序}</li>
+</ul>
+</li>
+<li>参数<ul>
+<li>形参 实参 </li>
+</ul>
+</li>
+<li>返回值<ol>
+<li>如果函数没有使用 return ，那么函数有默认的返回值：undefined</li>
+<li>如果函数使用 return，那么跟再return后面的值，就成了函数的返回值</li>
+<li>如果函数使用 return，但是return后面没有任何值，那么函数的返回值也是：undefined</li>
+<li>函数使用return后，这个函数会在执行完 return 语句之后停止并立即退出，也就是说return后面的所有其他代码都不会再执行。<h2 id="函数名-函数体-函数加载问题"><a href="#函数名-函数体-函数加载问题" class="headerlink" title="函数名 函数体 函数加载问题"></a>函数名 函数体 函数加载问题</h2></li>
+</ol>
+</li>
+<li>函数名 == 整个函数</li>
+<li>JS加载的时候，只加载函数名，不加载函数体。所以如果想使用内部的成员变量，需要调用函数。<h2 id="变量和作用域"><a href="#变量和作用域" class="headerlink" title="变量和作用域"></a>变量和作用域</h2></li>
+<li>隐式全局变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">隐式全局变量就是隐藏的全局变量不好被发现。</div><div class="line">function  fn（）&#123;</div><div class="line">var  a  =  b  =  c  =  1;   // b和c就是隐式全局变量</div><div class="line">&#125;</div><div class="line">注意:</div><div class="line">function  fn（）&#123;</div><div class="line">var  a  =  b  =  c  =  1;   // b和c就是隐式全局变量（等号）</div><div class="line">var  a = 1;  b = 2;  c = 3;     // b和c就是隐式全局变量（分号）</div><div class="line">var  a = 1 ,  b = 2 ,  c = 3;    // b和c就不是隐式全局变量（逗号）</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="变量声明提升（预解析）"><a href="#变量声明提升（预解析）" class="headerlink" title="变量声明提升（预解析）"></a>变量声明提升（预解析）</h2><ul>
+<li>函数中，定义变量在使用变量之后。（先提升变量，后提升函数）</li>
+<li>只提升变量名，不提升变量值，容易出现undefined。计算后形成NaN</li>
+<li>函数是所有内容全部提升。（function直接定义的）<h2 id="函数高级"><a href="#函数高级" class="headerlink" title="函数高级"></a>函数高级</h2></li>
+<li>匿名函数 匿名函数就是没有名字的函数</li>
+<li>递归函数 自己调用自己</li>
+<li>回调函数 函数作为参数</li>
+<li>闭包 函数作为返回值</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/01/02/02-css/css/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/02/02-css/css/" itemprop="url">
+                  css基础
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-02T00:00:00+08:00">
+                2016-01-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="css基础"><a href="#css基础" class="headerlink" title="css基础"></a>css基础</h1><h2 id="简介：三种表现形式"><a href="#简介：三种表现形式" class="headerlink" title="简介：三种表现形式"></a>简介：三种表现形式</h2><ul>
+<li>内嵌方式</li>
+<li>外联方式</li>
+<li>行内方式<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2></li>
+<li>基础选择器<ul>
+<li>标签 id class <code>*</code></li>
+</ul>
+</li>
+<li>复合选择器 <ul>
+<li>标签指定选择器  p.class/p#id</li>
+<li>后代选择器  div p</li>
+<li>并集选择器  div,div</li>
+<li>子代选择器  div&gt;p</li>
+<li>属性选择器  input[type:text]<h2 id="文本属性"><a href="#文本属性" class="headerlink" title="文本属性"></a>文本属性</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">font:weight style size/line-height family</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><ul>
+<li>1em代表一个文字的大小<h2 id="标签显示方式及转换"><a href="#标签显示方式及转换" class="headerlink" title="标签显示方式及转换"></a>标签显示方式及转换</h2></li>
+<li>块级元素 <ul>
+<li>独占一行；可以设置宽高；没有设置宽高情况下，宽度随父级元素，高度是内容的高度</li>
+</ul>
+</li>
+<li>行内元素 <ul>
+<li>在一行显示，不能设置宽高</li>
+</ul>
+</li>
+<li>行内块元素 <ul>
+<li>代表 img和input；元素在一行显示；可以设置宽高</li>
+</ul>
+</li>
+<li>元素模式转换<ul>
+<li>display:block/inline-block/inline<h2 id="css特性"><a href="#css特性" class="headerlink" title="css特性"></a>css特性</h2></li>
+</ul>
+</li>
+<li>层叠性<ul>
+<li>同一标签，权重相同，样式发生冲突时，最后定义的样式会将前面的样式覆盖</li>
+</ul>
+</li>
+<li>继承性<ul>
+<li>给父元素设置样式时，子元素在没有默认样式的情况下会受父元素样式的影响</li>
+<li>可以继承的属性：color,与文本相关的属性，text-align</li>
+<li>高度宽度不能继承</li>
+<li>继承特殊性：a标签不会受到父元素颜色的影响；标题标签不会受父元素文字大小影响，要与父元素的文字大小进行乘积运算</li>
+</ul>
+</li>
+<li>优先级<ul>
+<li>标签&lt;class&lt;id&lt;行内样式&lt;！important</li>
+<li>继承的优先级为0</li>
+<li>权重可以叠加<h2 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h2></li>
+</ul>
+</li>
+<li>a:link 推荐使用a</li>
+<li>a:visited 只能设与颜色相关的属性</li>
+<li>a:hover 用的多</li>
+<li>a:active<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2></li>
+<li>border<ul>
+<li>属性 width style color</li>
+<li>style的默认值是none，solid dashed dotted</li>
+<li>outline-style: none;去轮廓线</li>
+<li>border-collapse:collapse;只在表格里实现合并边框</li>
+</ul>
+</li>
+<li>padding<ul>
+<li>在块级元素中，如果默认子元素没有设置宽度，给子元素设置padding，不会影响子元素大小</li>
+</ul>
+</li>
+<li>margin<ul>
+<li>1.垂直外边距合并，水平方向没有</li>
+<li>2.垂直外边距塌陷<ul>
+<li>a给父元素设置边框</li>
+<li>b给父元素设置overflow: hidden;<h2 id="行高"><a href="#行高" class="headerlink" title="行高"></a>行高</h2></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>行高=文字大小+上下间距</li>
+<li>可以实现让文字垂直居中,只能让文字垂直居中，行高值和容器的高度一致</li>
+<li>特点：文字大小、字体影响行高，如果设置好行高的话跟文字大小就没关系了,行高只能影响文字，不影响标签<h2 id="补充-1"><a href="#补充-1" class="headerlink" title="补充"></a>补充</h2></li>
+</ul>
+<ol>
+<li>浏览器中默认文字大小16px，行高18px</li>
+<li>点击鼠标获得焦点 label for=”id”<h2 id="浮动及清除浮动"><a href="#浮动及清除浮动" class="headerlink" title="浮动及清除浮动"></a>浮动及清除浮动</h2></li>
+</ol>
+<ul>
+<li>flow:left|right</li>
+<li>特点：<ol>
+<li>设置后不占原来的位置，托标（行内元素浮动可设置宽高，因为脱标）</li>
+<li>可以在一行显示</li>
+<li>实现模式转换</li>
+<li>会影响浮动元素后边的元素</li>
+<li>想让块级元素在一行显示，需要给所有的块级元素设置浮动  </li>
+</ol>
+</li>
+<li>作用：<ol>
+<li>布局</li>
+<li>制作网页导航</li>
+<li>实现文字图片环绕  文字不会被浮动元素压着</li>
+</ol>
+</li>
+<li><p>清除浮动</p>
+<ul>
+<li>什么时候清除浮动<ul>
+<li>父元素没有高度并且所有子元素都设置了浮动</li>
+</ul>
+</li>
+<li><p>清除浮动三种方法：</p>
+<ol>
+<li><p>使用.clear:both(<figure class="highlight plain"><figcaption><span>class=clear>```)</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">2. overflow:hidden; 给父元素设置，前提是父元素没有定位的元素</div><div class="line">3. 使用伪元素.clearfix:after &#123;&#125;</div></pre></td></tr></table></figure></p>
+<p> content=“”；<br> heitht：0；<br> line-height:0;<br> clear:both;<br> display:block;<br> visibility:hidden;<br>```</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="overflow的用法"><a href="#overflow的用法" class="headerlink" title="overflow的用法"></a>overflow的用法</h2><ul>
+<li>默认是visible</li>
+<li>hidden</li>
+<li>scroll</li>
+<li>auto<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2></li>
+</ul>
+<ol>
+<li>静态定位<ul>
+<li>标准流下的效果</li>
+</ul>
+</li>
+<li>绝对定位（看脸型）<ul>
+<li>脱标不占位置 实现模式转换，有盒子压盒子时候使用</li>
+</ul>
+</li>
+<li>相对定位（自恋型）<ul>
+<li>占位置，子绝父相</li>
+</ul>
+</li>
+<li>固定定位<ul>
+<li>以body为准，脱标不占位置，实现模式转换<h2 id="绝对定位居中问题"><a href="#绝对定位居中问题" class="headerlink" title="绝对定位居中问题"></a>绝对定位居中问题</h2></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>left：50%；父元素的一半，margin-left：-自己的一半<h2 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h2></li>
+<li>只有定位的元素（除static）才有层级关系</li>
+<li>默认值auto（0）<ul>
+<li>z-index相同，后来居上</li>
+<li>如果父元素设置了，值越大越靠前<h2 id="网页布局顺序"><a href="#网页布局顺序" class="headerlink" title="网页布局顺序"></a>网页布局顺序</h2></li>
+</ul>
+</li>
+<li>标准流 浮动 定位<h2 id="vertical-align"><a href="#vertical-align" class="headerlink" title="vertical-align"></a>vertical-align</h2></li>
+<li>行内块元素设置垂直居中的属性</li>
+<li>默认值 baseline，top，middle，bottom<ul>
+<li>图片垂直居中 设置行高和middle值<h2 id="元素隐藏"><a href="#元素隐藏" class="headerlink" title="元素隐藏"></a>元素隐藏</h2></li>
+</ul>
+</li>
+<li>overflow:hidden</li>
+<li>display:none;display:block; 隐藏元素不占位置</li>
+<li>visibility:hidden<h2 id="logo内容移除"><a href="#logo内容移除" class="headerlink" title="logo内容移除"></a>logo内容移除</h2></li>
+<li>text-indent:-2000px;</li>
+<li>logo一般是给a设置背景图片，a要模式转换<h2 id="精灵图"><a href="#精灵图" class="headerlink" title="精灵图"></a>精灵图</h2></li>
+<li>一种特殊的背景图片</li>
+<li>设置bg-img，使用fw的“打开”方式，找到横纵坐标</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -2194,7 +2175,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
