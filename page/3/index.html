@@ -973,45 +973,49 @@
             <h1 id="jquery"><a href="#jquery" class="headerlink" title="jquery"></a>jquery</h1><h2 id="js框架库"><a href="#js框架库" class="headerlink" title="js框架库:"></a>js框架库:</h2><ul>
 <li>把一些常用的函数进行封装,封装成一个js文件.这个文件就是库,称为:javascript框架库,函数库</li>
 <li>常见的框架库：Prototype、YUI(网络反响一般)、Dojo、ExtJS、jQuery</li>
-<li><p>dom中的缺点:代码容错性差,window.onload只能写一次,兼容问题特别多          </p>
-</li>
-<li><p>JQuery:免费,插件丰富,开源</p>
-</li>
-<li>JQuery特点:写的少，做的多</li>
+<li>dom中的缺点:代码容错性差,window.onload只能写一次,兼容问题特别多       </li>
+<li>JQuery:免费,插件丰富,开源</li>
+<li>JQuery特点:写的少，做的多         </li>
+<li><code>$(&#39;&#39;);</code>页面要统一,如果页面中有多个地方是用单引号,建议都用单引号的方式</li>
+<li><code>$(&quot;&quot;);</code></li>
 </ul>
-<ul>
-<li>$(‘’);页面要统一,如果页面中有多个地方是用单引号,建议都用单引号的方式</li>
-<li>$(“”);<h2 id="jquery使用："><a href="#jquery使用：" class="headerlink" title="jquery使用："></a>jquery使用：</h2></li>
+<h2 id="jquery使用："><a href="#jquery使用：" class="headerlink" title="jquery使用："></a>jquery使用：</h2><ul>
 <li>第一个问题.写jq代码,要先引入JQuery的问题,</li>
 <li>第二个问题:不要在引入jquery的script标签中写任何的代码</li>
 <li>第三个问题:如果编程过程中,发现代码一点都没有问题,看看是不是出现了第二个问题</li>
-<li>jquery的代码一定要写注释,代码结束一定要加分号<h2 id="顶级对象"><a href="#顶级对象" class="headerlink" title="顶级对象"></a>顶级对象</h2></li>
+<li>jquery的代码一定要写注释,代码结束一定要加分号</li>
+</ul>
+<h2 id="顶级对象"><a href="#顶级对象" class="headerlink" title="顶级对象"></a>顶级对象</h2><ul>
 <li>dom中的顶级的对象document</li>
 <li>bom中的顶级的对象window</li>
-<li>JQuery中的顶级对象:$—jQuery<h2 id="加载页面有几种方式"><a href="#加载页面有几种方式" class="headerlink" title="加载页面有几种方式:"></a>加载页面有几种方式:</h2></li>
-<li>dom 加载页面 window.onload=function(){};</li>
+<li>JQuery中的顶级对象:$—jQuery</li>
+</ul>
+<h2 id="加载页面有几种方式"><a href="#加载页面有几种方式" class="headerlink" title="加载页面有几种方式:"></a>加载页面有几种方式:</h2><ul>
+<li>dom 加载页面 <code>window.onload=function(){};</code></li>
 <li>JQuery中加载页面方式:<ul>
 <li>第一种:页面中所有的标签.图片.外部引入的文件都加载完毕再执行<ul>
-<li>$(window).load(function(){});</li>
+<li><code>$(window).load(function(){});</code></li>
 </ul>
 </li>
 <li>第二种:页面中的dom元素加载完毕之后就执行<ul>
-<li>$(document).ready(function(){});比第一种快</li>
+<li><code>$(document).ready(function(){});</code>比第一种快</li>
 </ul>
 </li>
 <li>第三种:和第二种一样,开发的时候<ul>
-<li>$(function(){});</li>
+<li><code>$(function(){});</code></li>
 </ul>
 </li>
 <li>第四种:变种<ul>
-<li>jQuery(function(){});<h2 id="jquery书写注意"><a href="#jquery书写注意" class="headerlink" title="jquery书写注意"></a>jquery书写注意</h2></li>
+<li><code>jQuery(function(){});</code></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<h2 id="jquery书写注意"><a href="#jquery书写注意" class="headerlink" title="jquery书写注意"></a>jquery书写注意</h2><ul>
 <li>jquery代码中$都可以替换成jQuery单词</li>
 <li>在jquery中写代码的时候,把dom中事件的on去掉,直接.后面的事件方法的名字就可以了<ul>
-<li>$(“#btn”).click(匿名函数);</li>
+<li><code>$(&quot;#btn&quot;).click(匿名函数);</code></li>
 </ul>
 </li>
 </ul>
@@ -1025,11 +1029,13 @@
 <li>jquery对象转dom—-&gt;$(“#btn”)[0]</li>
 <li>jquery对象转dom—-&gt;$(“#btn”).get(0);</li>
 <li>dom对象转jquery对象—&gt;$(dom对象);</li>
-<li><p>$(this)  var obj=$(this);  obj.innerHTML</p>
+<li><p><code>$(this)  var obj=$(this);  obj.innerHTML</code></p>
 </li>
 <li><p>dom对象转jquery对象编程更方便</p>
 </li>
-<li>jquery对象转dom对象是为了解决兼容问题(写原生的js代码)<h2 id="识别对象"><a href="#识别对象" class="headerlink" title="识别对象"></a>识别对象</h2></li>
+<li>jquery对象转dom对象是为了解决兼容问题(写原生的js代码)</li>
+</ul>
+<h2 id="识别对象"><a href="#识别对象" class="headerlink" title="识别对象"></a>识别对象</h2><ul>
 <li>如何识别这个对象是jquery对象:</li>
 <li>可以通过.语法获取方法进行使用,如果不能调用就不是jquery对象</li>
 <li>如何识别这个对象是dom对象</li>
@@ -1039,81 +1045,77 @@
 <li>$(this)表示的是jquery对象</li>
 <li>dom中获取value的值   .value</li>
 <li>jquery中用的是.val();</li>
-<li>.val()如果括号中什么也不写表示的是获取value的值</li>
-<li>.val()如果括号中写了一个字符串,表示的是设置value的值<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2></li>
+<li><code>.val()</code>如果括号中什么也不写表示的是获取value的值</li>
+<li><code>.val()</code>如果括号中写了一个字符串,表示的是设置value的值</li>
+</ul>
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
 <li>选择器:作用:用来获取需要的元素</li>
 <li>dom中通过什么方式获取元素的呢?</li>
 <li>document.getElementById———一个对象</li>
 <li>document.getElementsByTagName—-多个对象</li>
 <li>document.getElementsByClassName—多个对象</li>
-<li><p>jquery中获取元素使用选择器(很多–一大坨)</p>
+<li>jquery中获取元素使用选择器(很多–一大坨)</li>
+</ul>
 <h3 id="重点的选择器"><a href="#重点的选择器" class="headerlink" title="重点的选择器:"></a>重点的选择器:</h3><ul>
-<li>三个:id选择器,标签选择器,类选择器</li>
-<li>id选择器: 是在$(“#btn”)在双引号中写一个#id的值<ul>
-<li>dom中的事件到了jquery中去掉on,直接写事件的名字加小括号</li>
+<li>三个:<code>id</code>选择器,标签选择器,类选择器</li>
+<li><code>id</code>选择器: 是在<code>$(&quot;#btn&quot;)</code>在双引号中写一个#id的值<ul>
+<li><code>dom</code>中的事件到了jquery中去掉on,直接写事件的名字加小括号</li>
 <li>此时这个事件就是一个方法了,然后在方法中写一个匿名函数即可</li>
 </ul>
 </li>
 <li>标签选择器:在$(“标签的名字”),获取的是多个标签<ul>
-<li>.text()方法,如果在里面写了一个参数(字符串类型),就是设置这个标签的innerText内容</li>
-<li>.text()啥也没写,获取标签的innerText内容</li>
+<li><code>.text()</code>方法,如果在里面写了一个参数(字符串类型),就是设置这个标签的innerText内容</li>
+<li><code>.text()</code>啥也没写,获取标签的innerText内容</li>
 </ul>
 </li>
-<li><p>类选择器:在$(“.类样式的名字”)表示获取在这个页面上所有应用了这个类样式的标签</p>
-<ul>
-<li>.css(),在css()方法中可以写一个属性，逗号隔开，这个属性对应的值</li>
+<li>类选择器:在$(“.类样式的名字”)表示获取在这个页面上所有应用了这个类样式的标签<ul>
+<li><code>.css()</code>,在<code>css()</code>方法中可以写一个属性，逗号隔开，这个属性对应的值</li>
 <li>如果是多个属性和多个值可以使用大括号的方式,键值对的方式</li>
-<li>$(“.cls”).css(“backgroundColor”,”green”);</li>
+<li><code>$(&quot;.cls&quot;).css(&quot;backgroundColor&quot;,&quot;green&quot;);</code>       </li>
 </ul>
 </li>
-<li><p>.html()相当于innerHTML</p>
-</li>
-<li><p>.html(“标签加文字内容”)         </p>
+<li><code>.html()相当于innerHTML</code></li>
+<li><p><code>.html(&quot;标签加文字内容&quot;)</code>        </p>
 </li>
 <li><p>标签加类选择器</p>
 <ul>
-<li>在$(“标签的名字.类样式的名字”)</li>
+<li>在<code>$(&quot;标签的名字.类样式的名字&quot;)</code></li>
 <li>解释:获取所有的span标签,是应用了cls这个类样式的span标签</li>
 </ul>
 </li>
 <li>多条件选择器:在$(“多个条件”),每个条件都是由逗号隔开</li>
 <li>子代选择器:当前的标签里面的直接的子元素<ul>
-<li>$(“父级的条件&gt;子级的条件”)</li>
+<li><code>$(&quot;父级的条件&gt;子级的条件&quot;)</code></li>
 </ul>
 </li>
 <li><p>后代选择器:当前的标签里面的子元素的子元素,仔仔元素()</p>
 <ul>
-<li><ul>
-<li>获取当前元素的后面的第一个兄弟元素</li>
-</ul>
-</li>
-<li>~ 获取当前元素的后面的所有的兄弟元素</li>
-<li>div~span</li>
+<li><code>+</code> 获取当前元素的后面的第一个兄弟元素</li>
+<li><code>~</code> 获取当前元素的后面的所有的兄弟元素</li>
+<li><code>div~span</code></li>
 </ul>
 </li>
 <li><p>奇数的选择器</p>
 <ul>
-<li>$(“#u1&gt;li:odd”).css(“backgroundColor”,”red”);</li>
+<li><code>$(&quot;#u1&gt;li:odd&quot;).css(&quot;backgroundColor&quot;,&quot;red&quot;);</code></li>
 </ul>
 </li>
 <li>偶数的选择器<ul>
-<li>$(“#u1&gt;li:even”).css(“backgroundColor”,”blue”);</li>
+<li><code>$(&quot;#u1&gt;li:even&quot;).css(&quot;backgroundColor&quot;,&quot;blue&quot;);</code></li>
 </ul>
 </li>
 <li>索引选择器    <ul>
-<li>:eq(索引)获取对应索引的那个标签</li>
-<li>:gt(索引)获取大于那个索引的所有的标签</li>
-<li>:lt(索引)获取小于那个索引的所有的标签</li>
+<li><code>:eq(索引)</code>获取对应索引的那个标签</li>
+<li><code>:gt(索引)</code>获取大于那个索引的所有的标签</li>
+<li><code>:lt(索引)</code>获取小于那个索引的所有的标签</li>
 </ul>
 </li>
-<li>.children()获取当前元素的子元素,在括号中写标签的名字那么获取的就是子元素中的某个标签</li>
-<li>.show()就是显示出来 .hide()就是隐藏</li>
-<li>.parent()方法是获取当前元素的父级元素</li>
-<li>.find(),方法中写一个参数.就是标签的名字,获取到的就是这个标签名所有的标签</li>
-<li>.siblings()获取当前元素的所有的兄弟元素<ul>
+<li><code>.children()</code>获取当前元素的子元素,在括号中写标签的名字那么获取的就是子元素中的某个标签</li>
+<li><code>.show()</code>就是显示出来 .hide()就是隐藏</li>
+<li><code>.parent()</code>方法是获取当前元素的父级元素</li>
+<li><code>.find()</code>方法中写一个参数.就是标签的名字,获取到的就是这个标签名所有的标签</li>
+<li><code>.siblings()</code>获取当前元素的所有的兄弟元素<ul>
 <li>如果在括号中写了标签的名字，那就是获取指定的兄弟标签</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -1768,7 +1770,8 @@
         
           
             <h1 id="数组和函数"><a href="#数组和函数" class="headerlink" title="数组和函数"></a>数组和函数</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ul>
-<li>定义 <ul>
+<li><p>定义 </p>
+<ul>
 <li>var ary=[1,2,3]</li>
 <li>var ary=  new Array()  <ul>
 <li>参数位置一个数值时为数组长度，多个数值时为数组中的元素</li>
@@ -1776,7 +1779,8 @@
 </li>
 </ul>
 </li>
-<li>遍历<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3];</div><div class="line">for(var i = 0;i&lt;arr.length;i++)&#123;</div><div class="line">    arr[i]  //如此操作数组中的每一个元素</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li><p>遍历</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">    arr[i]  <span class="comment">//如此操作数组中的每一个元素</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><ul>
@@ -1792,18 +1796,24 @@
 <li>如果函数没有使用 return ，那么函数有默认的返回值：undefined</li>
 <li>如果函数使用 return，那么跟再return后面的值，就成了函数的返回值</li>
 <li>如果函数使用 return，但是return后面没有任何值，那么函数的返回值也是：undefined</li>
-<li>函数使用return后，这个函数会在执行完 return 语句之后停止并立即退出，也就是说return后面的所有其他代码都不会再执行。<h2 id="函数名-函数体-函数加载问题"><a href="#函数名-函数体-函数加载问题" class="headerlink" title="函数名 函数体 函数加载问题"></a>函数名 函数体 函数加载问题</h2></li>
+<li>函数使用return后，这个函数会在执行完 return 语句之后停止并立即退出，也就是说return后面的所有其他代码都不会再执行。</li>
 </ol>
 </li>
+</ul>
+<h2 id="函数名-函数体-函数加载问题"><a href="#函数名-函数体-函数加载问题" class="headerlink" title="函数名 函数体 函数加载问题"></a>函数名 函数体 函数加载问题</h2><ul>
 <li>函数名 == 整个函数</li>
-<li>JS加载的时候，只加载函数名，不加载函数体。所以如果想使用内部的成员变量，需要调用函数。<h2 id="变量和作用域"><a href="#变量和作用域" class="headerlink" title="变量和作用域"></a>变量和作用域</h2></li>
-<li>隐式全局变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">隐式全局变量就是隐藏的全局变量不好被发现。</div><div class="line">function  fn（）&#123;</div><div class="line">var  a  =  b  =  c  =  1;   // b和c就是隐式全局变量</div><div class="line">&#125;</div><div class="line">注意:</div><div class="line">function  fn（）&#123;</div><div class="line">var  a  =  b  =  c  =  1;   // b和c就是隐式全局变量（等号）</div><div class="line">var  a = 1;  b = 2;  c = 3;     // b和c就是隐式全局变量（分号）</div><div class="line">var  a = 1 ,  b = 2 ,  c = 3;    // b和c就不是隐式全局变量（逗号）</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>JS加载的时候，只加载函数名，不加载函数体。所以如果想使用内部的成员变量，需要调用函数。</li>
+</ul>
+<h2 id="变量和作用域"><a href="#变量和作用域" class="headerlink" title="变量和作用域"></a>变量和作用域</h2><ul>
+<li>隐式全局变量<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 隐式全局变量就是隐藏的全局变量不好被发现。</span></div><div class="line"><span class="function"><span class="keyword">function</span>  <span class="title">fn</span>（）</span>&#123;</div><div class="line"><span class="keyword">var</span>  a  =  b  =  c  =  <span class="number">1</span>;   <span class="comment">// b和c就是隐式全局变量</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 注意:</span></div><div class="line"><span class="function"><span class="keyword">function</span>  <span class="title">fn</span>（）</span>&#123;</div><div class="line"><span class="keyword">var</span>  a  =  b  =  c  =  <span class="number">1</span>;   <span class="comment">// b和c就是隐式全局变量（等号）</span></div><div class="line"><span class="keyword">var</span>  a = <span class="number">1</span>;  b = <span class="number">2</span>;  c = <span class="number">3</span>;     <span class="comment">// b和c就是隐式全局变量（分号）</span></div><div class="line"><span class="keyword">var</span>  a = <span class="number">1</span> ,  b = <span class="number">2</span> ,  c = <span class="number">3</span>;    <span class="comment">// b和c就不是隐式全局变量（逗号）</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="变量声明提升（预解析）"><a href="#变量声明提升（预解析）" class="headerlink" title="变量声明提升（预解析）"></a>变量声明提升（预解析）</h2><ul>
 <li>函数中，定义变量在使用变量之后。（先提升变量，后提升函数）</li>
 <li>只提升变量名，不提升变量值，容易出现undefined。计算后形成NaN</li>
-<li>函数是所有内容全部提升。（function直接定义的）<h2 id="函数高级"><a href="#函数高级" class="headerlink" title="函数高级"></a>函数高级</h2></li>
+<li>函数是所有内容全部提升。（function直接定义的）</li>
+</ul>
+<h2 id="函数高级"><a href="#函数高级" class="headerlink" title="函数高级"></a>函数高级</h2><ul>
 <li>匿名函数 匿名函数就是没有名字的函数</li>
 <li>递归函数 自己调用自己</li>
 <li>回调函数 函数作为参数</li>
@@ -1932,7 +1942,9 @@
             <h1 id="css基础"><a href="#css基础" class="headerlink" title="css基础"></a>css基础</h1><h2 id="简介：三种表现形式"><a href="#简介：三种表现形式" class="headerlink" title="简介：三种表现形式"></a>简介：三种表现形式</h2><ul>
 <li>内嵌方式</li>
 <li>外联方式</li>
-<li>行内方式<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2></li>
+<li>行内方式</li>
+</ul>
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
 <li>基础选择器<ul>
 <li>标签 id class <code>*</code></li>
 </ul>
@@ -1942,11 +1954,11 @@
 <li>后代选择器  div p</li>
 <li>并集选择器  div,div</li>
 <li>子代选择器  div&gt;p</li>
-<li>属性选择器  input[type:text]<h2 id="文本属性"><a href="#文本属性" class="headerlink" title="文本属性"></a>文本属性</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">font:weight style size/line-height family</div></pre></td></tr></table></figure>
-</li>
+<li>属性选择器  input[type:text]</li>
 </ul>
 </li>
 </ul>
+<h2 id="文本属性"><a href="#文本属性" class="headerlink" title="文本属性"></a>文本属性</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">font:weight style size/line-height family</div></pre></td></tr></table></figure>
 <h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><ul>
 <li>1em代表一个文字的大小<h2 id="标签显示方式及转换"><a href="#标签显示方式及转换" class="headerlink" title="标签显示方式及转换"></a>标签显示方式及转换</h2></li>
 <li>块级元素 <ul>
@@ -1962,9 +1974,11 @@
 </ul>
 </li>
 <li>元素模式转换<ul>
-<li>display:block/inline-block/inline<h2 id="css特性"><a href="#css特性" class="headerlink" title="css特性"></a>css特性</h2></li>
+<li>display:block/inline-block/inline</li>
 </ul>
 </li>
+</ul>
+<h2 id="css特性"><a href="#css特性" class="headerlink" title="css特性"></a>css特性</h2><ul>
 <li>层叠性<ul>
 <li>同一标签，权重相同，样式发生冲突时，最后定义的样式会将前面的样式覆盖</li>
 </ul>
@@ -1977,15 +1991,19 @@
 </ul>
 </li>
 <li>优先级<ul>
-<li>标签&lt;class&lt;id&lt;行内样式&lt;！important</li>
+<li><code>标签&lt;class&lt;id&lt;行内样式&lt;！important</code></li>
 <li>继承的优先级为0</li>
-<li>权重可以叠加<h2 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h2></li>
+<li>权重可以叠加</li>
 </ul>
 </li>
+</ul>
+<h2 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h2><ul>
 <li>a:link 推荐使用a</li>
 <li>a:visited 只能设与颜色相关的属性</li>
 <li>a:hover 用的多</li>
-<li>a:active<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2></li>
+<li>a:active</li>
+</ul>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><ul>
 <li>border<ul>
 <li>属性 width style color</li>
 <li>style的默认值是none，solid dashed dotted</li>
@@ -2001,20 +2019,22 @@
 <li>1.垂直外边距合并，水平方向没有</li>
 <li>2.垂直外边距塌陷<ul>
 <li>a给父元素设置边框</li>
-<li>b给父元素设置overflow: hidden;<h2 id="行高"><a href="#行高" class="headerlink" title="行高"></a>行高</h2></li>
+<li>b给父元素设置overflow: hidden;</li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<h2 id="行高"><a href="#行高" class="headerlink" title="行高"></a>行高</h2><ul>
 <li>行高=文字大小+上下间距</li>
 <li>可以实现让文字垂直居中,只能让文字垂直居中，行高值和容器的高度一致</li>
-<li>特点：文字大小、字体影响行高，如果设置好行高的话跟文字大小就没关系了,行高只能影响文字，不影响标签<h2 id="补充-1"><a href="#补充-1" class="headerlink" title="补充"></a>补充</h2></li>
+<li>特点：文字大小、字体影响行高，如果设置好行高的话跟文字大小就没关系了,行高只能影响文字，不影响标签</li>
 </ul>
-<ol>
+<h2 id="补充-1"><a href="#补充-1" class="headerlink" title="补充"></a>补充</h2><ol>
 <li>浏览器中默认文字大小16px，行高18px</li>
-<li>点击鼠标获得焦点 label for=”id”<h2 id="浮动及清除浮动"><a href="#浮动及清除浮动" class="headerlink" title="浮动及清除浮动"></a>浮动及清除浮动</h2></li>
+<li>点击鼠标获得焦点 label for=”id”</li>
 </ol>
-<ul>
+<h2 id="浮动及清除浮动"><a href="#浮动及清除浮动" class="headerlink" title="浮动及清除浮动"></a>浮动及清除浮动</h2><ul>
 <li>flow:left|right</li>
 <li>特点：<ol>
 <li>设置后不占原来的位置，托标（行内元素浮动可设置宽高，因为脱标）</li>
@@ -2050,9 +2070,9 @@
 <li>默认是visible</li>
 <li>hidden</li>
 <li>scroll</li>
-<li>auto<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2></li>
+<li>auto</li>
 </ul>
-<ol>
+<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><ol>
 <li>静态定位<ul>
 <li>标准流下的效果</li>
 </ul>
@@ -2071,24 +2091,36 @@
 </li>
 </ol>
 <ul>
-<li>left：50%；父元素的一半，margin-left：-自己的一半<h2 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h2></li>
+<li>left：50%；父元素的一半，margin-left：-自己的一半</li>
+</ul>
+<h2 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h2><ul>
 <li>只有定位的元素（除static）才有层级关系</li>
 <li>默认值auto（0）<ul>
 <li>z-index相同，后来居上</li>
-<li>如果父元素设置了，值越大越靠前<h2 id="网页布局顺序"><a href="#网页布局顺序" class="headerlink" title="网页布局顺序"></a>网页布局顺序</h2></li>
+<li>如果父元素设置了，值越大越靠前</li>
 </ul>
 </li>
-<li>标准流 浮动 定位<h2 id="vertical-align"><a href="#vertical-align" class="headerlink" title="vertical-align"></a>vertical-align</h2></li>
+</ul>
+<h2 id="网页布局顺序"><a href="#网页布局顺序" class="headerlink" title="网页布局顺序"></a>网页布局顺序</h2><ul>
+<li>标准流 浮动 定位</li>
+</ul>
+<h2 id="vertical-align"><a href="#vertical-align" class="headerlink" title="vertical-align"></a>vertical-align</h2><ul>
 <li>行内块元素设置垂直居中的属性</li>
 <li>默认值 baseline，top，middle，bottom<ul>
-<li>图片垂直居中 设置行高和middle值<h2 id="元素隐藏"><a href="#元素隐藏" class="headerlink" title="元素隐藏"></a>元素隐藏</h2></li>
+<li>图片垂直居中 设置行高和middle值</li>
 </ul>
 </li>
+</ul>
+<h2 id="元素隐藏"><a href="#元素隐藏" class="headerlink" title="元素隐藏"></a>元素隐藏</h2><ul>
 <li>overflow:hidden</li>
 <li>display:none;display:block; 隐藏元素不占位置</li>
-<li>visibility:hidden<h2 id="logo内容移除"><a href="#logo内容移除" class="headerlink" title="logo内容移除"></a>logo内容移除</h2></li>
+<li>visibility:hidden</li>
+</ul>
+<h2 id="logo内容移除"><a href="#logo内容移除" class="headerlink" title="logo内容移除"></a>logo内容移除</h2><ul>
 <li>text-indent:-2000px;</li>
-<li>logo一般是给a设置背景图片，a要模式转换<h2 id="精灵图"><a href="#精灵图" class="headerlink" title="精灵图"></a>精灵图</h2></li>
+<li>logo一般是给a设置背景图片，a要模式转换</li>
+</ul>
+<h2 id="精灵图"><a href="#精灵图" class="headerlink" title="精灵图"></a>精灵图</h2><ul>
 <li>一种特殊的背景图片</li>
 <li>设置bg-img，使用fw的“打开”方式，找到横纵坐标</li>
 </ul>
