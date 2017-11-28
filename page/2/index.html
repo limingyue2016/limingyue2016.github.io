@@ -2223,7 +2223,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/01-html5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/02-html5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="明月">
@@ -2245,7 +2245,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/02/11/06-H5+c3/01-html5/" itemprop="url">
+                <a class="post-title-link" href="/2016/02/11/06-H5+c3/02-html5/" itemprop="url">
                   html5基础
                 </a>
               
@@ -2300,129 +2300,82 @@
       
         
           
-            <h1 id="html5"><a href="#html5" class="headerlink" title="html5"></a>html5</h1><h2 id="DOCTYPE"><a href="#DOCTYPE" class="headerlink" title="DOCTYPE"></a>DOCTYPE</h2><p><code>DOCTYPE</code>并不是<code>HTML标签</code>,而是一个<code>声明</code>,告诉浏览器按哪种规范解析</p>
-<h2 id="新的语义标签"><a href="#新的语义标签" class="headerlink" title="新的语义标签"></a>新的语义标签</h2><ul>
-<li>目的：有利于SEO和后期维护<ul>
-<li>header nav main article section aside footer</li>
+            <h1 id="html5"><a href="#html5" class="headerlink" title="html5"></a>html5</h1><h2 id="web存储"><a href="#web存储" class="headerlink" title="web存储"></a>web存储</h2><h3 id="使用特点"><a href="#使用特点" class="headerlink" title="使用特点"></a>使用特点</h3><ul>
+<li>设置读取方便(通过键值对)</li>
+<li>容量较大,<code>sessionStorage</code>大约5m,<code>localStorage</code>大约20m</li>
+<li>如果要保存<code>json</code>数据,可以使用<code>JSON.stringify()</code>将对象编码后保存</li>
 </ul>
-</li>
+<h3 id="window-sessionStorage"><a href="#window-sessionStorage" class="headerlink" title="window.sessionStorage"></a>window.sessionStorage</h3><ul>
+<li>生命周期为关闭浏览器窗口</li>
+<li>在同一个窗口下数据可以共享</li>
 </ul>
-<h2 id="新语义标签兼容问题"><a href="#新语义标签兼容问题" class="headerlink" title="新语义标签兼容问题"></a>新语义标签兼容问题</h2><ul>
-<li>兼容ie8以下<ul>
-<li>cc:ie6+tab </li>
+<h3 id="window-localStorage"><a href="#window-localStorage" class="headerlink" title="window.localStorage"></a>window.localStorage</h3><ul>
+<li>永久生效，除非手动删除</li>
+<li>可以多窗口共享</li>
 </ul>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--[if lte IE 8]&gt;</span></div><div class="line">    &lt;script src="js/html5shiv.min.js"&gt;&lt;/script&gt;   </div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
-<h2 id="input标签的新type属性"><a href="#input标签的新type属性" class="headerlink" title="input标签的新type属性"></a>input标签的新type属性</h2><p><img src="images/HTML5中的type.png" alt=""></p>
-<h2 id="input表单验证"><a href="#input表单验证" class="headerlink" title="input表单验证"></a>input表单验证</h2><ul>
-<li><code>email</code>自带格式</li>
-<li>对于没有自带验证效果的标签,就需要手动添加属性增加验证了<ul>
-<li><code>required</code> 当控件没有输入信息，会弹出提示信息</li>
-<li><code>pattern</code> 自定义规则 赋值正则表达式<ul>
-<li>自定义验证信息：</li>
-<li>oninvalid事件 //元素验证失败会触发 这个事件需要绑定给 对应的表单元素</li>
-<li>setCustomValidity()方法 //自定义验证信息</li>
-<li>输入时会弹出<code>oninput</code>绑定的代码</li>
-<li><img src="images/输入中.png" alt="输入中"></li>
-<li>验证失败时,会弹出<code>oninvalid</code>绑定的代码!</li>
-<li><a href="images/验证失败.png">验证失败</a></li>
-<li>自定义验证属性 </li>
-<li><img src="images/自定义验证.png" alt="自定义"></li>
-<li>代码<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"> <span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></div><div class="line">        email:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"userEmail"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">br</span>/&gt;</span></div><div class="line">        tel:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"tel"</span> <span class="attr">required</span> <span class="attr">pattern</span>=<span class="string">"[0-9]&#123;3&#125;"</span> <span class="attr">id</span>=<span class="string">"telInput"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">br</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">var telInput = document.getElementById("telInput");</div><div class="line">// 正在输入时</div><div class="line">telInput.oninput=function () &#123;</div><div class="line">    this.setCustomValidity("请正确输入哦");</div><div class="line">&#125;</div><div class="line">// 验证失败时</div><div class="line">telInput.oninvalid=function()&#123;</div><div class="line">    this.setCustomValidity("请不要输入火星的手机号好吗？");</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="新表单属性"><a href="#新表单属性" class="headerlink" title="新表单属性"></a>新表单属性</h2><ul>
-<li><code>placeholder</code>(占位符)<ul>
-<li>输入元素内默认显示一些提示信息,当用户输入之后自动消失</li>
-</ul>
-</li>
-<li><code>autofocus</code>(获取焦点)<ul>
-<li>当某一页有很多个可供输入的元素时,用户需要使用鼠标点选元素进行输入,为了提升用户体验,我们可以通过<code>autofocus</code>属性来指定页面中默认选中的元素</li>
-</ul>
-</li>
-</ul>
-<h2 id="新的表单元素"><a href="#新的表单元素" class="headerlink" title="新的表单元素"></a>新的表单元素</h2><ul>
-<li><p>datalist</p>
-<ul>
-<li>该元素规定了输入区域的选项列表,可以让用户有一些选项</li>
-<li>id:id属性,想要使用该datalist的元素需要通过list=id的方式来指定</li>
-<li>option:   <ul>
-<li>value制定具体的值</li>
-</ul>
-</li>
-<li><p>代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">网址:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"url"</span> <span class="attr">list</span>=<span class="string">"url_list"</span> <span class="attr">name</span>=<span class="string">"link"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">"url_list"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">label</span>=<span class="string">"W3School"</span> <span class="attr">value</span>=<span class="string">"http://www.W3School.com.cn"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">label</span>=<span class="string">"Google"</span> <span class="attr">value</span>=<span class="string">"http://www.google.com"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">label</span>=<span class="string">"Microsoft"</span> <span class="attr">value</span>=<span class="string">"http://www.microsoft.com"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></div><div class="line"></div><div class="line">电话: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"tel"</span> <span class="attr">list</span>=<span class="string">"tel_list"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">"tel_list"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"186xxx"</span> <span class="attr">label</span>=<span class="string">"移动"</span>&gt;</span>移动<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"187xxx"</span> <span class="attr">label</span>=<span class="string">"联通"</span>&gt;</span>联通<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"135xxx"</span> <span class="attr">label</span>=<span class="string">"天翼"</span>&gt;</span>天翼<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="多媒体"><a href="#多媒体" class="headerlink" title="多媒体"></a>多媒体</h2><ul>
-<li><p>audio标签</p>
-<ul>
-<li>src:音频的地址</li>
-<li>controls:音频播放控制器</li>
-<li>autoplay:自动播放</li>
-<li>loop:循环</li>
-<li>poster:指定视频不播放时显示的封面</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">  <span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">"song.ogg"</span> <span class="attr">controls</span>=<span class="string">"controls"</span> <span class="attr">autoplay</span> <span class="attr">loop</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">audio</span>&gt;</span></div><div class="line">``` </div><div class="line">* 由于音频格式在不同浏览器中支持情况不同,考虑兼容性问题,我们需要使用下述代码</div><div class="line">* source:指定多个音频,如果找到了当前浏览器支持的,那么会直接使用,如果所有的`source`标签格式都不支持,会显示最后的文本内容</div><div class="line">* src:音频的地址</div><div class="line"></div><div class="line">```html</div><div class="line">      <span class="tag">&lt;<span class="name">audio</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"song.ogg"</span> <span class="attr">type</span>=<span class="string">"audio/ogg"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"song.mp3"</span> <span class="attr">type</span>=<span class="string">"audio/mpeg"</span>&gt;</span></div><div class="line">          你的浏览器不支持此种格式</div><div class="line">      <span class="tag">&lt;/<span class="name">audio</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>video标签 </p>
-<ul>
-<li>用法跟audio一样</li>
-</ul>
-</li>
-</ul>
-<h2 id="两种进度条"><a href="#两种进度条" class="headerlink" title="两种进度条"></a>两种进度条</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meter value=&quot;.5&quot;&gt;&lt;/meter&gt; //value(0-1)</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;progress value=&quot;50&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;  //value(0-100)</div></pre></td></tr></table></figure>
-<h2 id="Dom语法"><a href="#Dom语法" class="headerlink" title="Dom语法"></a>Dom语法</h2><ul>
-<li>document.querySelector()<blockquote>
-<p>可以传入的选择器 还有CSS3的选择器 获取满足条件的第一个元素 从上往下 查找</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><blockquote>
+<p>两种存储方式,只是前缀不同,调用方法是一致的</p>
 </blockquote>
-</li>
-<li>document.querySelectorAll()<blockquote>
-<p>返回数组</p>
-</blockquote>
-</li>
-<li>classList<blockquote>
-<p>这个元素返回的是dom元素的class 列表,这个属性本身是只读的，但是我们可以通过几个方法去操作元素的class</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">setItem(key, value) 设置存储内容</div><div class="line">getItem(key) 读取存储内容</div><div class="line">removeItem(key) 删除键值为key的存储内容</div><div class="line">clear() 清空所有存储内容</div><div class="line">key(n) 以索引值来获取存储内容</div></pre></td></tr></table></figure>
+<h2 id="地理定位"><a href="#地理定位" class="headerlink" title="地理定位"></a>地理定位</h2><h3 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h3><ul>
+<li>语义地理位置属于私密信息,所以浏览器会弹出提示框,在征得用户允许的情况下再获取位置</li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">navigator.geolocation.getCurrentPosition(successCallback, errorCallback, options) 获取当前地理信息</div><div class="line"></div><div class="line">navigator.watchPosition(successCallback, errorCallback, options) 重复获取当前地理信息</div><div class="line">​    </div><div class="line">当成功获取地理信息后，会调用succssCallback，并返回一个包含位置信息的对象position。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">navigator.geolocation.getCurrentPosition(function(position)&#123;</div><div class="line">    // 定位成功会调用该方法</div><div class="line">    // position.coords.latitude 纬度</div><div class="line">    // position.coords.longitude 经度</div><div class="line">    // position.coords.accuracy 精度</div><div class="line">    // position.coords.altitude 海拔高度</div><div class="line">&#125;, function(error)&#123;</div><div class="line">    // 定位失败会调用该方法</div><div class="line">    // error 是错误信息</div><div class="line">&#125;, )</div></pre></td></tr></table></figure>
+<h2 id="全屏幕"><a href="#全屏幕" class="headerlink" title="全屏幕"></a>全屏幕</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><ul>
+<li>基础语法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">requestFullScreen() 开启全屏显示</div><div class="line">cancleFullScreen() 关闭全屏显示</div></pre></td></tr></table></figure>
 <ul>
-<li><strong>可用方法：</strong><ul>
-<li><strong>add</strong> ： 添加一个 class 到元素的 class 列表中</li>
-<li><strong>remove</strong> ： 从元素的 class 列表中移除一个 class</li>
-<li><strong>toggle</strong> ： 切换一个 class 是否存在于一个元素的 class 列表中</li>
-<li><strong>contains</strong> ： 查询一个指定的 class 是否存在于元素的 class 列表中</li>
+<li>使用注意:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">不同浏览器需要添加前缀如：</div><div class="line">webkitRequestFullScreen、mozRequestFullScreen</div><div class="line">webkitCancleFullScreen、mozCancleFullScreen</div></pre></td></tr></table></figure>
+<h2 id="4、网络连接事件"><a href="#4、网络连接事件" class="headerlink" title="4、网络连接事件"></a>4、网络连接事件</h2><h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><ul>
+<li>获取网络状态</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.navigator.onLine</div></pre></td></tr></table></figure>
+<ul>
+<li>网络连接,断开事件</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 网络连接</span></div><div class="line"><span class="built_in">window</span>.ononline = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="string">'网络已连接'</span>);</div><div class="line">	&#125;</div><div class="line"><span class="comment">// 网络断开</span></div><div class="line"><span class="built_in">window</span>.onoffline= <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="string">'网络已断开'</span>);</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h2 id="5、文件读取"><a href="#5、文件读取" class="headerlink" title="5、文件读取"></a>5、文件读取</h2><h3 id="获取文件"><a href="#获取文件" class="headerlink" title="获取文件"></a>获取文件</h3><ul>
+<li>由于<code>File</code>标签支持多文件上传,所以我们想要获取到选取的文件,需要配合索引</li>
+</ul>
+<ul>
+<li>语法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 其中this为file标签</div><div class="line">    this.files[0]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><p>读取文件需要使用js对象<code>FileReader</code><br>​    </p>
+<ul>
+<li>基础语法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var reader = new FileReader; //实例化一个对象</div><div class="line">reader.readAsDataURL(this.files[0]) //以DataURL形式读取文件 获取的值可以用在任意通过链接指定的地方</div><div class="line"></div><div class="line">// 通过onload事件监测加载完毕</div><div class="line">reader.onload = function ()&#123;</div><div class="line">     // result 就是我们需要的结果</div><div class="line"> console.log(this.result);</div><div class="line">     //可以用在指定连接地址的元素中比如</div><div class="line">         // 设置图片</div><div class="line">     	document.querySelector(&apos;#img&apos;).src = this.result;</div><div class="line">     	// 设置图像</div><div class="line">document.querySelector(&quot;#video&quot;).src= this.result;</div><div class="line">// 设置CSS</div><div class="line">document.querySelector(&quot;#link&quot;).href = this.result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="6、文件拖拽"><a href="#6、文件拖拽" class="headerlink" title="6、文件拖拽"></a>6、文件拖拽</h2><h3 id="拖拽元素"><a href="#拖拽元素" class="headerlink" title="拖拽元素"></a>拖拽元素</h3><p>添加了<code>draggable=&quot;true&quot;</code> 属性即可实现拖拽,除了默认支持拖拽的元素(图片,链接)</p>
+<h3 id="目标元素"><a href="#目标元素" class="headerlink" title="目标元素"></a>目标元素</h3><p>拖拽元素的放置位置,任意元素都可以设置为目标元素</p>
+<h3 id="支持事件"><a href="#支持事件" class="headerlink" title="支持事件"></a>支持事件</h3><ul>
+<li>拖拽元素</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ondrag 		应用于拖拽元素，整个拖拽过程都会调用</div><div class="line">ondragstart	应用于拖拽元素，当拖拽开始时调用</div><div class="line">ondragleave	应用于拖拽元素，当鼠标离开拖拽元素时调用</div><div class="line">ondragend	应用于拖拽元素，当拖拽结束时调用</div></pre></td></tr></table></figure>
+<ul>
+<li>目标元素</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">目标元素</div><div class="line">ondragenter	应用于目标元素，当拖拽元素进入时调用</div><div class="line">ondragover	应用于目标元素，当停留在目标元素上时调用</div><div class="line">ondrop		应用于目标元素，当在目标元素上松开鼠标时调用</div><div class="line">ondragleave	应用于目标元素，当鼠标离开目标元素时调用</div></pre></td></tr></table></figure>
+<ul>
+<li>使用注意:<ul>
+<li>如果想要调用ondrop事件,必须在<code>ondragover</code>中使用事件参数阻止浏览器的默认行为</li>
 </ul>
 </li>
 </ul>
-</blockquote>
-</li>
-</ul>
-<h2 id="data-添加属性"><a href="#data-添加属性" class="headerlink" title="data-添加属性"></a>data-添加属性</h2><ul>
-<li><strong>语法:</strong><ul>
-<li>data-:这个是固定格式</li>
-<li>data-xxx:xxx是自定义的值</li>
-</ul>
-</li>
-<li><strong>注意:</strong><ul>
-<li>属性名不应该包含任何大写字母，并且在前缀 “data-“ 之后必须有至少一个字符</li>
-<li>属性值可以是任意字符串</li>
-<li>不要使用纯数字,特殊字符等作为自定义值</li>
-<li>如果data之后使用<code>-</code>连接多个值,取值时,需要使用<code>驼峰命名</code></li>
-</ul>
-</li>
-<li>获取：<ul>
-<li>对象.dataset 返回是自定义属性的对象，可以<code>.</code>出想要的属性值或者 也可以 对象.dataset[“属性名”]</li>
-<li>如果定义的时候使用了大写字母获取的时候 会变成小写,我们需要通过小写字母来获取</li>
-<li>如果 我们使用 多个 - 进行分割会去掉横线,横线之后的 首字母变为大写</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">thirdBox.ondragover = function (argument) &#123;</div><div class="line">				// 在 ondragover时 必须阻止默认行为 才能够 看到拖放效果</div><div class="line">				argument.preventDefault();</div><div class="line">			&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>数据传递<ul>
+<li>配合事件对象的<code>dataTransfor</code> 可以实现数据的传递</li>
+<li>setData(key,value) 设置数据</li>
+<li>getData(key) 获取数据</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//dom1为任意的元素</div><div class="line">dom1.ondragstart = function (argument) &#123;</div><div class="line">				argument.dataTransfer.setData(&quot;fox&quot;,this.id);</div><div class="line">			&#125;</div><div class="line"></div><div class="line">//dom2为拖放的目标元素</div><div class="line">dom2.ondrop = function (argument) &#123;</div><div class="line">				console.log(argument);</div><div class="line">				var fromBoxID =argument.dataTransfer.getData(&quot;fox&quot;);</div></pre></td></tr></table></figure>
 
           
         
@@ -2654,7 +2607,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2699,7 +2652,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
