@@ -855,6 +855,431 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/01/node/node0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/01/node/node0/" itemprop="url">
+                  Node基础
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-01T00:00:00+08:00">
+                2016-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Node-介绍"><a href="#Node-介绍" class="headerlink" title="Node 介绍"></a>Node 介绍</h2><ul>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="external">官网</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/Node.js" target="_blank" rel="external">维基百科</a></li>
+<li><a href="http://www.infoq.com/cn/articles/what-is-nodejs" target="_blank" rel="external">深入浅出Node.js（一）：什么是Node.js</a></li>
+<li><p><a href="http://blog.jobbole.com/1254/" target="_blank" rel="external">Node.js 究竟是什么？</a></p>
+</li>
+<li><p>Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine. </p>
+<ul>
+<li>NodeJS 是一个构建与 Chrome V8 引擎之上的一个 JavaScript 运行时环境</li>
+<li>Node 可以像浏览器一样去解析和执行 JavaScript 代码</li>
+<li>JavaScript 是一个动态脚本语言<ul>
+<li>预编译</li>
+<li>再执行</li>
+</ul>
+</li>
+<li>JavaScript 之前的解析和执行一直停留在浏览器环境<ul>
+<li>通过编译解析引擎：解析和执行 JavaScript 脚本代码</li>
+<li>Chrome V8 引擎是所有浏览器里面解析和执行 JS 代码最快的</li>
+<li>Node 作者做了一件事儿，把 Chrome 的 V8 引擎移植出来了</li>
+<li>又基于 V8 引擎至上构建了一系列的 API</li>
+<li>在 Node 中，没有界面，不再需要关心 HTML、CSS</li>
+<li>只需要关注 JavaScript</li>
+<li>和 DOM、Style 等没有任何关系了</li>
+<li>纯粹的 JavaScript 代码：Ecmascript<ul>
+<li>var</li>
+<li>function</li>
+<li>Object</li>
+<li>Date</li>
+<li>Math</li>
+<li>x window</li>
+<li>x document</li>
+<li>文件操作</li>
+<li>网络操作</li>
+<li>让 JavaScript 代码具有了服务器编程能力</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. <ul>
+<li>事件驱动</li>
+<li>非阻塞IO模型：大量的异步编程接口<ul>
+<li>充满了类似于客户端中 ajax 一样的 API</li>
+<li>异步：回调</li>
+</ul>
+</li>
+<li>跨平台</li>
+<li>单线程</li>
+<li>轻量和高效</li>
+</ul>
+</li>
+<li>Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.<ul>
+<li>npm 是世界上最大的开源库生态系统</li>
+<li>在 npm  上发布的第三方包已经接近 35 万个之多</li>
+<li>包只能帮你解决某一个单一的问题，解决不了你的业务</li>
+</ul>
+</li>
+</ul>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><h3 id="可以做什么"><a href="#可以做什么" class="headerlink" title="可以做什么"></a>可以做什么</h3><p>Node 说白了就是为 JavaScript 提供了服务端编程的能力（不处理UI）。</p>
+<ul>
+<li>Java、PHP、Python、.Net、Ruby 等 能做的 Node 都能做</li>
+<li>网站开发，提供网站服务端</li>
+<li>数据库交互</li>
+<li>移动应用：后台</li>
+<li>网络游戏：后台</li>
+<li>CLI（Command Line Interface） 程序：<ul>
+<li>git</li>
+<li>gulp</li>
+<li>hexo</li>
+<li>Node 具有开发命令行工具的能力<ul>
+<li>webpack 打包构建工具</li>
+<li>http-server 在终端中快速提供一个服务</li>
+<li>browser-sync 提供服务，提供浏览器自动刷新的能力</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>虽然 Node 很强大，而且也是前端进阶必备的一个节能。</p>
+<ul>
+<li>对 IO 操作比较频繁的操作<ul>
+<li>文件读写</li>
+<li>和数据库交互：网络数据IO</li>
+</ul>
+</li>
+<li>实时通信<ul>
+<li>聊天：微信、QQ、直播</li>
+</ul>
+</li>
+</ul>
+<h3 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h3><ul>
+<li>朴灵：《深入浅出Node.js》</li>
+<li>《Node.js 权威指南》：官方API详解<ul>
+<li>参考 API</li>
+</ul>
+</li>
+<li>JavaScript 标准参考教程（alpha）：<a href="http://javascript.ruanyifeng.com/" target="_blank" rel="external">http://javascript.ruanyifeng.com/</a></li>
+<li>Node 入门：<a href="http://www.nodebeginner.org/index-zh-cn.html" target="_blank" rel="external">http://www.nodebeginner.org/index-zh-cn.html</a></li>
+<li>官方API文档：<a href="https://nodejs.org/dist/latest-v6.x/docs/api/" target="_blank" rel="external">https://nodejs.org/dist/latest-v6.x/docs/api/</a></li>
+<li>中文文档（版本比较旧，凑合看）：<a href="http://www.nodeclass.com/api/node.html" target="_blank" rel="external">http://www.nodeclass.com/api/node.html</a></li>
+<li>CNODE社区：<a href="http://cnodejs.org" target="_blank" rel="external">http://cnodejs.org</a></li>
+<li>CNODE-新手入门：<a href="http://cnodejs.org/getstart" target="_blank" rel="external">http://cnodejs.org/getstart</a></li>
+</ul>
+<hr>
+<h2 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h2><h3 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h3><p>各个环境版本下载地址：<a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a></p>
+<h4 id="如何确认是否有-Node-环境"><a href="#如何确认是否有-Node-环境" class="headerlink" title="如何确认是否有 Node 环境"></a>如何确认是否有 Node 环境</h4><p>打开终端，在终端中输入以下命令：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node --version</div></pre></td></tr></table></figure>
+<p>如果能看到类似于 <code>v6.8.0</code> 这样的版本号（版本号不一定和我的一致）输出，<br>说明当前计算机具有 Node 环境。</p>
+<h4 id="普通安装方式（下一步下一步）"><a href="#普通安装方式（下一步下一步）" class="headerlink" title="普通安装方式（下一步下一步）"></a>普通安装方式（下一步下一步）</h4><h4 id="使用-nvm（Node-version-manager）-安装和管理-Node（补充）"><a href="#使用-nvm（Node-version-manager）-安装和管理-Node（补充）" class="headerlink" title="使用 nvm（Node version manager） 安装和管理 Node（补充）"></a>使用 nvm（Node version manager） 安装和管理 Node（补充）</h4><h3 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h3><h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><h3 id="构建-HTTP-服务"><a href="#构建-HTTP-服务" class="headerlink" title="构建 HTTP 服务"></a>构建 HTTP 服务</h3><h3 id="path-环境变量"><a href="#path-环境变量" class="headerlink" title="path 环境变量"></a>path 环境变量</h3><p>问题：为什么在终端的任何目录下输入 <code>node</code> 命令，<br>执行的都是 <code>node.exe</code> 这个可执行文件？</p>
+<p>核心就在于可以通过操作系统的终端启动或者打开软件（GUI、CLI）：</p>
+<p>当你在终端输入一个字符串的时候：</p>
+<ul>
+<li>终端会在当前目录下找和该字符串相关的执行文件</li>
+<li>如果找不到，优先进入用户 path 环境变量<ul>
+<li>path 换件变量通过 <strong>英文分号</strong> 作为分割保存了多个目录</li>
+<li>终端会一个一个进入该目录找你刚才输入的字符串所对应的可执行文件</li>
+<li>如果在其中一个目录找到，则直接打开执行</li>
+<li>如果在用户 path 环境变量中找不到，则进入系统 path 换将变量</li>
+<li>查找规则如上，如果最后还找不到，则报错：<code>&#39;A&#39; 不是内部或外部命令，也不是可运行的程序或批处理文件。</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Node-中的-JavaScript"><a href="#Node-中的-JavaScript" class="headerlink" title="Node 中的 JavaScript"></a>Node 中的 JavaScript</h2><h3 id="Ecmascript"><a href="#Ecmascript" class="headerlink" title="Ecmascript"></a>Ecmascript</h3><ul>
+<li>var</li>
+<li>if else </li>
+<li>function </li>
+<li>{}</li>
+<li>Object</li>
+<li>Number</li>
+<li>String</li>
+<li>Date</li>
+<li>Math</li>
+<li>…</li>
+<li>console</li>
+<li>定时器函数<ul>
+<li>setTimeout clearTimeout</li>
+<li>setInterval clearInterval</li>
+</ul>
+</li>
+<li>global</li>
+</ul>
+<h3 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h3><ul>
+<li>核心模块是由 Node 环境平台本身提供的</li>
+<li>以一个唯一的核心模块标识名称进行暴露</li>
+<li>使用的时候，直接通过 <code>require</code> 函数进行加载</li>
+</ul>
+<p>Node 把绝大多数的 API 都封装到了一个具名的核心模块中了，例如文件操作的：<code>fs</code><br>网络操作的 <code>http</code> 等。</p>
+<p>也就是说你如果想要使用核心模块，必须先加载才可以使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> 起个名字 = <span class="built_in">require</span>(<span class="string">'唯一的核心模块标识名称'</span>)</div></pre></td></tr></table></figure>
+<h3 id="第三方模块（由社区提供）"><a href="#第三方模块（由社区提供）" class="headerlink" title="第三方模块（由社区提供）"></a>第三方模块（由社区提供）</h3><ul>
+<li>由社区提供，也就是所谓的第三方<ul>
+<li>可以是公司</li>
+<li>可以是个人</li>
+</ul>
+</li>
+<li>举个例子：moment 时间处理库</li>
+</ul>
+<p>如何在 Node 中使用第三方包：</p>
+<ol>
+<li>通过 <code>npm</code> 下载</li>
+<li>通过 <code>require</code> 函数引包</li>
+<li>查看第三方包的 API 文档，<code>try-try-see</code></li>
+</ol>
+<h3 id="用户自定义模块"><a href="#用户自定义模块" class="headerlink" title="用户自定义模块"></a>用户自定义模块</h3><ul>
+<li>require</li>
+<li>module.exports</li>
+</ul>
+<p>在 Node 中，也提供了一种所谓的 JavaScript 模块化解决方案（类似于之前学过的 requirejs）：</p>
+<p>在 Node 中对模块化的支持非常好，<br>也就是说 Node 开发就是结合：</p>
+<ul>
+<li>Ecmascript</li>
+<li>核心模块</li>
+<li>第三方模块</li>
+<li>自己写的模块</li>
+</ul>
+<p>结合以上的功能去开发 Node 应用程序，这里先宏观了解一下，<br>随着课程的不断深入，会讲解到具体的模块加载机制及细节。</p>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/01/node/node2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="明月">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/wuliannan.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小博客园">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/01/node/node2/" itemprop="url">
+                  文件操作和HTTP服务
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-01T00:00:00+08:00">
+                2016-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 引包</span></div><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 读取文件</span></div><div class="line"><span class="comment">// 第一个参数：要读取文件的路径</span></div><div class="line"><span class="comment">// 第二个参数：回调函数</span></div><div class="line"><span class="comment">//    err</span></div><div class="line"><span class="comment">//      如果操作失败，err 是一个错误对象，data undefined</span></div><div class="line"><span class="comment">//      如果操作成功，err 是一个 null，data 是 读取到的数据</span></div><div class="line"><span class="comment">//    data</span></div><div class="line"><span class="comment">//      读取到的文件数据，取决于第一个参数是否是错误对象</span></div><div class="line">fs.readFile(<span class="string">'../1.md'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (err) &#123;</div><div class="line">    <span class="comment">// console.log('读取文件失败了')</span></div><div class="line">    <span class="built_in">console</span>.log(err)</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="comment">// console.log(data)</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'读取文件的回调函数执行了'</span>)</div><div class="line">    <span class="built_in">console</span>.log(data.toString())</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="文件写入"><a href="#文件写入" class="headerlink" title="文件写入"></a>文件写入</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 写文件</span></div><div class="line"><span class="comment">// 第一个参数：文件路径</span></div><div class="line"><span class="comment">//    如果没有，会自动新建，如果已存在，则会将内容覆盖</span></div><div class="line"><span class="comment">// 第二个参数：回调函数</span></div><div class="line"><span class="comment">//    err：如果操作成功，err 就是 null，如果操作失败，err 就是错误对象</span></div><div class="line">fs.writeFile(<span class="string">'./data/a.txt'</span>, <span class="string">'你好，NOde.js'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (err) &#123;</div><div class="line">    <span class="comment">// 这里使用 return 的目的是不让代码继续往后执行（后面是逻辑是针对成功之后的操作）</span></div><div class="line">    <span class="comment">// 使用 return 的方式就是不用再去 else 嵌套了</span></div><div class="line">    <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'写入文件失败了'</span>)</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'写入文件成功'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="构建-HTTP-服务"><a href="#构建-HTTP-服务" class="headerlink" title="构建 HTTP 服务"></a>构建 HTTP 服务</h2><h3 id="编写一个响应-hello-world-的服务"><a href="#编写一个响应-hello-world-的服务" class="headerlink" title="编写一个响应 hello world 的服务"></a>编写一个响应 <code>hello world</code> 的服务</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 1. 通过 http.createServer 创建一个服务，得到一个 server 服务实例</span></div><div class="line"><span class="keyword">var</span> server = http.createServer()</div><div class="line"></div><div class="line"><span class="keyword">var</span> count = <span class="number">0</span></div><div class="line"></div><div class="line"><span class="comment">// 2. 为 server 设置 request 请求事件的请求处理函数</span></div><div class="line"><span class="comment">//    request 请求事件是所有请求的入口</span></div><div class="line"><span class="comment">//      也就是说任务请求都会触发该事件，然后执行对应的回调处理函数</span></div><div class="line"><span class="comment">//    第二个参数 callback 需要接收两个参数</span></div><div class="line"><span class="comment">//    Request</span></div><div class="line"><span class="comment">//      请求对象：用来获取客户端的一些数据</span></div><div class="line"><span class="comment">//    Response</span></div><div class="line"><span class="comment">//      响应对象：用来给客户端发送响应数据</span></div><div class="line"><span class="comment">//      res.write</span></div><div class="line"><span class="comment">//        write 可以使用多次</span></div><div class="line"><span class="comment">//      res.end</span></div><div class="line"><span class="comment">//        write 之后一定要通过 res.end 结束响应</span></div><div class="line"><span class="comment">//        res.end 可以在结束响应的同时，直接发送响应数据</span></div><div class="line">server.on(<span class="string">'request'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="comment">// res.end('hello world')</span></div><div class="line"></div><div class="line">  <span class="comment">// 一个请求对应一个响应，发送多次响应数据是不管用的</span></div><div class="line">  <span class="comment">// 如果发送的数据是中文，要在响应头中加入 Content-Type 指定 charset 具体编码才可以</span></div><div class="line">  res.writeHead(<span class="number">200</span>, &#123;</div><div class="line">    <span class="string">'Content-Type'</span>: <span class="string">'text/plain; charset=utf-8'</span></div><div class="line">  &#125;)</div><div class="line"></div><div class="line">  <span class="comment">// 发送响应数据</span></div><div class="line">  res.end(<span class="string">'河北人民非常 happy：，被拆了'</span> + (++count) + <span class="string">'套房子'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 3. 绑定端口号，启动服务</span></div><div class="line">server.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'服务已启动，请访问: http://127.0.0.1:3000/'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="根据不同请求输出不同响应数据"><a href="#根据不同请求输出不同响应数据" class="headerlink" title="根据不同请求输出不同响应数据"></a>根据不同请求输出不同响应数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line"></div><div class="line"><span class="keyword">var</span> server = http.createServer()</div><div class="line"></div><div class="line"><span class="comment">// 在请求处理函数中，通过 req.url 获取请求路径作不同的响应处理</span></div><div class="line">server.on(<span class="string">'request'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="comment">// 可以通过 req 请求对象的 url 属性来获取请求路径</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'请求路径：'</span>, req.url)</div><div class="line">  </div><div class="line">  <span class="keyword">var</span> url = req.url</div><div class="line">  </div><div class="line">  <span class="keyword">if</span> (url === <span class="string">'/'</span>) &#123;</div><div class="line">    res.end(<span class="string">'home index'</span>)</div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url === <span class="string">'/a'</span>) &#123;</div><div class="line">    res.end(<span class="string">'aaa index'</span>)</div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url === <span class="string">'/about'</span>) &#123;</div><div class="line">    <span class="comment">// 建议：如果发送的数据是 HTML 格式字符串，最好加入 Content-Type 响应头</span></div><div class="line">    res.writeHead(<span class="number">200</span>, &#123;</div><div class="line">      <span class="string">'Content-Type'</span>: <span class="string">'text/html; charset=utf-8'</span></div><div class="line">    &#125;)</div><div class="line">    res.end(<span class="string">'&lt;div&gt;&lt;h2&gt;erji biaoti&lt;/h2&gt;&lt;p&gt;this is paragraph&lt;/p&gt;&lt;h1&gt;about me&lt;/h1&gt;&lt;/div&gt;'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">server.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'running...'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="实现-Apache-的功能：静态资源服务器"><a href="#实现-Apache-的功能：静态资源服务器" class="headerlink" title="实现 Apache 的功能：静态资源服务器"></a>实现 Apache 的功能：静态资源服务器</h3><h3 id="构建动态网站"><a href="#构建动态网站" class="headerlink" title="构建动态网站"></a>构建动态网站</h3><hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/01/node/node/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1664,431 +2089,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/01/node/node2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/01/node/node2/" itemprop="url">
-                  文件操作和HTTP服务
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-01T00:00:00+08:00">
-                2016-05-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 引包</span></div><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 读取文件</span></div><div class="line"><span class="comment">// 第一个参数：要读取文件的路径</span></div><div class="line"><span class="comment">// 第二个参数：回调函数</span></div><div class="line"><span class="comment">//    err</span></div><div class="line"><span class="comment">//      如果操作失败，err 是一个错误对象，data undefined</span></div><div class="line"><span class="comment">//      如果操作成功，err 是一个 null，data 是 读取到的数据</span></div><div class="line"><span class="comment">//    data</span></div><div class="line"><span class="comment">//      读取到的文件数据，取决于第一个参数是否是错误对象</span></div><div class="line">fs.readFile(<span class="string">'../1.md'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (err) &#123;</div><div class="line">    <span class="comment">// console.log('读取文件失败了')</span></div><div class="line">    <span class="built_in">console</span>.log(err)</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="comment">// console.log(data)</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'读取文件的回调函数执行了'</span>)</div><div class="line">    <span class="built_in">console</span>.log(data.toString())</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="文件写入"><a href="#文件写入" class="headerlink" title="文件写入"></a>文件写入</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 写文件</span></div><div class="line"><span class="comment">// 第一个参数：文件路径</span></div><div class="line"><span class="comment">//    如果没有，会自动新建，如果已存在，则会将内容覆盖</span></div><div class="line"><span class="comment">// 第二个参数：回调函数</span></div><div class="line"><span class="comment">//    err：如果操作成功，err 就是 null，如果操作失败，err 就是错误对象</span></div><div class="line">fs.writeFile(<span class="string">'./data/a.txt'</span>, <span class="string">'你好，NOde.js'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (err) &#123;</div><div class="line">    <span class="comment">// 这里使用 return 的目的是不让代码继续往后执行（后面是逻辑是针对成功之后的操作）</span></div><div class="line">    <span class="comment">// 使用 return 的方式就是不用再去 else 嵌套了</span></div><div class="line">    <span class="keyword">return</span> <span class="built_in">console</span>.log(<span class="string">'写入文件失败了'</span>)</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'写入文件成功'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<hr>
-<h2 id="构建-HTTP-服务"><a href="#构建-HTTP-服务" class="headerlink" title="构建 HTTP 服务"></a>构建 HTTP 服务</h2><h3 id="编写一个响应-hello-world-的服务"><a href="#编写一个响应-hello-world-的服务" class="headerlink" title="编写一个响应 hello world 的服务"></a>编写一个响应 <code>hello world</code> 的服务</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 1. 通过 http.createServer 创建一个服务，得到一个 server 服务实例</span></div><div class="line"><span class="keyword">var</span> server = http.createServer()</div><div class="line"></div><div class="line"><span class="keyword">var</span> count = <span class="number">0</span></div><div class="line"></div><div class="line"><span class="comment">// 2. 为 server 设置 request 请求事件的请求处理函数</span></div><div class="line"><span class="comment">//    request 请求事件是所有请求的入口</span></div><div class="line"><span class="comment">//      也就是说任务请求都会触发该事件，然后执行对应的回调处理函数</span></div><div class="line"><span class="comment">//    第二个参数 callback 需要接收两个参数</span></div><div class="line"><span class="comment">//    Request</span></div><div class="line"><span class="comment">//      请求对象：用来获取客户端的一些数据</span></div><div class="line"><span class="comment">//    Response</span></div><div class="line"><span class="comment">//      响应对象：用来给客户端发送响应数据</span></div><div class="line"><span class="comment">//      res.write</span></div><div class="line"><span class="comment">//        write 可以使用多次</span></div><div class="line"><span class="comment">//      res.end</span></div><div class="line"><span class="comment">//        write 之后一定要通过 res.end 结束响应</span></div><div class="line"><span class="comment">//        res.end 可以在结束响应的同时，直接发送响应数据</span></div><div class="line">server.on(<span class="string">'request'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="comment">// res.end('hello world')</span></div><div class="line"></div><div class="line">  <span class="comment">// 一个请求对应一个响应，发送多次响应数据是不管用的</span></div><div class="line">  <span class="comment">// 如果发送的数据是中文，要在响应头中加入 Content-Type 指定 charset 具体编码才可以</span></div><div class="line">  res.writeHead(<span class="number">200</span>, &#123;</div><div class="line">    <span class="string">'Content-Type'</span>: <span class="string">'text/plain; charset=utf-8'</span></div><div class="line">  &#125;)</div><div class="line"></div><div class="line">  <span class="comment">// 发送响应数据</span></div><div class="line">  res.end(<span class="string">'河北人民非常 happy：，被拆了'</span> + (++count) + <span class="string">'套房子'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 3. 绑定端口号，启动服务</span></div><div class="line">server.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'服务已启动，请访问: http://127.0.0.1:3000/'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="根据不同请求输出不同响应数据"><a href="#根据不同请求输出不同响应数据" class="headerlink" title="根据不同请求输出不同响应数据"></a>根据不同请求输出不同响应数据</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line"></div><div class="line"><span class="keyword">var</span> server = http.createServer()</div><div class="line"></div><div class="line"><span class="comment">// 在请求处理函数中，通过 req.url 获取请求路径作不同的响应处理</span></div><div class="line">server.on(<span class="string">'request'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="comment">// 可以通过 req 请求对象的 url 属性来获取请求路径</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'请求路径：'</span>, req.url)</div><div class="line">  </div><div class="line">  <span class="keyword">var</span> url = req.url</div><div class="line">  </div><div class="line">  <span class="keyword">if</span> (url === <span class="string">'/'</span>) &#123;</div><div class="line">    res.end(<span class="string">'home index'</span>)</div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url === <span class="string">'/a'</span>) &#123;</div><div class="line">    res.end(<span class="string">'aaa index'</span>)</div><div class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (url === <span class="string">'/about'</span>) &#123;</div><div class="line">    <span class="comment">// 建议：如果发送的数据是 HTML 格式字符串，最好加入 Content-Type 响应头</span></div><div class="line">    res.writeHead(<span class="number">200</span>, &#123;</div><div class="line">      <span class="string">'Content-Type'</span>: <span class="string">'text/html; charset=utf-8'</span></div><div class="line">    &#125;)</div><div class="line">    res.end(<span class="string">'&lt;div&gt;&lt;h2&gt;erji biaoti&lt;/h2&gt;&lt;p&gt;this is paragraph&lt;/p&gt;&lt;h1&gt;about me&lt;/h1&gt;&lt;/div&gt;'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">server.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'running...'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="实现-Apache-的功能：静态资源服务器"><a href="#实现-Apache-的功能：静态资源服务器" class="headerlink" title="实现 Apache 的功能：静态资源服务器"></a>实现 Apache 的功能：静态资源服务器</h3><h3 id="构建动态网站"><a href="#构建动态网站" class="headerlink" title="构建动态网站"></a>构建动态网站</h3><hr>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/01/node/node0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="明月">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/wuliannan.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小博客园">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/01/node/node0/" itemprop="url">
-                  Node基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-01T00:00:00+08:00">
-                2016-05-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Node-介绍"><a href="#Node-介绍" class="headerlink" title="Node 介绍"></a>Node 介绍</h2><ul>
-<li><a href="https://nodejs.org/en/" target="_blank" rel="external">官网</a></li>
-<li><a href="https://zh.wikipedia.org/wiki/Node.js" target="_blank" rel="external">维基百科</a></li>
-<li><a href="http://www.infoq.com/cn/articles/what-is-nodejs" target="_blank" rel="external">深入浅出Node.js（一）：什么是Node.js</a></li>
-<li><p><a href="http://blog.jobbole.com/1254/" target="_blank" rel="external">Node.js 究竟是什么？</a></p>
-</li>
-<li><p>Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine. </p>
-<ul>
-<li>NodeJS 是一个构建与 Chrome V8 引擎之上的一个 JavaScript 运行时环境</li>
-<li>Node 可以像浏览器一样去解析和执行 JavaScript 代码</li>
-<li>JavaScript 是一个动态脚本语言<ul>
-<li>预编译</li>
-<li>再执行</li>
-</ul>
-</li>
-<li>JavaScript 之前的解析和执行一直停留在浏览器环境<ul>
-<li>通过编译解析引擎：解析和执行 JavaScript 脚本代码</li>
-<li>Chrome V8 引擎是所有浏览器里面解析和执行 JS 代码最快的</li>
-<li>Node 作者做了一件事儿，把 Chrome 的 V8 引擎移植出来了</li>
-<li>又基于 V8 引擎至上构建了一系列的 API</li>
-<li>在 Node 中，没有界面，不再需要关心 HTML、CSS</li>
-<li>只需要关注 JavaScript</li>
-<li>和 DOM、Style 等没有任何关系了</li>
-<li>纯粹的 JavaScript 代码：Ecmascript<ul>
-<li>var</li>
-<li>function</li>
-<li>Object</li>
-<li>Date</li>
-<li>Math</li>
-<li>x window</li>
-<li>x document</li>
-<li>文件操作</li>
-<li>网络操作</li>
-<li>让 JavaScript 代码具有了服务器编程能力</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. <ul>
-<li>事件驱动</li>
-<li>非阻塞IO模型：大量的异步编程接口<ul>
-<li>充满了类似于客户端中 ajax 一样的 API</li>
-<li>异步：回调</li>
-</ul>
-</li>
-<li>跨平台</li>
-<li>单线程</li>
-<li>轻量和高效</li>
-</ul>
-</li>
-<li>Node.js’ package ecosystem, npm, is the largest ecosystem of open source libraries in the world.<ul>
-<li>npm 是世界上最大的开源库生态系统</li>
-<li>在 npm  上发布的第三方包已经接近 35 万个之多</li>
-<li>包只能帮你解决某一个单一的问题，解决不了你的业务</li>
-</ul>
-</li>
-</ul>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><h3 id="可以做什么"><a href="#可以做什么" class="headerlink" title="可以做什么"></a>可以做什么</h3><p>Node 说白了就是为 JavaScript 提供了服务端编程的能力（不处理UI）。</p>
-<ul>
-<li>Java、PHP、Python、.Net、Ruby 等 能做的 Node 都能做</li>
-<li>网站开发，提供网站服务端</li>
-<li>数据库交互</li>
-<li>移动应用：后台</li>
-<li>网络游戏：后台</li>
-<li>CLI（Command Line Interface） 程序：<ul>
-<li>git</li>
-<li>gulp</li>
-<li>hexo</li>
-<li>Node 具有开发命令行工具的能力<ul>
-<li>webpack 打包构建工具</li>
-<li>http-server 在终端中快速提供一个服务</li>
-<li>browser-sync 提供服务，提供浏览器自动刷新的能力</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>虽然 Node 很强大，而且也是前端进阶必备的一个节能。</p>
-<ul>
-<li>对 IO 操作比较频繁的操作<ul>
-<li>文件读写</li>
-<li>和数据库交互：网络数据IO</li>
-</ul>
-</li>
-<li>实时通信<ul>
-<li>聊天：微信、QQ、直播</li>
-</ul>
-</li>
-</ul>
-<h3 id="一些资源"><a href="#一些资源" class="headerlink" title="一些资源"></a>一些资源</h3><ul>
-<li>朴灵：《深入浅出Node.js》</li>
-<li>《Node.js 权威指南》：官方API详解<ul>
-<li>参考 API</li>
-</ul>
-</li>
-<li>JavaScript 标准参考教程（alpha）：<a href="http://javascript.ruanyifeng.com/" target="_blank" rel="external">http://javascript.ruanyifeng.com/</a></li>
-<li>Node 入门：<a href="http://www.nodebeginner.org/index-zh-cn.html" target="_blank" rel="external">http://www.nodebeginner.org/index-zh-cn.html</a></li>
-<li>官方API文档：<a href="https://nodejs.org/dist/latest-v6.x/docs/api/" target="_blank" rel="external">https://nodejs.org/dist/latest-v6.x/docs/api/</a></li>
-<li>中文文档（版本比较旧，凑合看）：<a href="http://www.nodeclass.com/api/node.html" target="_blank" rel="external">http://www.nodeclass.com/api/node.html</a></li>
-<li>CNODE社区：<a href="http://cnodejs.org" target="_blank" rel="external">http://cnodejs.org</a></li>
-<li>CNODE-新手入门：<a href="http://cnodejs.org/getstart" target="_blank" rel="external">http://cnodejs.org/getstart</a></li>
-</ul>
-<hr>
-<h2 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h2><h3 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h3><p>各个环境版本下载地址：<a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a></p>
-<h4 id="如何确认是否有-Node-环境"><a href="#如何确认是否有-Node-环境" class="headerlink" title="如何确认是否有 Node 环境"></a>如何确认是否有 Node 环境</h4><p>打开终端，在终端中输入以下命令：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node --version</div></pre></td></tr></table></figure>
-<p>如果能看到类似于 <code>v6.8.0</code> 这样的版本号（版本号不一定和我的一致）输出，<br>说明当前计算机具有 Node 环境。</p>
-<h4 id="普通安装方式（下一步下一步）"><a href="#普通安装方式（下一步下一步）" class="headerlink" title="普通安装方式（下一步下一步）"></a>普通安装方式（下一步下一步）</h4><h4 id="使用-nvm（Node-version-manager）-安装和管理-Node（补充）"><a href="#使用-nvm（Node-version-manager）-安装和管理-Node（补充）" class="headerlink" title="使用 nvm（Node version manager） 安装和管理 Node（补充）"></a>使用 nvm（Node version manager） 安装和管理 Node（补充）</h4><h3 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h3><h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><h3 id="构建-HTTP-服务"><a href="#构建-HTTP-服务" class="headerlink" title="构建 HTTP 服务"></a>构建 HTTP 服务</h3><h3 id="path-环境变量"><a href="#path-环境变量" class="headerlink" title="path 环境变量"></a>path 环境变量</h3><p>问题：为什么在终端的任何目录下输入 <code>node</code> 命令，<br>执行的都是 <code>node.exe</code> 这个可执行文件？</p>
-<p>核心就在于可以通过操作系统的终端启动或者打开软件（GUI、CLI）：</p>
-<p>当你在终端输入一个字符串的时候：</p>
-<ul>
-<li>终端会在当前目录下找和该字符串相关的执行文件</li>
-<li>如果找不到，优先进入用户 path 环境变量<ul>
-<li>path 换件变量通过 <strong>英文分号</strong> 作为分割保存了多个目录</li>
-<li>终端会一个一个进入该目录找你刚才输入的字符串所对应的可执行文件</li>
-<li>如果在其中一个目录找到，则直接打开执行</li>
-<li>如果在用户 path 环境变量中找不到，则进入系统 path 换将变量</li>
-<li>查找规则如上，如果最后还找不到，则报错：<code>&#39;A&#39; 不是内部或外部命令，也不是可运行的程序或批处理文件。</code></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="Node-中的-JavaScript"><a href="#Node-中的-JavaScript" class="headerlink" title="Node 中的 JavaScript"></a>Node 中的 JavaScript</h2><h3 id="Ecmascript"><a href="#Ecmascript" class="headerlink" title="Ecmascript"></a>Ecmascript</h3><ul>
-<li>var</li>
-<li>if else </li>
-<li>function </li>
-<li>{}</li>
-<li>Object</li>
-<li>Number</li>
-<li>String</li>
-<li>Date</li>
-<li>Math</li>
-<li>…</li>
-<li>console</li>
-<li>定时器函数<ul>
-<li>setTimeout clearTimeout</li>
-<li>setInterval clearInterval</li>
-</ul>
-</li>
-<li>global</li>
-</ul>
-<h3 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h3><ul>
-<li>核心模块是由 Node 环境平台本身提供的</li>
-<li>以一个唯一的核心模块标识名称进行暴露</li>
-<li>使用的时候，直接通过 <code>require</code> 函数进行加载</li>
-</ul>
-<p>Node 把绝大多数的 API 都封装到了一个具名的核心模块中了，例如文件操作的：<code>fs</code><br>网络操作的 <code>http</code> 等。</p>
-<p>也就是说你如果想要使用核心模块，必须先加载才可以使用：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> 起个名字 = <span class="built_in">require</span>(<span class="string">'唯一的核心模块标识名称'</span>)</div></pre></td></tr></table></figure>
-<h3 id="第三方模块（由社区提供）"><a href="#第三方模块（由社区提供）" class="headerlink" title="第三方模块（由社区提供）"></a>第三方模块（由社区提供）</h3><ul>
-<li>由社区提供，也就是所谓的第三方<ul>
-<li>可以是公司</li>
-<li>可以是个人</li>
-</ul>
-</li>
-<li>举个例子：moment 时间处理库</li>
-</ul>
-<p>如何在 Node 中使用第三方包：</p>
-<ol>
-<li>通过 <code>npm</code> 下载</li>
-<li>通过 <code>require</code> 函数引包</li>
-<li>查看第三方包的 API 文档，<code>try-try-see</code></li>
-</ol>
-<h3 id="用户自定义模块"><a href="#用户自定义模块" class="headerlink" title="用户自定义模块"></a>用户自定义模块</h3><ul>
-<li>require</li>
-<li>module.exports</li>
-</ul>
-<p>在 Node 中，也提供了一种所谓的 JavaScript 模块化解决方案（类似于之前学过的 requirejs）：</p>
-<p>在 Node 中对模块化的支持非常好，<br>也就是说 Node 开发就是结合：</p>
-<ul>
-<li>Ecmascript</li>
-<li>核心模块</li>
-<li>第三方模块</li>
-<li>自己写的模块</li>
-</ul>
-<p>结合以上的功能去开发 Node 应用程序，这里先宏观了解一下，<br>随着课程的不断深入，会讲解到具体的模块加载机制及细节。</p>
-<hr>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/01/08-OOP/01-oop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2223,7 +2223,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/02-html5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/01-html5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="明月">
@@ -2245,7 +2245,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/02/11/06-H5+c3/02-html5/" itemprop="url">
+                <a class="post-title-link" href="/2016/02/11/06-H5+c3/01-html5/" itemprop="url">
                   html5基础
                 </a>
               
@@ -2300,82 +2300,129 @@
       
         
           
-            <h1 id="html5"><a href="#html5" class="headerlink" title="html5"></a>html5</h1><h2 id="web存储"><a href="#web存储" class="headerlink" title="web存储"></a>web存储</h2><h3 id="使用特点"><a href="#使用特点" class="headerlink" title="使用特点"></a>使用特点</h3><ul>
-<li>设置读取方便(通过键值对)</li>
-<li>容量较大,<code>sessionStorage</code>大约5m,<code>localStorage</code>大约20m</li>
-<li>如果要保存<code>json</code>数据,可以使用<code>JSON.stringify()</code>将对象编码后保存</li>
+            <h1 id="html5"><a href="#html5" class="headerlink" title="html5"></a>html5</h1><h2 id="DOCTYPE"><a href="#DOCTYPE" class="headerlink" title="DOCTYPE"></a>DOCTYPE</h2><p><code>DOCTYPE</code>并不是<code>HTML标签</code>,而是一个<code>声明</code>,告诉浏览器按哪种规范解析</p>
+<h2 id="新的语义标签"><a href="#新的语义标签" class="headerlink" title="新的语义标签"></a>新的语义标签</h2><ul>
+<li>目的：有利于SEO和后期维护<ul>
+<li>header nav main article section aside footer</li>
 </ul>
-<h3 id="window-sessionStorage"><a href="#window-sessionStorage" class="headerlink" title="window.sessionStorage"></a>window.sessionStorage</h3><ul>
-<li>生命周期为关闭浏览器窗口</li>
-<li>在同一个窗口下数据可以共享</li>
+</li>
 </ul>
-<h3 id="window-localStorage"><a href="#window-localStorage" class="headerlink" title="window.localStorage"></a>window.localStorage</h3><ul>
-<li>永久生效，除非手动删除</li>
-<li>可以多窗口共享</li>
+<h2 id="新语义标签兼容问题"><a href="#新语义标签兼容问题" class="headerlink" title="新语义标签兼容问题"></a>新语义标签兼容问题</h2><ul>
+<li>兼容ie8以下<ul>
+<li>cc:ie6+tab </li>
 </ul>
-<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><blockquote>
-<p>两种存储方式,只是前缀不同,调用方法是一致的</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--[if lte IE 8]&gt;</span></div><div class="line">    &lt;script src="js/html5shiv.min.js"&gt;&lt;/script&gt;   </div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<h2 id="input标签的新type属性"><a href="#input标签的新type属性" class="headerlink" title="input标签的新type属性"></a>input标签的新type属性</h2><p><img src="images/HTML5中的type.png" alt=""></p>
+<h2 id="input表单验证"><a href="#input表单验证" class="headerlink" title="input表单验证"></a>input表单验证</h2><ul>
+<li><code>email</code>自带格式</li>
+<li>对于没有自带验证效果的标签,就需要手动添加属性增加验证了<ul>
+<li><code>required</code> 当控件没有输入信息，会弹出提示信息</li>
+<li><code>pattern</code> 自定义规则 赋值正则表达式<ul>
+<li>自定义验证信息：</li>
+<li>oninvalid事件 //元素验证失败会触发 这个事件需要绑定给 对应的表单元素</li>
+<li>setCustomValidity()方法 //自定义验证信息</li>
+<li>输入时会弹出<code>oninput</code>绑定的代码</li>
+<li><img src="images/输入中.png" alt="输入中"></li>
+<li>验证失败时,会弹出<code>oninvalid</code>绑定的代码!</li>
+<li><a href="images/验证失败.png">验证失败</a></li>
+<li>自定义验证属性 </li>
+<li><img src="images/自定义验证.png" alt="自定义"></li>
+<li>代码<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"> <span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></div><div class="line">        email:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"userEmail"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">br</span>/&gt;</span></div><div class="line">        tel:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"tel"</span> <span class="attr">required</span> <span class="attr">pattern</span>=<span class="string">"[0-9]&#123;3&#125;"</span> <span class="attr">id</span>=<span class="string">"telInput"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">br</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">var telInput = document.getElementById("telInput");</div><div class="line">// 正在输入时</div><div class="line">telInput.oninput=function () &#123;</div><div class="line">    this.setCustomValidity("请正确输入哦");</div><div class="line">&#125;</div><div class="line">// 验证失败时</div><div class="line">telInput.oninvalid=function()&#123;</div><div class="line">    this.setCustomValidity("请不要输入火星的手机号好吗？");</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="新表单属性"><a href="#新表单属性" class="headerlink" title="新表单属性"></a>新表单属性</h2><ul>
+<li><code>placeholder</code>(占位符)<ul>
+<li>输入元素内默认显示一些提示信息,当用户输入之后自动消失</li>
+</ul>
+</li>
+<li><code>autofocus</code>(获取焦点)<ul>
+<li>当某一页有很多个可供输入的元素时,用户需要使用鼠标点选元素进行输入,为了提升用户体验,我们可以通过<code>autofocus</code>属性来指定页面中默认选中的元素</li>
+</ul>
+</li>
+</ul>
+<h2 id="新的表单元素"><a href="#新的表单元素" class="headerlink" title="新的表单元素"></a>新的表单元素</h2><ul>
+<li><p>datalist</p>
+<ul>
+<li>该元素规定了输入区域的选项列表,可以让用户有一些选项</li>
+<li>id:id属性,想要使用该datalist的元素需要通过list=id的方式来指定</li>
+<li>option:   <ul>
+<li>value制定具体的值</li>
+</ul>
+</li>
+<li><p>代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">网址:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"url"</span> <span class="attr">list</span>=<span class="string">"url_list"</span> <span class="attr">name</span>=<span class="string">"link"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">"url_list"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">label</span>=<span class="string">"W3School"</span> <span class="attr">value</span>=<span class="string">"http://www.W3School.com.cn"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">label</span>=<span class="string">"Google"</span> <span class="attr">value</span>=<span class="string">"http://www.google.com"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">label</span>=<span class="string">"Microsoft"</span> <span class="attr">value</span>=<span class="string">"http://www.microsoft.com"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></div><div class="line"></div><div class="line">电话: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"tel"</span> <span class="attr">list</span>=<span class="string">"tel_list"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">"tel_list"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"186xxx"</span> <span class="attr">label</span>=<span class="string">"移动"</span>&gt;</span>移动<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"187xxx"</span> <span class="attr">label</span>=<span class="string">"联通"</span>&gt;</span>联通<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"135xxx"</span> <span class="attr">label</span>=<span class="string">"天翼"</span>&gt;</span>天翼<span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="多媒体"><a href="#多媒体" class="headerlink" title="多媒体"></a>多媒体</h2><ul>
+<li><p>audio标签</p>
+<ul>
+<li>src:音频的地址</li>
+<li>controls:音频播放控制器</li>
+<li>autoplay:自动播放</li>
+<li>loop:循环</li>
+<li>poster:指定视频不播放时显示的封面</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">  <span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">"song.ogg"</span> <span class="attr">controls</span>=<span class="string">"controls"</span> <span class="attr">autoplay</span> <span class="attr">loop</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">audio</span>&gt;</span></div><div class="line">``` </div><div class="line">* 由于音频格式在不同浏览器中支持情况不同,考虑兼容性问题,我们需要使用下述代码</div><div class="line">* source:指定多个音频,如果找到了当前浏览器支持的,那么会直接使用,如果所有的`source`标签格式都不支持,会显示最后的文本内容</div><div class="line">* src:音频的地址</div><div class="line"></div><div class="line">```html</div><div class="line">      <span class="tag">&lt;<span class="name">audio</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"song.ogg"</span> <span class="attr">type</span>=<span class="string">"audio/ogg"</span>&gt;</span></div><div class="line">          <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"song.mp3"</span> <span class="attr">type</span>=<span class="string">"audio/mpeg"</span>&gt;</span></div><div class="line">          你的浏览器不支持此种格式</div><div class="line">      <span class="tag">&lt;/<span class="name">audio</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>video标签 </p>
+<ul>
+<li>用法跟audio一样</li>
+</ul>
+</li>
+</ul>
+<h2 id="两种进度条"><a href="#两种进度条" class="headerlink" title="两种进度条"></a>两种进度条</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meter value=&quot;.5&quot;&gt;&lt;/meter&gt; //value(0-1)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;progress value=&quot;50&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;  //value(0-100)</div></pre></td></tr></table></figure>
+<h2 id="Dom语法"><a href="#Dom语法" class="headerlink" title="Dom语法"></a>Dom语法</h2><ul>
+<li>document.querySelector()<blockquote>
+<p>可以传入的选择器 还有CSS3的选择器 获取满足条件的第一个元素 从上往下 查找</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">setItem(key, value) 设置存储内容</div><div class="line">getItem(key) 读取存储内容</div><div class="line">removeItem(key) 删除键值为key的存储内容</div><div class="line">clear() 清空所有存储内容</div><div class="line">key(n) 以索引值来获取存储内容</div></pre></td></tr></table></figure>
-<h2 id="地理定位"><a href="#地理定位" class="headerlink" title="地理定位"></a>地理定位</h2><h3 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h3><ul>
-<li>语义地理位置属于私密信息,所以浏览器会弹出提示框,在征得用户允许的情况下再获取位置</li>
-</ul>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">navigator.geolocation.getCurrentPosition(successCallback, errorCallback, options) 获取当前地理信息</div><div class="line"></div><div class="line">navigator.watchPosition(successCallback, errorCallback, options) 重复获取当前地理信息</div><div class="line">​    </div><div class="line">当成功获取地理信息后，会调用succssCallback，并返回一个包含位置信息的对象position。</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">navigator.geolocation.getCurrentPosition(function(position)&#123;</div><div class="line">    // 定位成功会调用该方法</div><div class="line">    // position.coords.latitude 纬度</div><div class="line">    // position.coords.longitude 经度</div><div class="line">    // position.coords.accuracy 精度</div><div class="line">    // position.coords.altitude 海拔高度</div><div class="line">&#125;, function(error)&#123;</div><div class="line">    // 定位失败会调用该方法</div><div class="line">    // error 是错误信息</div><div class="line">&#125;, )</div></pre></td></tr></table></figure>
-<h2 id="全屏幕"><a href="#全屏幕" class="headerlink" title="全屏幕"></a>全屏幕</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><ul>
-<li>基础语法</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">requestFullScreen() 开启全屏显示</div><div class="line">cancleFullScreen() 关闭全屏显示</div></pre></td></tr></table></figure>
-<ul>
-<li>使用注意:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">不同浏览器需要添加前缀如：</div><div class="line">webkitRequestFullScreen、mozRequestFullScreen</div><div class="line">webkitCancleFullScreen、mozCancleFullScreen</div></pre></td></tr></table></figure>
-<h2 id="4、网络连接事件"><a href="#4、网络连接事件" class="headerlink" title="4、网络连接事件"></a>4、网络连接事件</h2><h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><ul>
-<li>获取网络状态</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.navigator.onLine</div></pre></td></tr></table></figure>
-<ul>
-<li>网络连接,断开事件</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 网络连接</span></div><div class="line"><span class="built_in">window</span>.ononline = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="string">'网络已连接'</span>);</div><div class="line">	&#125;</div><div class="line"><span class="comment">// 网络断开</span></div><div class="line"><span class="built_in">window</span>.onoffline= <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="string">'网络已断开'</span>);</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
-<h2 id="5、文件读取"><a href="#5、文件读取" class="headerlink" title="5、文件读取"></a>5、文件读取</h2><h3 id="获取文件"><a href="#获取文件" class="headerlink" title="获取文件"></a>获取文件</h3><ul>
-<li>由于<code>File</code>标签支持多文件上传,所以我们想要获取到选取的文件,需要配合索引</li>
-</ul>
-<ul>
-<li>语法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 其中this为file标签</div><div class="line">    this.files[0]</div></pre></td></tr></table></figure>
 </li>
-</ul>
-<h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><p>读取文件需要使用js对象<code>FileReader</code><br>​    </p>
+<li>document.querySelectorAll()<blockquote>
+<p>返回数组</p>
+</blockquote>
+</li>
+<li>classList<blockquote>
+<p>这个元素返回的是dom元素的class 列表,这个属性本身是只读的，但是我们可以通过几个方法去操作元素的class</p>
 <ul>
-<li>基础语法</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var reader = new FileReader; //实例化一个对象</div><div class="line">reader.readAsDataURL(this.files[0]) //以DataURL形式读取文件 获取的值可以用在任意通过链接指定的地方</div><div class="line"></div><div class="line">// 通过onload事件监测加载完毕</div><div class="line">reader.onload = function ()&#123;</div><div class="line">     // result 就是我们需要的结果</div><div class="line"> console.log(this.result);</div><div class="line">     //可以用在指定连接地址的元素中比如</div><div class="line">         // 设置图片</div><div class="line">     	document.querySelector(&apos;#img&apos;).src = this.result;</div><div class="line">     	// 设置图像</div><div class="line">document.querySelector(&quot;#video&quot;).src= this.result;</div><div class="line">// 设置CSS</div><div class="line">document.querySelector(&quot;#link&quot;).href = this.result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="6、文件拖拽"><a href="#6、文件拖拽" class="headerlink" title="6、文件拖拽"></a>6、文件拖拽</h2><h3 id="拖拽元素"><a href="#拖拽元素" class="headerlink" title="拖拽元素"></a>拖拽元素</h3><p>添加了<code>draggable=&quot;true&quot;</code> 属性即可实现拖拽,除了默认支持拖拽的元素(图片,链接)</p>
-<h3 id="目标元素"><a href="#目标元素" class="headerlink" title="目标元素"></a>目标元素</h3><p>拖拽元素的放置位置,任意元素都可以设置为目标元素</p>
-<h3 id="支持事件"><a href="#支持事件" class="headerlink" title="支持事件"></a>支持事件</h3><ul>
-<li>拖拽元素</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ondrag 		应用于拖拽元素，整个拖拽过程都会调用</div><div class="line">ondragstart	应用于拖拽元素，当拖拽开始时调用</div><div class="line">ondragleave	应用于拖拽元素，当鼠标离开拖拽元素时调用</div><div class="line">ondragend	应用于拖拽元素，当拖拽结束时调用</div></pre></td></tr></table></figure>
-<ul>
-<li>目标元素</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">目标元素</div><div class="line">ondragenter	应用于目标元素，当拖拽元素进入时调用</div><div class="line">ondragover	应用于目标元素，当停留在目标元素上时调用</div><div class="line">ondrop		应用于目标元素，当在目标元素上松开鼠标时调用</div><div class="line">ondragleave	应用于目标元素，当鼠标离开目标元素时调用</div></pre></td></tr></table></figure>
-<ul>
-<li>使用注意:<ul>
-<li>如果想要调用ondrop事件,必须在<code>ondragover</code>中使用事件参数阻止浏览器的默认行为</li>
+<li><strong>可用方法：</strong><ul>
+<li><strong>add</strong> ： 添加一个 class 到元素的 class 列表中</li>
+<li><strong>remove</strong> ： 从元素的 class 列表中移除一个 class</li>
+<li><strong>toggle</strong> ： 切换一个 class 是否存在于一个元素的 class 列表中</li>
+<li><strong>contains</strong> ： 查询一个指定的 class 是否存在于元素的 class 列表中</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">thirdBox.ondragover = function (argument) &#123;</div><div class="line">				// 在 ondragover时 必须阻止默认行为 才能够 看到拖放效果</div><div class="line">				argument.preventDefault();</div><div class="line">			&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>数据传递<ul>
-<li>配合事件对象的<code>dataTransfor</code> 可以实现数据的传递</li>
-<li>setData(key,value) 设置数据</li>
-<li>getData(key) 获取数据</li>
+</blockquote>
+</li>
+</ul>
+<h2 id="data-添加属性"><a href="#data-添加属性" class="headerlink" title="data-添加属性"></a>data-添加属性</h2><ul>
+<li><strong>语法:</strong><ul>
+<li>data-:这个是固定格式</li>
+<li>data-xxx:xxx是自定义的值</li>
+</ul>
+</li>
+<li><strong>注意:</strong><ul>
+<li>属性名不应该包含任何大写字母，并且在前缀 “data-“ 之后必须有至少一个字符</li>
+<li>属性值可以是任意字符串</li>
+<li>不要使用纯数字,特殊字符等作为自定义值</li>
+<li>如果data之后使用<code>-</code>连接多个值,取值时,需要使用<code>驼峰命名</code></li>
+</ul>
+</li>
+<li>获取：<ul>
+<li>对象.dataset 返回是自定义属性的对象，可以<code>.</code>出想要的属性值或者 也可以 对象.dataset[“属性名”]</li>
+<li>如果定义的时候使用了大写字母获取的时候 会变成小写,我们需要通过小写字母来获取</li>
+<li>如果 我们使用 多个 - 进行分割会去掉横线,横线之后的 首字母变为大写</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//dom1为任意的元素</div><div class="line">dom1.ondragstart = function (argument) &#123;</div><div class="line">				argument.dataTransfer.setData(&quot;fox&quot;,this.id);</div><div class="line">			&#125;</div><div class="line"></div><div class="line">//dom2为拖放的目标元素</div><div class="line">dom2.ondrop = function (argument) &#123;</div><div class="line">				console.log(argument);</div><div class="line">				var fromBoxID =argument.dataTransfer.getData(&quot;fox&quot;);</div></pre></td></tr></table></figure>
 
           
         
@@ -2419,7 +2466,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/03-css3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/11/06-H5+c3/01-css3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="明月">
@@ -2441,8 +2488,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/02/11/06-H5+c3/03-css3/" itemprop="url">
-                  css3基础
+                <a class="post-title-link" href="/2016/02/11/06-H5+c3/01-css3/" itemprop="url">
+                  CSS3基础
                 </a>
               
             
@@ -2496,78 +2543,53 @@
       
         
           
-            <h1 id="css3"><a href="#css3" class="headerlink" title="css3"></a>css3</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
-<li><p><strong>background-size:</strong></p>
-<blockquote>
-<p>设置背景的大小,通过这个属性可以使用多张图片作为背景</p>
+            <h1 id="CSS3"><a href="#CSS3" class="headerlink" title="CSS3"></a>CSS3</h1><h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><ul>
+<li>兄弟选择器 E~ F 只能获取E后边的兄弟元素</li>
+<li>属性选择器 </li>
+<li>E[attr], E[attr=”val”],E<a href="开头">attr^=”val”</a>，E<a href="结尾">attr$=”val”</a>，E<a href="包含val属性的">attr~=”val”</a>,E<a href="包含val字符串的">attr*=”val”</a></li>
+<li>伪类选择器 E:first-child{}，E:last-child{},E:nth-child{} </li>
+</ul>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><ul>
+<li>box-sizing: border-box; 保证的是盒子的尺寸，内容会变小</li>
+</ul>
+<h2 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h2><ul>
+<li>E::first-letter(首字母)，E::first-line(首行)，E::placeholder(设置占位符的前景色 背景色)，E::before(常用),E::after(常用)</li>
+<li>E::before 伪元素必须设置content:””,默认是行内元素，一般设置定位</li>
+</ul>
+<h2 id="border-radius"><a href="#border-radius" class="headerlink" title="border-radius"></a>border-radius</h2><ul>
+<li>设置圆角 顺时针方向设置四个值</li>
+</ul>
+<h2 id="文本阴影"><a href="#文本阴影" class="headerlink" title="文本阴影"></a>文本阴影</h2><ul>
+<li>text-shadow (水平偏移，垂直偏移，模糊放大，阴影颜色)</li>
+</ul>
+<h2 id="盒子阴影"><a href="#盒子阴影" class="headerlink" title="盒子阴影"></a>盒子阴影</h2><ul>
+<li>box-shadow(inset 水平偏移，垂直偏移，模糊放大，阴影颜色)</li>
+</ul>
+<h2 id="两种颜色设置"><a href="#两种颜色设置" class="headerlink" title="两种颜色设置"></a>两种颜色设置</h2><ul>
+<li>rgba(),hsla()</li>
+<li>网页f12 Elements-&gt;style中点击颜色 即可出现调色板</li>
+</ul>
+<h2 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h2><ul>
+<li>注意渐变产生的是<code>图像</code>,换句话来说,所有可以设置<code>图像</code>的地方都能够使用它,能够减少我们页面图片的使用</li>
+<li><p>线性渐变 linear-gradient()</p>
 <ul>
-<li>cover(等比例放大，直到两边都顶格，如果图片变大，超出的会切掉) </li>
-<li>contain(等比例放大，某一边顶格，立刻停止)</li>
+<li>/<em>语法组合方式 可以添加多个颜色</em>/</li>
+<li>background-image: linear-gradient(方向,开始颜色 开始位置 ,颜色2 开始位置,颜色3 开始位置…..);</li>
+<li>background-image: linear-gradient(to top left,red,yellow);</li>
 </ul>
-</blockquote>
 </li>
-<li><p><strong>background-origin:</strong></p>
-<blockquote>
-<p>设置的是背景图片的开始位置</p>
+<li><p>径向渐变 </p>
 <ul>
-<li>border-box</li>
-<li>content-box</li>
-<li>padding-box</li>
-</ul>
-</blockquote>
+<li>/<em> 圆形渐变写法 </em>/</li>
+<li><p>background:radial-gradient(半径  ,颜色1,颜色2等等);</p>
 </li>
-<li><p><strong>background-repeat</strong></p>
-<ul>
-<li><p>在原来只能设置平铺,不平铺的基础上,增加了两个属性,让我们在设置背景图时更为灵活</p>
+<li><p>/<em> 椭圆渐变写法 </em>/</p>
 </li>
-<li><p>/<em> 自动缩放 直到填满 </em>/</p>
+<li>background:radial-gradient(横向半径,竖向半径  ,颜色1,颜色2等等);</li>
+</ul>
+<p><strong>注意</strong></p>
 </li>
-<li>background-repeat:round;</li>
-<li>/<em> 两个方法都缩放,直到某一边充满容器为止 </em>/</li>
-<li>background-repeat:space;</li>
-</ul>
-</li>
-<li><p><strong>border-image:</strong></p>
-<ul>
-<li>border这个属性必须设置</li>
-<li>border-image-source:url(“”)</li>
-<li>border-image-slice: x y 没有单位</li>
-<li>border-image-width：</li>
-<li>border-image-repeat:stretch/round/repeat<ul>
-<li>round 可以保证图片完整性</li>
-<li>repeat 只是简单的重复 可能会有半个图片显示</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>background 支持设置多个背景图，最后放一个背景颜色</p>
-<ul>
-<li>background：source repeat position /size  origin(注意：position要有才能写size)</li>
-</ul>
-</li>
-</ul>
-<h2 id="body-的注意事项："><a href="#body-的注意事项：" class="headerlink" title="body 的注意事项："></a>body 的注意事项：</h2><ul>
-<li>默认没有高度 需要设置html，body{height：100%；}</li>
-<li>body{margin:0;box-sizing:border-box;} //如果设置了border</li>
-</ul>
-<h2 id="过渡-transition"><a href="#过渡-transition" class="headerlink" title="过渡 transition"></a>过渡 transition</h2><ul>
-<li>transition-property:</li>
-<li>transition-duration:</li>
-<li>transition-delay:</li>
-<li>transition-timing-function:ease/linear(线性匀速)/steps()（步骤动画）<ul>
-<li>贝塞尔曲线动画 <code>cubic-bezier()</code></li>
-</ul>
-</li>
-<li>transition:property duration delay timing-function，…</li>
-</ul>
-<h2 id="2D转换-transform"><a href="#2D转换-transform" class="headerlink" title="2D转换 transform"></a>2D转换 transform</h2><ul>
-<li>transform-translate(x,y)//移动元素不会影响其他元素</li>
-<li>transform-rotate(n deg)//旋转  %也可以</li>
-<li>transform-scale() //缩放 默认是1</li>
-<li>transform-skew() //扭曲 如果两个轴扭曲角度一致，元素会消失</li>
-<li>transform-origin:具体位置单词 /具体坐标</li>
-<li>transform:translate() rotate() scale()</li>
-<li>注意：先走还是先旋转 效果不一样的</li>
+<li>跟线性渐变一样如果上一个颜色的结束,跟下一个颜色的开始相等,那么不会出现过度</li>
 </ul>
 
           
@@ -2607,7 +2629,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2652,7 +2674,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
